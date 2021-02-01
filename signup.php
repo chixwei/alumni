@@ -1,1 +1,0 @@
-halo makan loh
