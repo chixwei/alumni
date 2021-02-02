@@ -18,13 +18,13 @@ body {
 
 #navbar {
     overflow: hidden;
-    background-color: RGB(72, 161, 250);
+    background-color: blue;
 }
 
 #navbar a {
     float: left;
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 11px 22px;
     text-decoration: none;
@@ -32,7 +32,7 @@ body {
 }
 
 #navbar a:hover {
-    background-color: white;
+    background-color: skyblue;
     color: black;
 }
 
@@ -101,7 +101,7 @@ body {
 }
 
 .search {
-    background: RGB(72, 161, 250);
+    background: blue;
     color: white;
 }
 
