@@ -1,362 +1,176 @@
-
-@import "compass/css3";
-<?php
-$body-bg: #9BDBD2;
-$form-bg: #77C1D4;
-$white: #ffffff;
-
-$main: #7795D4;
-$main-light: lighten($main, 5%);
-$main-dark: darken($main, 5%);
-
-$gray-light: #C7C7C8;
-$gray: #ddd;
-
-$thin: 300;
-$normal: 400;
-$bold: 600;
-$br: 4px;
-?>
 <DOCTYPE html>
-  <html>
-    <head>
-      <style>
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-html {
-  overflow-y: scroll;
+<head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: #9BDBD2;
-  font-family: "Titillium Web", sans-serif;
+    font-family: "Roboto";
+    font-size: 20px;
+    background-size: 200% 100% !important;
+    animation: move 10s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+    height: 100vh
 }
 
-a {
-  text-decoration: none;
-  color: $main;
-  transition: 0.5s ease;
-  &:hover {
-    color: $main-dark;
-  }
+.user {
+    width: 90%;
+    max-width: 340px;
+    margin: 10vh auto;
+}
+
+.user__header {
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 500ms ease-in-out 0.7s forwards;
+}
+
+.user__title {
+    font-size: 20px;
+    margin-bottom: -10px;
+    font-weight: 500;
+    color: white;
 }
 
 .form {
-  background: #77C1D4;
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: $br;
-  box-shadow: 0 4px 10px 4px rgba($form-bg, 0.3);
-}
-
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  li a {
-    display: block;
-    text-decoration: none;
-    padding: 15px;
-    background: rgba($gray-light, 0.25);
-    color: $gray-light;
-    font-size: 20px;
-    float: left;
-    width: 50%;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.5s ease;
-    &:hover {
-      background: $main-dark;
-      color: $white;
-    }
-  }
-  .active a {
-    background: $main;
-    color: $white;
-  }
-}
-
-.tab-content > div:last-child {
-  display: none;
-}
-
-h1 {
-  text-align: center;
-  color: $white;
-  font-weight: $thin;
-  margin: 0 0 40px;
-}
-
-label {
-  position: absolute;
-  transform: translateY(6px);
-  left: 13px;
-  color: rgba($white, 0.5);
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 22px;
-  .req {
-    margin: 2px;
-    color: $main;
-  }
-}
-
-label.active {
-  transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-  .req {
+    margin-top: 10px;
+    border-radius: 6px;
+    overflow: hidden;
     opacity: 0;
-  }
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 500ms ease-in-out 0.9s forwards;
 }
 
-label.highlight {
-  color: $white;
+.form--no {
+    animation: NO 1s ease-in-out;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
-input,
-textarea {
-  font-size: 22px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid $gray-light;
-  color: $white;
-  border-radius: 0;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  &:focus {
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family:"Roboto";
+    -webkit-appearance: none;
+    border: 0;
     outline: 0;
-    border-color: $main;
-  }
+    transition: 0.3s;
 }
-
-textarea {
-  border: 2px solid $gray-light;
-  resize: vertical;
-}
-
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.top-row {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  > div {
-    float: left;
-    width: 48%;
-    margin-right: 4%;
-    &:last-child {
-      margin: 0;
+.form__input:focus {
+        background: #E9E9E9;
     }
+
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: "Roboto";
+    -webkit-appearance: none;
+    outline: 0;
+    border: 0;
+    color: white;
+    background: #DFB85A;
+    transition: 0.3s;
+}
+    
+.btn:hover {
+        background:#E6D5AC;
+    }
+
+
+@keyframes NO {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
   }
 }
 
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: $bold;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: $main;
-  color: $white;
-  transition: all.5s ease;
-  -webkit-appearance: none;
-  &:hover,
-  &:focus {
-    background: $main-dark;
-  }
+@keyframes arrive {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-.button-block {
-  display: block;
-  width: 100%;
+@keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    50% {
+        background-position: 100% 0
+    }
+
+    100% {
+        background-position: 0 0
+    }
 }
 
-.forgot {
-  margin-top: -20px;
-  text-align: right;
-}
 </style>
 </head>
 <body>
 
-<div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up </h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required />
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required />
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Contact<span class="req">*</span>
-            </label>
-            <input type="text"required />
-          </div>
-            
-            <div class="field-wrap">
-            <label>
-              Student ID<span class="req">*</span>
-            </label>
-            <input type="number"required />
-          </div>
-            
-            <div class="field-wrap">
-            <label>
-              Country<span class="req">*</span>
-            </label>
-            <input list="country"required />
-              <datalist id="country">
-                <option value="Africa">
-                  <option value="Europe">
-                   <option value="Japan">
-<option value="Korea">
-  <option value="Malaysia">       
-          </div>
-             
-            <div class="field-wrap">
-            <label>
-              Set Your Password<span class="req">*</span>
-            </label>
-            <input type="password"required />
-          </div>
-            
-            <div class="field-wrap">
-            <label>
-              Comfirm Password<span class="req">*</span>
-            </label>
-            <input type="password"required />
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
-
+<div class="user">
+    <header class="user__header">
+        <img src="Kaweiee3.png" width="300px" height="300px" margin-top="10px" margin-bottom= "50px" alt="" />
+    </header>
+    
+    <form class="form">
+        <div class="form__group">
+            <input type="text" placeholder="Username" class="form__input" />
         </div>
         
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Contact<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
+        <div class="form__group">
+            <input type="email" placeholder="Email" class="form__input" />
         </div>
         
-      </div>
-      
-</div> 
+        <div class="form__group">
+            <input type="tel" placeholder="Phone Number" class="form__input" />
+        </div>
+        <div class="form__group">
+            <input type="text" placeholder="Student ID" class="form__input" />
+        </div>
+        
 
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  
-  var $this = $(this),
-      label = $this.prev('label');
+        <div class="form__group">
+            <input type="password" placeholder="Password" class="form__input" />
+        </div>
+        
+        <button class="btn" type="button">Register</button>
+        
+        <button class="btn" type="button">Login</button>
+    </form>
+</div>
+</body>
 
-	  if (e.type === 'keyup') {
-			if ($this.val() === '') {
-          label.removeClass('active highlight');
-        } else {
-          label.addClass('active highlight');
-        }
-    } else if (e.type === 'blur') {
-    	if( $this.val() === '' ) {
-    		label.removeClass('active highlight'); 
-			} else {
-		    label.removeClass('highlight');   
-			}   
-    } else if (e.type === 'focus') {
-      
-      if( $this.val() === '' ) {
-    		label.removeClass('highlight'); 
-			} 
-      else if( $this.val() !== '' ) {
-		    label.addClass('highlight');
-			}
-    }
+<script>
+    const button = document.querySelector('.btn')
+const form   = document.querySelector('.form')
 
+button.addEventListener('click', function() {
+   form.classList.add('form--no') 
 });
-
-$('.tab a').on('click', function (e) {
-  
-  e.preventDefault();
-  
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
-  
-  target = $(this).attr('href');
-
-  $('.tab-content > div').not(target).hide();
-  
-  $(target).fadeIn(600);
-  
-});
+</script>
+</html>
