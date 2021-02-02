@@ -9,7 +9,7 @@
 
 body {
     font-family: "Roboto";
-    font-size: 20px;
+    font-size: 30px;
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
@@ -31,7 +31,7 @@ body {
 }
 
 .user__title {
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: -10px;
     font-weight: 500;
     color: white;
@@ -84,6 +84,11 @@ body {
         background:#E6D5AC;
     }
 
+.forgot {
+  margin-top:-20px;
+  text-align:right;
+  font-size:15px;
+}
 
 @keyframes NO {
   from, to {
@@ -127,7 +132,6 @@ body {
         background-position: 0 0
     }
 }
-
 </style>
 </head>
 <body>
@@ -136,31 +140,19 @@ body {
     <header class="user__header">
         <img src="Kaweiee3.png" width="300px" height="300px" margin-top="10px" margin-bottom= "50px" alt="" />
     </header>
-    
+    <p class="forgot"><a href="#">Forgot Password?</a></p>
     <form class="form">
-        <div class="form__group">
-            <input type="text" placeholder="Username" class="form__input" />
-        </div>
-        
-        <div class="form__group">
-            <input type="email" placeholder="Email" class="form__input" />
-        </div>
-        
+
         <div class="form__group">
             <input type="tel" placeholder="Phone Number" class="form__input" />
         </div>
-        <div class="form__group">
-            <input type="text" placeholder="Student ID" class="form__input" />
-        </div>
-        
 
         <div class="form__group">
             <input type="password" placeholder="Password" class="form__input" />
         </div>
         
-        <button class="btn" type="button">Register</button>
+        <button class="btn" type="button">Enter</button>
         
-        <button class="btn" type="button">Login</button>
     </form>
 </div>
 </body>
