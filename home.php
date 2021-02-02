@@ -13,28 +13,18 @@
         </video>
 
         <header>
-            <div class="wrapper">
-
-                <div class="logo">
-                    <img src="logo.png" alt="Kaweiee Logo">
-                </div>
-
-                <ul class="nav">
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="event.php">Event</a></li>
-                </ul>
-
+            
+            <div class="logo">
+                <img src="logo.png" alt="Kaweiee Logo">
             </div>
 
             <div class="welcome">
                 <h1>"NEVER GIVE UP BECAUSE GREAT THINGS TAKE TIME"</h1>
                 <!-- not sure login or sign up -->
-                <a href="login.php"> Explore</a>
+                <a href="signup.php"> Explore</a>
             </div>
+
         </header>
 
-        
     </body>
 </html>

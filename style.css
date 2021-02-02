@@ -24,42 +24,12 @@
     }
 }
 
-.wrapper{
-    width: 1170px;
-    margin: auto;
-}
-
-.nav{
-    float: right;
-    list-style: none;
-    margin-top: 30px;
-    margin-right: -100px;
-}
-
-.nav li{
-    display: inline-block;
-}
-
-.nav li a{
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 40px;
-    font-family: poppins;
-    font-size: 20px;
-    
-}
-
-.nav li a:hover{
-    background: #fff;
-    color: #333;
-}
-
 .logo img{
-    width: 300px;
+    width: 200px;
     float: left;
     height: auto;
-    margin-left: -180px;
-    margin-top: -50px;
+    margin-left: 0px;
+    margin-top: 0px;
 }
 
 .welcome {
