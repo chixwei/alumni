@@ -1,13 +1,12 @@
-body{
-    margin-top: 0;
-    margin-left: 0;
-    
+*{
+    margin: 0;
+    padding: 0;
 }
 
 #homevideo{
     position: fixed;
     z-index: -1;
-    background: rgba(0, 0, 0, 0.5);
+    background-clip: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
     
 }
 
@@ -23,4 +22,76 @@ body{
         width: auto;
         height: 100%;
     }
+}
+
+.wrapper{
+    width: 1170px;
+    margin: auto;
+}
+
+.nav{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+    margin-right: -100px;
+}
+
+.nav li{
+    display: inline-block;
+}
+
+.nav li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 40px;
+    font-family: poppins;
+    font-size: 20px;
+    
+}
+
+.nav li a:hover{
+    background: #fff;
+    color: #333;
+}
+
+.logo img{
+    width: 300px;
+    float: left;
+    height: auto;
+    margin-left: -180px;
+    margin-top: -50px;
+}
+
+.welcome {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 20% 30%;
+    text-align: center;
+}
+
+.welcome h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+    background: rgba(0,0,0,0.8);
+    
+}
+
+.welcome a {
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+    background: rgba(0,0,0,0.8);
+    
+}
+
+.welcome a:hover {
+    background: #fff;
+    color: #333;
 }
