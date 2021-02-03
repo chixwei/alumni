@@ -4,140 +4,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {
-    margin: 0;
-    height:2000px;
-    font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
-}
+* {box-sizing: border-box;}
 
-.header {
-    background-color: white;
-    text-align: center;
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #navbar {
-    overflow: hidden;
-    background-color: blue;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
 }
 
 #navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 11px 22px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 6px;
+  text-decoration: none;
+  font-size: 22px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
 }
 
 #navbar a:hover {
-    background-color: skyblue;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 #navbar a.active {
-    background-color: #4CAF50;
-    color: white;
+  background-color: dodgerblue;
+  color: white;
 }
 
-.content {
-    padding: 16px;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky + .content {
-    padding-top: 60px;
-}
-
-.topnav-right {
+#navbar-right {
   float: right;
 }
 
-.icon-bar {
-    position: fixed;
-    top: 76%;
-    webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.icon-bar a {
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+  #navbar a {
+    float: none;
     display: block;
-    text-align: center;
-    padding: 21px;
-    transition: all 0.5s ease;
-    color: white;
-    font-size: 20px;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
 }
-
-.icon-bar a:hover {
-    background-color: #000;
-}
-
-.facebook {
-    background: #3B5998;
-    color: white;
-}
-
-.twitter {
-    background: #55ACEE;
-    color: white;
-}
-
-.google {
-    background: #dd4b39;
-    color: white;
-}
-
-.youtube {
-    background: #bb0000;
-    color: white;
-}
-
-.search {
-    background: blue;
-    color: white;
-}
-
-.content {
-    margin-left: 85px;
-    font-size: 30px;
-}
-
-
 </style>
 </head>
 <body>
 
-<div class="header">
-    <img src="logo1.png" alt="logo1.png">
-</div>
-
 <div id="navbar">
+    <img src="logo1.png" alt="logo1.png">
+    <div id="navbar-right">
     <a href="home.php">Home</a>
     <a href="about.php">About Us</a>
     <a href="event.php">Event</a>
-    <div class="topnav-right">
     <a href="contact.php">Contact Us</a>
     <a href="https://www.google.com/" class="search"><i class="fa fa-search"></i></a>
   </div>
 </div>
 
-
-<div class="icon-bar">
-    <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a> 
-    <a href="https://www.twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a> 
-    <a href="https://www.google.com/" class="google"><i class="fa fa-google"></i></a> 
-    <a href="https://www.youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a> 
-</div>
-
-<div class="content">
+<div style="margin-top:210px;padding:15px 15px 2500px;font-size:30px">
     <h5><p><span style="color:blue;">The University</span></p></h5>
     <p>.</p>
     <p>.</p>
@@ -154,18 +98,19 @@ body {
     <p>.</p>
     <p>.</p>
 </div>
+</div>
 
 <script>
-window.onscroll = function() {myFunction()};
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
 
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
   } else {
-    navbar.classList.remove("sticky");
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
   }
 }
 </script>
