@@ -10,11 +10,11 @@
 body {
     font-family: "Roboto";
     font-size: 20px;
-    background-size: 200% 100% !important;
+    background-size: 100% 100% !important;
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
     background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-    height: 100vh
+    height: 100%
 }
 
 .user {
@@ -25,7 +25,6 @@ body {
 
 .user__header {
     text-align: center;
-    opacity: 0;
     transform: translate3d(0, 500px, 0);
     animation: arrive 500ms ease-in-out 0.7s forwards;
 }
@@ -71,6 +70,7 @@ body {
     display: block;
     width: 100%;
     padding: 20px;
+    font-size:15px;
     font-family: "Roboto";
     -webkit-appearance: none;
     outline: 0;
@@ -83,6 +83,17 @@ body {
 .btn:hover {
         background:#E6D5AC;
     }
+
+a{
+  text-decoration:none;
+  text-align:center;
+}
+.admin {
+    margin-right:10px;
+  text-align:right;
+  font-size:12px;
+  animation: arrive 500ms ease-in-out 0.7s forwards;
+}
 
 
 @keyframes NO {
@@ -134,33 +145,34 @@ body {
 
 <div class="user">
     <header class="user__header">
-        <img src="Kaweiee3.png" width="300px" height="300px" margin-top="10px" margin-bottom= "50px" alt="" />
+        <img src="Kaweiee3.png" width="300px" height="300px" style="align-middle" margin-top="5px" margin-bottom= "50px" alt="" />
     </header>
     
+    <p class="admin"><a href="login.php">Login</a></p>
+
     <form class="form">
         <div class="form__group">
-            <input type="text" placeholder="Username" class="form__input" />
+            <input type="text" placeholder="Username" class="form__input" required>
         </div>
         
         <div class="form__group">
-            <input type="email" placeholder="Email" class="form__input" />
+            <input type="email" placeholder="Email" class="form__input" required>
         </div>
         
         <div class="form__group">
-            <input type="tel" placeholder="Phone Number" class="form__input" />
+            <input type="tel" placeholder="Phone Number" class="form__input" required>
         </div>
-        <div class="form__group">
-            <input type="text" placeholder="Student ID" class="form__input" />
-        </div>
-        
 
         <div class="form__group">
-            <input type="password" placeholder="Password" class="form__input" />
+            <input type="text" placeholder="Student ID" class="form__input" required>
         </div>
         
-        <button class="btn" type="button">Register</button>
+        <div class="form__group">
+            <input type="password" placeholder="Password" class="form__input" required>
+        </div>
         
-        <button class="btn" type="button">Login</button>
+       <a href= "home.php" button class="btn" type="submit">Register</button></a>
+        
     </form>
 </div>
 </body>
@@ -169,7 +181,7 @@ body {
     const button = document.querySelector('.btn')
 const form   = document.querySelector('.form')
 
-button.addEventListener('click', function() {
+button.addEventListener('click', function(loop) {
    form.classList.add('form--no') 
 });
 </script>
