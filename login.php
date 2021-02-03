@@ -13,7 +13,7 @@ body {
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+    background: linear-gradient(45deg, #B1CCEA 10%, #F1DBDB 90%);
     height: 100vh
 }
 
@@ -32,7 +32,7 @@ body {
 
 .user__title {
     font-size: 30px;
-    margin-bottom: -10px;
+    margin-bottom: 10px;
     font-weight: 500;
     color: white;
 }
@@ -70,8 +70,9 @@ body {
 .btn {
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     font-family: "Roboto";
+    font-size: 15px;
     -webkit-appearance: none;
     outline: 0;
     border: 0;
@@ -85,9 +86,16 @@ body {
     }
 
 .forgot {
-  margin-top:-20px;
   text-align:right;
-  font-size:15px;
+  font-size:12px;
+  transition: 0.3s;
+  animation: arrive 500ms ease-in-out 0.9s forwards;
+}
+
+
+a{
+  text-decoration:none;
+  text-align:center;
 }
 
 @keyframes NO {
@@ -140,7 +148,9 @@ body {
     <header class="user__header">
         <img src="Kaweiee3.png" width="300px" height="300px" margin-top="10px" margin-bottom= "50px" alt="" />
     </header>
+    <p class="forgot"><a href="signup.php">Sign up</a></p>
     <p class="forgot"><a href="#">Forgot Password?</a></p>
+
     <form class="form">
 
         <div class="form__group">
@@ -151,8 +161,8 @@ body {
             <input type="password" placeholder="Password" class="form__input" />
         </div>
         
-        <button class="btn" type="button">Enter</button>
-        
+        <a href="home.php" button class="btn" type="button">Enter</button></a>
+        <a href="admin.php" button class="btn" type="button">&#8608; Admin Login &#8608; </button></a>
     </form>
 </div>
 </body>
