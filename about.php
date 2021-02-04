@@ -18,7 +18,7 @@ body {
     padding: 40px 10px;
     transition: 0.4s;
     position: fixed;
-     width: 100%;
+    width: 100%;
     top: 0;
     z-index: 99;
     }
@@ -27,11 +27,11 @@ body {
     float: left;
     color: white;
     text-align: center;
-    padding: 6px;
+    padding: 14px;
     text-decoration: none;
-    font-size: 22px; 
+    font-size: 21px; 
     line-height: 25px;
-    border-radius: 4px;
+    border-radius: 8px;
     }
 
 #navbar #logo {
@@ -54,43 +54,35 @@ body {
     float: right;
     }
 
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
 .leftcolumn {   
     float: left;
     width: 75%;
     }
 
-/* Right column */
 .rightcolumn {
     float: left;
     width: 25%;
     padding-left: 15px;
     }
 
-/* Fake image */
 .fakeimg {
     background-color: RGB(227, 139, 25);
     width: 70%;
     padding: 5px;
     }
 
-/* Add a card effect for articles */
 .card {
     background-color: RGB(126, 192, 242);
     padding: 20px;
     margin-top: 20px;
     }
 
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
     }
 
-/* Footer */
 .footer {
     padding: 15px;
     text-align: center;
@@ -117,14 +109,14 @@ body {
 <body>
 
 <div id="navbar">
-    <a href="login.php" id="logo">KAWEIEE <br> UNIVERSITY</a>
+    <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
         <div id="navbar-right">
             <br>
             <a href="home.php">HOME</a>
             <a href="about.php">ABOUT US</a>
-            <a href="event.php">EVENT</a>
+            <a href="event.php">NEWS & EVENTS</a>
             <a href="contact.php">CONTACT</a>
-            <a href="">SEARCH</a>
+            <a href="login.php">LOG OUT</a>
         </div>
     </div>
 
@@ -210,11 +202,10 @@ body {
 </div>
 
 <div class="footer">
-    <p style="color:white;">© 2021 KAWEIEE UNIVERSSITY | Privacy Policy</p>
+    <p style="color:white;">© 2021 KAWEIEE UNIVERSITY | Privacy Policy</p>
 </div>
 
 <script>
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
