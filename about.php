@@ -203,6 +203,7 @@ body {
     <h2>History</h2>
         <p>Kaweiee University or KU, Malaysia's technology university, is situated on a 922 acre (373.12 hectare) 
         campus in the southwest of Kuala Lumpur, the capital of Malaysia.
+        <div class="fakeimg" style="height:225px;"><img src='uni6.png' width='100%'></div><br>
         </p>
         </div>
     </div>
