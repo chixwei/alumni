@@ -14,8 +14,8 @@ body {
 
 #navbar {
     overflow: hidden;
-    background-color: RGB(27, 94, 209);
-    padding: 90px 10px;
+    background-color: RGB(16, 58, 99);
+    padding: 40px 10px;
     transition: 0.4s;
     position: fixed;
      width: 100%;
@@ -54,13 +54,6 @@ body {
     float: right;
     }
 
-/* Header/Blog Title */
-.header {
-    padding: 30px;
-    font-size: 40px;
-    text-align: center;
-    background: white;
-    }
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
@@ -73,19 +66,19 @@ body {
 .rightcolumn {
     float: left;
     width: 25%;
-    padding-left: 20px;
+    padding-left: 15px;
     }
 
 /* Fake image */
 .fakeimg {
-    background-color: #aaa;
+    background-color: RGB(227, 139, 25);
     width: 70%;
     padding: 5px;
     }
 
 /* Add a card effect for articles */
 .card {
-    background-color: white;
+    background-color: RGB(126, 192, 242);
     padding: 20px;
     margin-top: 20px;
     }
@@ -99,10 +92,10 @@ body {
 
 /* Footer */
 .footer {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    background: #ddd;
-    margin-top: 20px;
+    background: RGB(16, 58, 99);
+    margin-top: 15px;
     }
 
 @media screen and (max-width: 580px) {
@@ -135,7 +128,7 @@ body {
         </div>
     </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
 <div class="row">
     <div class="leftcolumn">
@@ -145,7 +138,7 @@ body {
             <div class="fakeimg" style="height:215px;"><img src='uni.png' width='100%'></div>
 
 <br><br>            
-
+        
         <p>Welcome to Kaweiee University, one of Malaysia’s leading private universities which is a strictly not-for-profit institution and dedicated 
         to quality education, supporting enterprise, and undertaking research focused on key global problems. The University is relatively young by 
         global standards, but is already ranked within the top 2% of universities in the world (QS World University Rankings), and in the top 1.5% of 
@@ -216,7 +209,7 @@ body {
 </div>
 
 <div class="footer">
-    <p style="color:blue;">© 2021 KAWEIEE UNIVERSSITY | Privacy Policy</p>
+    <p style="color:white;">© 2021 KAWEIEE UNIVERSSITY | Privacy Policy</p>
 </div>
 
 <script>
@@ -224,12 +217,12 @@ body {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "30px 10px";
+if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("navbar").style.padding = "10px 10px";
     document.getElementById("logo").style.fontSize = "25px";
     } else {
-    document.getElementById("navbar").style.padding = "80px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
+    document.getElementById("navbar").style.padding = "40px 10px";
+    document.getElementById("logo").style.fontSize = "30px";
     }
 }
 </script>
