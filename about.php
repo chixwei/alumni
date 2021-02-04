@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us</title>
 <style>
 
 * {box-sizing: border-box;}
@@ -52,25 +53,6 @@ body {
 #navbar-right {
     float: right;
     }
-
-input[type=text] {
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('search.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    }
-
-input[type=text]:focus {
-    width: 100%;
-}
 
 /* Header/Blog Title */
 .header {
@@ -144,11 +126,12 @@ input[type=text]:focus {
 <div id="navbar">
     <a href="login.php" id="logo">KAWEIEE <br> UNIVERSITY</a>
         <div id="navbar-right">
+            <br>
             <a href="home.php">HOME</a>
             <a href="about.php">ABOUT US</a>
             <a href="event.php">EVENT</a>
-            <a href="contact.php">CONTACT</a><br>
-            <input type="text" name="search" placeholder="Search...">
+            <a href="contact.php">CONTACT</a>
+            <a href="">SEARCH</a>
         </div>
     </div>
 
