@@ -14,11 +14,11 @@ body {
 
 #navbar {
     overflow: hidden;
-    background-color: RGB(27, 94, 209);
-    padding: 90px 10px;
+    background-color: RGB(16, 58, 99);
+    padding: 40px 10px;
     transition: 0.4s;
     position: fixed;
-     width: 100%;
+    width: 100%;
     top: 0;
     z-index: 99;
     }
@@ -27,11 +27,11 @@ body {
     float: left;
     color: white;
     text-align: center;
-    padding: 6px;
+    padding: 14px;
     text-decoration: none;
-    font-size: 22px; 
+    font-size: 21px; 
     line-height: 25px;
-    border-radius: 4px;
+    border-radius: 8px;
     }
 
 #navbar #logo {
@@ -54,55 +54,40 @@ body {
     float: right;
     }
 
-/* Header/Blog Title */
-.header {
-    padding: 30px;
-    font-size: 40px;
-    text-align: center;
-    background: white;
-    }
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
 .leftcolumn {   
     float: left;
     width: 75%;
     }
 
-/* Right column */
 .rightcolumn {
     float: left;
     width: 25%;
-    padding-left: 20px;
+    padding-left: 15px;
     }
 
-/* Fake image */
 .fakeimg {
-    background-color: #aaa;
+    background-color: RGB(227, 139, 25);
     width: 70%;
     padding: 5px;
     }
 
-/* Add a card effect for articles */
 .card {
-    background-color: white;
+    background-color: RGB(126, 192, 242);
     padding: 20px;
     margin-top: 20px;
     }
 
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
     }
 
-/* Footer */
 .footer {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    background: #ddd;
-    margin-top: 20px;
+    background: RGB(16, 58, 99);
+    margin-top: 15px;
     }
 
 @media screen and (max-width: 580px) {
@@ -124,18 +109,18 @@ body {
 <body>
 
 <div id="navbar">
-    <a href="login.php" id="logo">KAWEIEE <br> UNIVERSITY</a>
+    <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
         <div id="navbar-right">
             <br>
             <a href="home.php">HOME</a>
             <a href="about.php">ABOUT US</a>
-            <a href="event.php">EVENT</a>
+            <a href="event.php">NEWS & EVENTS</a>
             <a href="contact.php">CONTACT</a>
-            <a href="">SEARCH</a>
+            <a href="login.php">LOG OUT</a>
         </div>
     </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
 <div class="row">
     <div class="leftcolumn">
@@ -145,7 +130,7 @@ body {
             <div class="fakeimg" style="height:215px;"><img src='uni.png' width='100%'></div>
 
 <br><br>            
-
+        
         <p>Welcome to Kaweiee University, one of Malaysia’s leading private universities which is a strictly not-for-profit institution and dedicated 
         to quality education, supporting enterprise, and undertaking research focused on key global problems. The University is relatively young by 
         global standards, but is already ranked within the top 2% of universities in the world (QS World University Rankings), and in the top 1.5% of 
@@ -210,26 +195,26 @@ body {
     <h2>History</h2>
         <p>Kaweiee University or KU, Malaysia's technology university, is situated on a 922 acre (373.12 hectare) 
         campus in the southwest of Kuala Lumpur, the capital of Malaysia.
+        <div class="fakeimg" style="height:225px;"><img src='uni6.png' width='100%'></div><br>
         </p>
         </div>
     </div>
 </div>
 
 <div class="footer">
-    <p style="color:blue;">© 2021 KAWEIEE UNIVERSSITY | Privacy Policy</p>
+    <p style="color:white;">© 2021 KAWEIEE UNIVERSITY | Privacy Policy</p>
 </div>
 
 <script>
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "30px 10px";
+if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("navbar").style.padding = "10px 10px";
     document.getElementById("logo").style.fontSize = "25px";
     } else {
-    document.getElementById("navbar").style.padding = "80px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
+    document.getElementById("navbar").style.padding = "40px 10px";
+    document.getElementById("logo").style.fontSize = "30px";
     }
 }
 </script>
