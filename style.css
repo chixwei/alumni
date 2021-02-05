@@ -1,12 +1,11 @@
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
 }
 
-#homevideo{
-    position: fixed;
+#homevideo {
     z-index: -1;
-    background-clip: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+    position: fixed;
     
 }
 
@@ -16,7 +15,6 @@
         height: auto;
     }
 }
-
 @media (max-aspect-ratio: 16/9) {
     #homevideo {
         width: auto;
@@ -24,44 +22,27 @@
     }
 }
 
-.logo img{
-    width: 200px;
+.logo img {
+    width: 250px;
     float: left;
     height: auto;
     margin-left: 0px;
-    margin-top: 0px;
+    margin-top: -20px;
+    z-index: 1;
+
 }
 
-.welcome {
+.overlay { 
+    height: 100vh;
     position: absolute;
-    width: 600px;
-    height: 300px;
-    margin: 20% 30%;
-    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index:-1;
+    background:black;
+    opacity:0.5;
 }
 
-.welcome h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 60px;
-    background: rgba(0,0,0,0.8);
-    
-}
 
-.welcome a {
-    border: 1px solid #fff;
-    padding: 10px 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-top: 20px;
-    display: inline-block;
-    color: #fff;
-    background: rgba(0,0,0,0.8);
-    
-}
 
-.welcome a:hover {
-    background: #fff;
-    color: #333;
-}
+
