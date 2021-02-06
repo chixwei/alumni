@@ -3,14 +3,18 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>News & Events</title>
+</head>>
 <style>
-
-* {box-sizing: border-box;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
 
 body { 
     margin: 0;
     padding; 0;
-    background-color: RGB(255, 237, 173);
+    background-color: RGB(220, 252, 187);
     font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -77,57 +81,202 @@ body {
     }
  }
 
+.wrapper {
+    margin-top: 0;
+    }
+
+.wrapper h1 {
+    font-family: 'Allura', cursive;
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+    }
+
+.box {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+    flex-wrap: wrap;
+    }
+
+.box .box1 {
+    background: RGB(233, 201, 245);
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding: 20px;
+    line-height: 20px;
+    color: black;  
+    position: relative;
+    }
+
+.box .box1 h3 {
+    color: RGB(46, 6, 54);
+    font-size: 26px;
+    margin-top: 50px;
+    }
+
+.box .box1 p.role {
+    color: grey;
+    margin: 12px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    }
+
+.box .box1 .box_img {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    }
+
+.box .box1 .box_img img {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    }
+
 </style>
-</head>
+
 <body>
 
-<div id="navbar">
-    <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
-        <div id="navbar-right">
-            <br>
-            <a href="home.php">HOME</a>
-            <a href="about.php">ABOUT US</a>
-            <a href="event.php">NEWS & EVENTS</a>
-            <a href="contact.php">CONTACT</a>
-            <a href="login.php">LOG OUT</a>
+    <div id="navbar">
+        <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
+            <div id="navbar-right">
+                <br>
+                <a href="home.php">HOME</a>
+                <a href="about.php">ABOUT US</a>
+                <a href="event.php">NEWS & EVENTS</a>
+                <a href="contact.php">CONTACT</a>
+                <a href="login.php">LOG OUT</a>
+                </div>
+        </div>
+    
+    <br><br><br>
+    
+    <header>
+            <img src='uni7.png' width='100%'>
+        </header>
+
+    <br>
+
+<div class="wrapper">
+        <h1>NEWS</h1>
+    <div class="box">
+        <div class="box1">
+            <div class="box_img">
+                <img src="news1.png" alt="uni4">
             </div>
-    </div>
+                <h3>6-STAR RATING</h3>
+                    <br>
+                    <p>Kaweiee University has been ranked among the very best universities in Malaysia.</p>
+                    <p>'I am very pleased that our hard work, innovation and creativity has been recognised by the Ministry of Education with this six-star rating'</p>
+                    <p class="role">COMMUNITY</p>
+                </div>
 
-<br><br><br>
+        <div class="box1">
+            <div class="box_img">
+                <img src="news2.png" alt="Team_image">
+            </div>
+                <h3>A Beginners Guide to Investing</h3>
+                    <br>
+                    <p>Interested in investing but dont know where to start? </p>
+                    <p>Kaweiee alumni, Professor Jane guide to investment answers all your beginners questions!</p>
+                    <p class="role">BUSINESS</p>
+                </div>
 
-<header>
-        <img src='uni7.png' width='100%'>
-    </header>
+        <div class="box1">
+            <div class="box_img">
+                <img src="news3.png" alt="Team_image">
+            </div>
+                <h3>Building Better Relationships</h3>
+                <br>
+                    <p>At Kaweiee, it is not just academics. It is about growing as an individual too.</p>
+                    <p>Dc.Jane shares how Life Skills helped her understand her personality.</p>
+                    <p class="role">OPINIONS</p>
+                </div>
+        
+        <div class="box1">
+            <div class="box_img">
+                <img src="news4.png" alt="Team_image">
+            </div>
+                <h3>Launches the First Robotic Design in Malaysia</h3>
+                <br>
+                    <p>Integrating knowledge and skills from different engineering disciplines, the programme is built to give students a broad-based overview of multiple specialisations</p>
+                    <p class="role">SCIENCE</p>
+                </div>
+                
+        <div class="box1">
+            <div class="box_img">
+                <img src="news5.png" alt="Team_image">
+            </div>
+                <h3>Moving Into 2021 With Hopeful Resolutions</h3>
+                <br>
+                    <p>It is that time of year to build a new list of resolutions. Kaweiee Karen Grace Prince shares how you can make and keep your 2021 New Years resolution.</p>
+                    <p class="role">COMMUNITY | FEATURED</p>
+                </div>
+                
+        <div class="box1">
+            <div class="box_img">
+                <img src="news6.png" alt="Team_image">
+            </div>
+                <h3>A Year of Gratitude A Future Filled With Hope</h3>
+                <br>
+                    <p>What has the past year taught us? How are you going into 2021? Our Taylorians share how the learnings of 2020 have allowed them to enter 2021 full of hope.</p>
+                    <p class="role">COMMUNITY | FEATURED</p>
+                </div>
+        </div>
+    </div>	
 
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
-<p>.............................</p>
+    <hr><br>
+
+    <div class="wrapper">
+        <h1>EVENTS</h1>
+    <div class="box">
+        <div class="box1">
+            <div class="box_img">
+                <img src="events1.png" alt="uni4">
+            </div>
+                <h3>From Basics to Getting it Right!</h3>
+                    <br><br>
+                    <p>KAWEIEE INITIATE 2021: Post Conference Workshop</p>
+                    <p>Post Conference Workshop</p>
+                    <br><br>
+                    <p class="role">EVENTS | UPCOMING EVENTS</p>
+                </div>
+
+        <div class="box1">
+            <div class="box_img">
+                <img src="events2.png" alt="Team_image">
+            </div>
+                <h3>Entrepreneurship & Innovation During Pandemic</h3>
+                    <br>
+                    <p>Join this webinar to learn more about the past and present entrepreneurship trends, the importance of social entrepreneurship and more.</p>
+                    <p class="role">EVENTS | 7 JANUARY 2021</p>
+                </div>
+        </div>
+    </div>	
 
 <div class="footer">
-        <p style="color:white;">© 2021 KAWEIEE UNIVERSITY | Privacy Policy</p>
-    </div>
+    <p style="color:white">© 2021 KAWEIEE UNIVERSITY | Privacy Policy</p>
+</div>
 
 <script>
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
 if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("navbar").style.padding = "10px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
-    } else {
-    document.getElementById("navbar").style.padding = "40px 10px";
-    document.getElementById("logo").style.fontSize = "30px";
-    }
+document.getElementById("navbar").style.padding = "10px 10px";
+document.getElementById("logo").style.fontSize = "25px";
+} else {
+document.getElementById("navbar").style.padding = "40px 10px";
+document.getElementById("logo").style.fontSize = "30px";
+}
 }
 </script>
 
