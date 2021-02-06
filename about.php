@@ -9,7 +9,9 @@
 
 body { 
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;;
+    padding; 0;
+    background-color: RGB(255, 237, 173);
+    font-family: Arial, Helvetica, sans-serif;
     }
 
 #navbar {
@@ -120,7 +122,11 @@ body {
         </div>
     </div>
 
-<br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<header>
+        <img src='uni0.png' width='100%'>
+    </header>
 
 <div class="row">
     <div class="leftcolumn">
