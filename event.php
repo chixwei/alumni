@@ -170,7 +170,7 @@ body {
     <div class="box">
         <div class="box1">
             <div class="box_img">
-                <img src="news1.png" alt="uni4">
+                <img src="news1.png">
             </div>
                 <h3>6-STAR RATING</h3>
                     <br>
@@ -181,18 +181,19 @@ body {
 
         <div class="box1">
             <div class="box_img">
-                <img src="news2.png" alt="Team_image">
+                <img src="news2.png">
             </div>
                 <h3>A Beginners Guide to Investing</h3>
                     <br>
                     <p>Interested in investing but dont know where to start? </p>
                     <p>Kaweiee alumni, Professor Jane guide to investment answers all your beginners questions!</p>
+                    <br>
                     <p class="role">BUSINESS</p>
                 </div>
 
         <div class="box1">
             <div class="box_img">
-                <img src="news3.png" alt="Team_image">
+                <img src="news3.png">
             </div>
                 <h3>Building Better Relationships</h3>
                 <br>
@@ -203,7 +204,7 @@ body {
         
         <div class="box1">
             <div class="box_img">
-                <img src="news4.png" alt="Team_image">
+                <img src="news4.png">
             </div>
                 <h3>Launches the First Robotic Design in Malaysia</h3>
                 <br>
@@ -213,7 +214,7 @@ body {
                 
         <div class="box1">
             <div class="box_img">
-                <img src="news5.png" alt="Team_image">
+                <img src="news5.png">
             </div>
                 <h3>Moving Into 2021 With Hopeful Resolutions</h3>
                 <br>
@@ -223,11 +224,11 @@ body {
                 
         <div class="box1">
             <div class="box_img">
-                <img src="news6.png" alt="Team_image">
+                <img src="news6.png">
             </div>
                 <h3>A Year of Gratitude A Future Filled With Hope</h3>
                 <br>
-                    <p>What has the past year taught us? How are you going into 2021? Our Taylorians share how the learnings of 2020 have allowed them to enter 2021 full of hope.</p>
+                    <p>What has the past year taught us? How are you going into 2021? Our Kaweians share how the learnings of 2020 have allowed them to enter 2021 full of hope.</p>
                     <p class="role">COMMUNITY | FEATURED</p>
                 </div>
         </div>
@@ -238,9 +239,31 @@ body {
     <div class="wrapper">
         <h1>EVENTS</h1>
     <div class="box">
+
+    <div class="box1">
+        <div class="box_img">
+            <img src="events0.png">
+        </div>
+            <h3>'Energy From The Sun : Role of Nanotechnology'</h3>
+                <br>
+                <p>Energy from the sun is one of the potential sources of renewable energy for the humankind.</p>
+                <p>It is perceived as one of the clean forms of energy as it does not pollute environment.</p>
+                <p class="role">EVENTS | 7 JANUARY 2021</p>
+            </div>
+
         <div class="box1">
             <div class="box_img">
-                <img src="events1.png" alt="uni4">
+                <img src="events2.png">
+            </div>
+                <h3>Entrepreneurship & Innovation During Pandemic</h3>
+                    <br>
+                    <p>Join this webinar to learn more about the past and present entrepreneurship trends, the importance of social entrepreneurship and more.</p>
+                    <p class="role">EVENTS | 23 MARCH 2021</p>
+                </div>
+
+        <div class="box1">
+            <div class="box_img">
+                <img src="events1.png">
             </div>
                 <h3>From Basics to Getting it Right!</h3>
                     <br><br>
@@ -251,14 +274,11 @@ body {
                 </div>
 
         <div class="box1">
-            <div class="box_img">
-                <img src="events2.png" alt="Team_image">
+            <br>
+                <b><h3>UPCOMING</3></b>
+                <b><h3>EVENTS</3></b>
+                <b><h3>......</3></b>
             </div>
-                <h3>Entrepreneurship & Innovation During Pandemic</h3>
-                    <br>
-                    <p>Join this webinar to learn more about the past and present entrepreneurship trends, the importance of social entrepreneurship and more.</p>
-                    <p class="role">EVENTS | 7 JANUARY 2021</p>
-                </div>
         </div>
     </div>	
 

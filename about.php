@@ -143,7 +143,7 @@ body {
         universities in Asia, as well as being ranked within the top 150 universities in the world under 50 years old.
         </p>
 
-        <p>The University has a 5-star “excellent” rating by the Malaysian government and is one of just eleven universities in Malaysia to be awarded 
+        <p>The University has a 6-star “excellent” rating by the Malaysian government and is one of just eleven universities in Malaysia to be awarded 
         the special “Premier Digital Technology University” status. We have developed close collaborations with many leading international universities 
         including Harvard University and the Universities of Oxford and Cambridge.
         </p>
