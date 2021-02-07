@@ -129,15 +129,15 @@ body {
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    background: #fff;
+    background: RGB(46, 6, 54);
     }
 
 .box .box1 .box_img img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     padding: 5px;
     }
 
@@ -283,7 +283,9 @@ body {
     </div>	
 
 <div class="footer">
+    <br>
     <p style="color:white">© 2021 KAWEIEE UNIVERSITY | Privacy Policy</p>
+    <br>
 </div>
 
 <script>
