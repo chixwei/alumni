@@ -1,188 +1,264 @@
-<DOCTYPE html>
-<head>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<?php
+$errors=array('name'=>"",'email'=>"",'tel'=>"",'password'=>"");
+$name = $name = $email = $tel = $password ="" ;
+
+if(isset($_POST['submit'])){
+    if(empty($_POST['name'])){
+      $errors['name']= "Name is required". "</font>"."<br>";
+
+    }
+    else{
+        $name=$_POST['name'];
+    }
+
+    if(empty($_POST['email'])){
+        $errors['email']= "Email is required"."<br>";
+    }
+    else{
+        $email=$_POST['email'];
+        if(!preg_match("/^\w+@ (hotmail ,gmail ,outlook)\.com/",$email)){
+            $errors['email']= "Please insert a valid email. Example: email@hotmail.com"."<br>";
+        }
 }
+    
+    if(empty($_POST['tel'])){
+        $errors['tel']= "Phone Number is required"."<br>";
+    }
+    else{
+        $tel=$_POST['tel'];
+        if(!preg_match("/\+60\d{9,10}/i",$tel)){
+         $errors['tel']= "Please insert a valid phone number. Example: +6012345678"."<br>";
+        }
+    }
+}
+
+
+?>
+<!DOCTYPE html> 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
 
 body {
-    font-family: "Roboto";
-    font-size: 20px;
-    background-size: 100% 100% !important;
-    animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-    height: 100%
-}
-
-.user {
-    width: 90%;
-    max-width: 340px;
-    margin: 10vh auto;
-}
-
-.user__header {
-    text-align: center;
-    transform: translate3d(0, 500px, 0);
-    animation: arrive 500ms ease-in-out 0.7s forwards;
-}
-
-.user__title {
-    font-size: 20px;
-    margin-bottom: -10px;
-    font-weight: 500;
-    color: white;
-}
-
-.form {
-    margin-top: 10px;
-    border-radius: 6px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translate3d(0, 500px, 0);
-    animation: arrive 500ms ease-in-out 0.9s forwards;
-}
-
-.form--no {
-    animation: NO 1s ease-in-out;
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-}
-
-.form__input {
-    display: block;
-    width: 100%;
-    padding: 20px;
-    font-family:"Roboto";
-    -webkit-appearance: none;
-    border: 0;
-    outline: 0;
-    transition: 0.3s;
-}
-.form__input:focus {
-        background: #E9E9E9;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #F3FFFA;
     }
 
-
-.btn {
-    display: block;
-    width: 100%;
-    padding: 20px;
-    font-size:15px;
-    font-family: "Roboto";
-    -webkit-appearance: none;
-    outline: 0;
-    border: 0;
-    color: white;
-    background: #DFB85A;
-    transition: 0.3s;
-}
     
-.btn:hover {
-        background:#E6D5AC;
-    }
-
-a{
-  text-decoration:none;
-  text-align:center;
-}
-.admin {
-    margin-right:10px;
-  text-align:right;
-  font-size:12px;
-  animation: arrive 500ms ease-in-out 0.7s forwards;
-}
-
-
-@keyframes NO {
-  from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-  }
-}
-
-@keyframes arrive {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 50px, 0);
+    .right {
+        float:right;
+        background-color: #F3FFFA;
+        width: 400px;
+        height: 400px;  
     }
     
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+    .sign {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
-}
-
-@keyframes move {
-    0% {
-        background-position: 0 0
+    
+    .fn {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: left;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    width:150px;
+    float:left
     }
 
-    50% {
-        background-position: 100% 0
+    .ln {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-right: 50px;
+    text-align: left;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    width:150px;
+    float:right;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
     }
 
-    100% {
-        background-position: 0 0
+    .email {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: left;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
     }
-}
 
-</style>
+    .tel {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: left;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: left;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+   
+    .fn:focus,.ln:focus, .tel:focus, .pass:focus, .email:focus{
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+
+    .submit {
+        font-weight:bold;
+      cursor: pointer;
+        border-radius: 5em;
+        color: #FFFFFF;
+        background: linear-gradient(to right, #98D1EA, #B9ECDA);
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 35%;
+        font-size: 14px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .forgot {
+        margin: 20px 0;
+        font-size: 10px;
+        color: #213F84;
+        text-align: center;
+    }
+
+    .forgot a {
+        text-align:right;
+        color: #6CB0F2;
+        text-decoration: none;
+    }
+
+    .signup{
+        text-align:center;
+        color: #6CB0F2;
+        padding-top: 0px;
+        font-size: 10px;
+    }
+    
+    a:hover{
+        color: #A86CAD;
+        text-decoration: none;
+    }
+    
+    @media (max-width: 700px) {
+        .main {
+            border-radius: 0px;
+        } 
+    }
+
+    .left{
+        float:left;
+        width:100%;
+        height:778px;
+    }
+
+
+    </style>
 </head>
+
 <body>
+<div style="max-width:1100px">
+  <img class="left" src="college.jpg ">
+  </div>
 
-<div class="user">
-    <header class="user__header">
-        <img src="Kaweiee3.png" width="300px" height="300px" style="align-middle" margin-top="5px" margin-bottom= "50px" alt="" />
-    </header>
-    
-    <p class="admin"><a href="login.php">Login</a></p>
 
-    <form class="form">
-        <div class="form__group">
-            <input type="text" placeholder="Username" class="form__input" required>
-        </div>
-        
-        <div class="form__group">
-            <input type="email" placeholder="Email" class="form__input" required>
-        </div>
-        
-        <div class="form__group">
-            <input type="tel" placeholder="Phone Number" class="form__input" required>
-        </div>
+<div class="right">
 
-        <div class="form__group">
-            <input type="text" placeholder="Student ID" class="form__input" required>
-        </div>
-        
-        <div class="form__group">
-            <input type="password" placeholder="Password" class="form__input" required>
-        </div>
-        
-       <a href= "home.php" button class="btn" type="submit">Register</button></a>
-        
-    </form>
+<img class="sign" src="Kaweiee3.png" width="300px" height="300px">
+
+<form class="form1">
+
+  <input class="fn " type="text" text-align="left" placeholder="FirstName">
+
+  <input class="ln " type="text" text-align="left" placeholder="LastName">
+
+  <input class="email" type="email" text-align="left" placeholder="Email">
+
+  <input class="tel" type="tel" text-align="left" placeholder="Phone Number">
+
+  <input class="pass" type="password" text-align="left" placeholder="Password">
+
+  <a class="submit">Register</a><br><br>
+
+<p class="forgot"><b> Page to let Admin login </b><a href="admin.php">Click here to login </a>.</p>
+            
 </div>
+</div>
+     
 </body>
 
-<script>
-    const button = document.querySelector('.btn')
-const form   = document.querySelector('.form')
-
-button.addEventListener('click', function(loop) {
-   form.classList.add('form--no') 
-});
-</script>
 </html>

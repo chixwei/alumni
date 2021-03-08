@@ -1,119 +1,150 @@
-<DOCTYPE html>
+<!DOCTYPE html> 
+<html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+    .vid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -2;
 }
+
 
 body {
-    font-family: "Roboto";
-    font-size: 30px;
-    background-size: 200% 100% !important;
-    animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #B1CCEA 10%, #F1DBDB 90%);
-    height: 100vh
-}
-
-.user {
-    width: 90%;
-    max-width: 340px;
-    margin: 10vh auto;
-}
-
-.user__header {
-    text-align: center;
-    opacity: 0;
-    transform: translate3d(0, 500px, 0);
-    animation: arrive 500ms ease-in-out 0.7s forwards;
-}
-
-.user__title {
-    font-size: 30px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    color: white;
-}
-
-.form {
-    margin-top: 10px;
-    border-radius: 6px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translate3d(0, 500px, 0);
-    animation: arrive 500ms ease-in-out 0.9s forwards;
-}
-
-.form--no {
-    animation: NO 1s ease-in-out;
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-}
-
-.form__input {
-    display: block;
-    width: 100%;
-    padding: 20px;
-    font-family:"Roboto";
-    -webkit-appearance: none;
-    border: 0;
-    outline: 0;
-    transition: 0.3s;
-}
-.form__input:focus {
-        background: #E9E9E9;
+        font-family: Arial, Helvetica, sans-serif;
     }
-
-
-.btn {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    font-family: "Roboto";
-    font-size: 15px;
-    -webkit-appearance: none;
-    outline: 0;
-    border: 0;
-    color: white;
-    background: #DFB85A;
-    transition: 0.3s;
-}
     
-.btn:hover {
-        background:#E6D5AC;
+    .main {
+        background-color: #F4F5F2;
+        width: 400px;
+        height: 400px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        animation: arrive 500ms ease-in-out 0.1s forwards;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    
+    .sign {
+        text-align: center;
+        padding-top: 40px;
+        color: #213F84;
+        text-shadow: 2px 2px #9DD4EC;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    .un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
     }
 
-.forgot {
-  text-align:right;
-  font-size:12px;
-  transition: 0.3s;
-  animation: arrive 500ms ease-in-out 0.9s forwards;
+
+    
+    .submit {
+        font-weight:bold;
+      cursor: pointer;
+        border-radius: 5em;
+        color: #FFFFFF;
+        background: linear-gradient(to right, #B19CD8, #FFCCCC);
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 35%;
+        font-size: 14px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .forgot {
+        margin: 20px 0;
+        font-size: 10px;
+        color: #213F84;
+        text-align: center;
+    }
+
+
+    .signup{
+        text-align:center;
+        color: #6CB0F2;
+        padding-top: 0px;
+        font-size: 10px;
+    }
+    
+    a:hover{
+        color: #A86CAD;
+        text-decoration: none;
+    }
+    
+    @media (max-width: 700px) {
+        .main {
+            border-radius: 0px;
+        } 
+    }
+
+@media (min-aspect-ratio: 16/9) {
+    #loginBack {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #loginBack {
+        width: auto;
+        height: 200%;
+    }
 }
 
-
-a{
-  text-decoration:none;
-  text-align:center;
-}
-
-@keyframes NO {
-  from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-  }
-}
 
 @keyframes arrive {
     0% {
@@ -126,53 +157,35 @@ a{
         transform: translate3d(0, 0, 0);
     }
 }
-
-@keyframes move {
-    0% {
-        background-position: 0 0
-    }
-
-    50% {
-        background-position: 100% 0
-    }
-
-    100% {
-        background-position: 0 0
-    }
-}
-</style>
+    </style>
 </head>
+
 <body>
 
-<div class="user">
-    <header class="user__header">
-        <img src="Kaweiee3.png" width="300px" height="300px" margin-top="10px" margin-bottom= "50px" alt="" />
-    </header>
-    <p class="forgot"><a href="signup.php">Sign up</a></p>
-    <p class="forgot"><a href="#">Forgot Password?</a></p>
-
-    <form class="form">
-
-        <div class="form__group">
-            <input type="tel" placeholder="Phone Number" class="form__input" />
-        </div>
-
-        <div class="form__group">
-            <input type="password" placeholder="Password" class="form__input" />
-        </div>
-        
-        <a href="home.php" button class="btn" type="button">Enter</button></a>
-        <a href="admin.php" button class="btn" type="button">&#8608; Admin Login &#8608; </button></a>
-    </form>
+<div class="vid">
+    <video autoplay muted loop id="loginBack">
+    <source src="loginBack.mp4" type="video/mp4">
+    </video>
 </div>
+
+<div class="main">
+
+<p class="sign" text-align="center">Sign in</p>
+
+<form class="form1">
+
+  <input class="un " type="text" text-align="center" placeholder="Username">
+
+  <input class="pass" type="password" text-align="center" placeholder="Password">
+
+  <a class="submit">Sign in</a><br><br>
+
+  <p class="signup"><a href="signup.php">Register</p>
+
+  <p class="forgot"><a href=""><b> Forgot your password? </b></p>
+            
+</div>
+     
 </body>
 
-<script>
-    const button = document.querySelector('.btn')
-const form   = document.querySelector('.form')
-
-button.addEventListener('click', function() {
-   form.classList.add('form--no') 
-});
-</script>
 </html>
