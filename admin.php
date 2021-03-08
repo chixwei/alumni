@@ -174,7 +174,7 @@ body {
 
   <a class="submit">Login</a><br><br>
 
-<p class="forgot"><b> Back to login </b><a href="#">Click here to login </a>.</p>
+<p class="forgot"><b> Back to login </b><a href="login.php">Click here to login </a>.</p>
             
 </div>
 </div>
