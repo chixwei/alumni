@@ -7,7 +7,6 @@
     </head>
     <body>
         
-
         <header>
 
             <div class="logo">
@@ -31,25 +30,67 @@
 
         </header>
 
+      <section>
 
-        <section class="section-a">
+        <div class= "slideshow-container">
 
-            <div class="container">
-              <h2>Section A</h2>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non ad, ipsum aliquam laudantium amet eaque corporis vel culpa excepturi reiciendis!</p>
-            </div>
-            
-          </section>
-          
-          <section class="section-b">
-          
-            <div class="container">
-              <h2>Section B</h2>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non ad, ipsum aliquam laudantium amet eaque corporis vel culpa excepturi reiciendis!</p>
-            </div>
-            
-          </section>
-          
+        <div class= "mySlides fade">
+          <img src="homeabout.jpg" style="width: 100%">
+          <div class="text">About </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="homeevents.jpg" style="width: 100%">
+          <div class="text">News and Events </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="homecontact.jpg" style="width: 100%">
+          <div class="text">Contacts </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10094;</a>
+
+      </div>
+
+      <script>
+        var slideIndex= 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slidesIndex += n);
+
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+
+          if (n > slides.length) {
+            slideIndex= 1;
+          }
+
+          if (n < 1) {
+            slideIndex= slides.length
+          }
+
+          for (i= 0; i< slides.length; i++) {
+            slides[i].style.display= "none";
+          }
+
+          slides[slideIndex-1].style.display= "block";
+  
+        }
+
+        </script>
+
+      </section>
+
           <footer>
             <p>Footer</p>
           </footer>
