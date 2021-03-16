@@ -30,66 +30,62 @@
 
         </header>
 
-      <section>
+        <div class="flex-container">
+            <div class="sec1">
+              <div class="sec1-section">
+                  <div class="sec1-container">
+                    <div class="sec1-actionBox">
 
-        <div class= "slideshow-container">
+                      <p class="sec1-para">Kaweiee University have founded in 2021. Want to know more about us? Explore more !</p>
+                      <button class="sec1-btn"><a href="about.php"> About Us</a></button>
 
-        <div class= "mySlides fade">
-          <img src="homeabout.jpg" style="width: 100%">
-          <div class="text">About </div>
-        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
 
-        <div class="mySlides fade">
-          <img src="homeevents.jpg" style="width: 100%">
-          <div class="text">News and Events </div>
-        </div>
+            <div class="main">
 
-        <div class="mySlides fade">
-          <img src="homecontact.jpg" style="width: 100%">
-          <div class="text">Contacts </div>
-        </div>
+            <div class="slideshow-container">
 
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10094;</a>
+              <div class="mySlides fade">
+                <img src="homeabout.jpg" style="width:100%; height:450px;">
 
-      </div>
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="homeevents.jpg" style="width:100%; height:450px;">
 
-      <script>
-        var slideIndex= 1;
-        showSlides(slideIndex);
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="homecontact.jpg" style="width:100%; height:450px;">
 
-        function plusSlides(n) {
-          showSlides(slidesIndex += n);
+              </div>
+              
+              </div>
+              <br>
+        
+              <script>
+              var slideIndex = 0;
+              showSlides();
+              
+              function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
 
-        }
-
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-
-          if (n > slides.length) {
-            slideIndex= 1;
-          }
-
-          if (n < 1) {
-            slideIndex= slides.length
-          }
-
-          for (i= 0; i< slides.length; i++) {
-            slides[i].style.display= "none";
-          }
-
-          slides[slideIndex-1].style.display= "block";
-  
-        }
-
-        </script>
-
-      </section>
+                slides[slideIndex-1].style.display = "block";  
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+              }
+              </script>
+            </div>
+            </div>
 
           <footer>
             <p>Footer</p>
