@@ -30,14 +30,16 @@
 
         </header>
 
-        <div class="flex-container">
-            <div class="sec1">
-              <div class="sec1-section">
-                  <div class="sec1-container">
-                    <div class="sec1-actionBox">
+<!-- section 1 -->
 
-                      <p class="sec1-para">Kaweiee University have founded in 2021. Want to know more about us? Explore more !</p>
-                      <button class="sec1-btn"><a href="about.php"> About Us</a></button>
+        <div class="flex-container">
+            <div class="sec">
+              <div class="sec-section">
+                  <div class="sec-container">
+                    <div class="sec-actionBox">
+
+                      <p class="sec-para">Kaweiee University have founded in 2021. Want to know more about us? Explore more !</p>
+                      <button class="sec-btn"><a href="about.php"> About Us</a></button>
 
                     </div>
                   </div>
@@ -46,7 +48,7 @@
 
             <div class="main">
 
-            <div class="slideshow-container">
+            <div class="slideshow-container"  data-cycle="2000">
 
               <div class="mySlides fade">
                 <img src="homeabout.jpg" style="width:100%; height:450px;">
@@ -62,30 +64,118 @@
                 <img src="homecontact.jpg" style="width:100%; height:450px;">
 
               </div>
+              </div>
+            </div>
+        </div>
+
+<!-- section 2 -->
+
+        <div class="flex-container2">
+            <div class="sec2">
+              <div class="sec-section">
+                  <div class="sec-container">
+                    <div class="sec-actionBox">
+
+                      <p class="sec-para">Our university proviedes alots of fun activities! If you are interest on it, Let's check it out !</p>
+                      <button class="sec-btn"><a href="event.php"> News and Events</a></button>
+
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="main2">
+
+            <div class="slideshow-container"  data-cycle="2500">
+
+              <div class="mySlides fade">
+                <img src="event1.jpg" style="width:100%; height:450px;">
+
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="event2.jpg" style="width:100%; height:450px;">
+
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="event3.jpg" style="width:100%; height:450px;">
+
+              </div>
               
               </div>
-              <br>
-        
-              <script>
-              var slideIndex = 0;
-              showSlides();
-              
-              function showSlides() {
-                var i;
-                var slides = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("dot");
-                for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";  
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {slideIndex = 1}    
+            </div>
+        </div>
 
-                slides[slideIndex-1].style.display = "block";  
-                setTimeout(showSlides, 2000); // Change image every 2 seconds
-              }
-              </script>
-            </div>
-            </div>
+<!-- section 3 -->
+
+        <div class="flex-container">
+                    <div class="sec">
+                      <div class="sec-section">
+                          <div class="sec-container">
+                            <div class="sec-actionBox">
+
+                              <p class="sec-para">If your have any problems, do not hessitate to contact us !</p>
+                              <button class="sec-btn"><a href="contact.php"> Contact</a></button>
+
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="main">
+
+                    <div class="slideshow-container"  data-cycle="2000">
+
+                      <div class="mySlides fade">
+                        <img src="contact1.jpg" style="width:100%; height:450px;">
+
+                      </div>
+                      
+                      <div class="mySlides fade">
+                        <img src="contact2.jpg" style="width:100%; height:450px;">
+
+                      </div>
+                      
+                      <div class="mySlides fade">
+                        <img src="contact3.jpg" style="width:100%; height:450px;">
+
+                      </div>
+                      
+                      </div>
+                    </div>
+                </div>
+
+        <script>
+              var slideshowContainers = document.getElementsByClassName("slideshow-container");
+
+              for(let s = 0; s < slideshowContainers.length; s++) {
+                  
+                  var cycle = slideshowContainers[s].dataset.cycle;
+
+                  var slides = slideshowContainers[s].querySelectorAll('.mySlides');
+                  var slideIndex = 0;
+                  showSlides(slides, slideIndex, cycle);
+              };
+
+
+              function showSlides(slides, slideIndex, cycle) {
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";
+                  };
+                  slideIndex++;
+                  if (slideIndex > slides.length) {
+                      slideIndex = 1
+                  };
+                  slides[slideIndex - 1].style.display = "block";
+                  
+                  setTimeout(function() {
+                      showSlides(slides, slideIndex, cycle)
+                  }, cycle);
+              };
+        </script>
+
+        
 
           <footer>
             <p>Footer</p>
