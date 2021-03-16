@@ -158,7 +158,6 @@
                   showSlides(slides, slideIndex, cycle);
               };
 
-
               function showSlides(slides, slideIndex, cycle) {
                   for (i = 0; i < slides.length; i++) {
                       slides[i].style.display = "none";
@@ -174,8 +173,6 @@
                   }, cycle);
               };
         </script>
-
-        
 
           <footer>
             <p>Footer</p>
