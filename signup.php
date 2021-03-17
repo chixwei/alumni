@@ -1,22 +1,17 @@
 <?php
 
-include("connection.php");
+// include("connection.php");
 
-$errors=array('fname'=>" ",'lname'=>" ",'email'=>" ",'tel'=>" ",'password'=>" ");
-$fname = $lname = $email = $tel = $password ="" ;
+$errors=array('name'=>" ",'email'=>" ",'tel'=>" ",'password'=>" ");
+$name = $email = $tel = $password ="" ;
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['fname'])){
-        $errors['fname'] = "First Name is required";
+    if(empty($_POST['name'])){
+        $errors['name'] = "Name is required";
     } else {
-        $name = $_POST['fname'];
+        $name = $_POST['name'];
     }
 
-    if(empty($_POST['lname'])){
-        $errors['lname'] = "Last Name is required";
-    } else {
-        $name = $_POST['lname'];
-    }
 
     if(empty($_POST['email'])){
         $errors['email'] = "Email is required";
@@ -39,31 +34,6 @@ if(isset($_POST['submit'])){
 
     if(empty($_POST['password'])){
         $errors['password']= "Password is required"."<br>";
-    }
-
-    if (!array_filter($errors)){
-        echo "<script> alert('You have submitted the form')</script>";
-        $fname = $lname = $email = $tel = $password ="";
-    }
-
-    if(!array_filter($errors)){
-
-        $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-        $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $tel = mysqli_real_escape_string($conn, $_POST['tel']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-        $sql = "INSERT INTO user(First Name,Last Name, Email, Phone Number,Password) VALUES('$fname', '$lname','$email', '$tel','$password')";
-
-        //save to db and check
-        if(mysqli_query($conn, $sql)){
-            //success
-            header("location:retrive.php");
-        } else {
-            //error
-            echo "Query error: " . mysqli_error($conn); //showing the database connection error
-        }
     }
 }
 
@@ -101,56 +71,13 @@ body {
         margin-right: auto;
     }
     
-    .fn {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: left;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
-    width:150px;
-    float:left
-    }
-
-    .ln {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-right: 50px;
-    text-align: left;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
-    width:150px;
-    float:right;
-    }
     
     form.form1 {
         padding-top: 40px;
     }
 
-    .email {
-    width: 76%;
+    .name{
+        width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
     font-size: 14px;
@@ -169,8 +96,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     }
 
-    .tel {
-    width: 76%;
+    .email{
+        width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
     font-size: 14px;
@@ -189,8 +116,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     }
     
-    .pass {
-    width: 76%;
+    .tel{
+        width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
     font-size: 14px;
@@ -208,9 +135,28 @@ body {
     margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
-    
+
+    .pass{
+        width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: left;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
    
-    .fn:focus,.ln:focus, .tel:focus, .pass:focus, .email:focus{
+    .name:focus, .tel:focus, .email:focus, .pass:focus{
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
         
     }
@@ -285,27 +231,24 @@ body {
 <form action="signup.php" method="post">
 <form class="form1">
 
+  <input type="text" class="name" placeholder="Username" name="name" value=<?php echo $name?>></input>
+  <div><?php echo $errors['name']?></div> 
 
-  <input type="text" class="fn "  placeholder="FirstName"  value=<?php echo $fname?>>
-  <div><?php echo $errors['fname']?></div>
-
-  <input type="text" class="ln "  placeholder="LastName" value=<?php echo $lname?>>
-  <div><?php echo $errors['lname']?></div> 
-
-  <input type="text" class="email"  placeholder="Email" value=<?php echo $email?>>
+  <input type="text" class="email" placeholder="Email" name="email"value=<?php echo $email?>></input>
   <div><?php echo $errors['email']?></div> 
 
-  <input type="text" class="tel"  placeholder="Phone Number" value=<?php echo $tel?>>
+  <input type="text" class="tel" placeholder="Phone Number" name="tel" value=<?php echo $tel?>></input>
   <div><?php echo $errors['tel']?></div> 
 
-  <input type="password" class="pass"  placeholder="Password" value=<?php echo $password?>>
+  <input type="password" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
   <div><?php echo $errors['password']?></div> 
 
-  <input type= "submit" class="enter" value="Submit" name="submit"><br>
+  <input type= "submit" class="enter" value="Register" name="submit"><br>
 
 <p class="forgot"><b> Page to let Admin login </b><a href="admin.php">Click here to login </a>.</p>
-            
-</div>
+
+</form>
+</form>
 </div>
      
 </body>

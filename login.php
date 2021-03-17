@@ -1,3 +1,19 @@
+<?php
+
+$errors=array('name'=>" ",'password'=>" ");
+$name = $password ="" ;
+
+if(isset($_POST['submit'])){
+    if(empty($_POST['name'])){
+        $errors['name'] = "Username is required";
+    }
+
+    if(empty($_POST['password'])){
+        $errors['password']= "Password is required";
+    }
+}
+?>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -91,7 +107,7 @@ body {
 
 
     
-    .submit {
+    .enter {
         font-weight:bold;
       cursor: pointer;
         border-radius: 5em;
@@ -183,15 +199,18 @@ body {
 
 <div class="main">
 
-<p class="sign" text-align="center">Sign in</p>
+<p class="sign" text-align="center">Sign in</p><br>
 
+<form action="login.php" method="post">
 <form class="form1">
 
-  <input class="un " type="text" text-align="center" placeholder="Username">
+  <input class="un" type="text" placeholder="Username" name="name" value=<?php echo $name?>>
+  <div><?php echo $errors['name']?></div> 
 
-  <input class="pass" type="password" text-align="center" placeholder="Password">
+  <input class="pass" type="password"  placeholder="Password" name="password" value=<?php echo $password?>>
+  <div><?php echo $errors['password']?></div> 
 
-  <a class="submit">Sign in</a><br><br>
+  <input type="submit" class="enter" value="Login" name="submit"><br><br>
 
   <p class="signup"><a href="signup.php">Register</p>
 

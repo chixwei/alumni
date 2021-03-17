@@ -1,3 +1,21 @@
+<?php
+
+// include("connection.php");
+
+$errors=array('name'=>" ",'password'=>" ");
+$name = $password ="" ;
+
+if(isset($_POST['submit'])){
+    if(empty($_POST['name'])){
+        $errors['name'] = "Username is required";
+    }
+
+    if(empty($_POST['password'])){
+        $errors['password']= "Password is required";
+    }
+}
+?>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -33,7 +51,7 @@ body {
         font-size: 35px;
     }
     
-    .un {
+    .name {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -57,26 +75,6 @@ body {
         padding-top: 40px;
     }
 
-    .tel {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-    
     .pass {
     width: 76%;
     color: rgb(38, 50, 56);
@@ -98,12 +96,12 @@ body {
     }
     
    
-    .un:focus, .tel:focus, .pass:focus {
+    .un:focus, .pass:focus {
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
         
     }
 
-    .submit {
+    .enter {
         font-weight:bold;
       cursor: pointer;
         border-radius: 5em;
@@ -169,15 +167,18 @@ body {
 
 <div class="right">
 
-<p class="sign" text-align="center">Admin Login</p>
+<p class="sign" text-align="center">Admin Login</p><br><br><br>
 
+<form action="admin.php" method="post">
 <form class="form1">
 
-  <input class="un " type="text" text-align="center" placeholder="Username">
+  <input type="text" class="name" placeholder="Username" name="name" value=<?php echo $name?>></input>
+  <div><?php echo $errors['name']?></div> 
 
-  <input class="pass" type="password" text-align="center" placeholder="Password">
+  <input type="password" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
+  <div><?php echo $errors['password']?></div> 
 
-  <a class="submit">Login</a><br><br>
+  <input type="submit" class="enter" value="Login" name="submit"><br>
 
 <p class="forgot"><b> Back to login </b><a href="login.php">Click here to login </a>.</p>
             
