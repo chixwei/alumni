@@ -1,33 +1,31 @@
 <?php
-$errors=array('fname'=>"",'lname'=>"",'email'=>"",'tel'=>"",'password'=>"");
+
+include("connection.php");
+
+$errors=array('fname'=>" ",'lname'=>" ",'email'=>" ",'tel'=>" ",'password'=>" ");
 $fname = $lname = $email = $tel = $password ="" ;
 
 if(isset($_POST['submit'])){
     if(empty($_POST['fname'])){
-      $errors['fname']= "First Name is required". "</font>";
-
-    }
-    else{
-        $name=$_POST['fname'];
+        $errors['fname'] = "First Name is required";
+    } else {
+        $name = $_POST['fname'];
     }
 
     if(empty($_POST['lname'])){
-        $errors['lname']= "Last Name is required". "</font>"."<br>";
-  
-      }
-      else{
-          $name=$_POST['lname'];
-      }
+        $errors['lname'] = "Last Name is required";
+    } else {
+        $name = $_POST['lname'];
+    }
 
     if(empty($_POST['email'])){
-        $errors['email']= "Email is required"."<br>";
-    }
-    else{
-        $email=$_POST['email'];
-        if(!preg_match("/^\w+@ (hotmail ,gmail ,outlook)\.com/",$email)){
-            $errors['email']= "Please insert a valid email. Example: email@hotmail.com"."<br>";
+        $errors['email'] = "Email is required";
+    } else {
+        $email = $_POST['email'];
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $errors['email'] = "Please insert a valid email. Example: email@hotmail.com";
         }
-}
+    }
     
     if(empty($_POST['tel'])){
         $errors['tel']= "Phone Number is required"."<br>";
@@ -45,9 +43,30 @@ if(isset($_POST['submit'])){
 
     if (!array_filter($errors)){
         echo "<script> alert('You have submitted the form')</script>";
-        $name = $email = $tel = $unit = $Sname = $code ="";
+        $fname = $lname = $email = $tel = $password ="";
+    }
+
+    if(!array_filter($errors)){
+
+        $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+        $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $tel = mysqli_real_escape_string($conn, $_POST['tel']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+        $sql = "INSERT INTO user(First Name,Last Name, Email, Phone Number,Password) VALUES('$fname', '$lname','$email', '$tel','$password')";
+
+        //save to db and check
+        if(mysqli_query($conn, $sql)){
+            //success
+            header("location:retrive.php");
+        } else {
+            //error
+            echo "Query error: " . mysqli_error($conn); //showing the database connection error
+        }
     }
 }
+
 
 
 ?>

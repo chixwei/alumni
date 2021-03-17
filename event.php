@@ -14,13 +14,13 @@
 body { 
     margin: 0;
     padding; 0;
-    background-color: RGB(220, 252, 187);
+    background-color: #E5C184;
     font-family: Arial, Helvetica, sans-serif;
     }
 
 #navbar {
     overflow: hidden;
-    background-color: RGB(16, 58, 99);
+    background-color: #C99738;
     padding: 40px 10px;
     transition: 0.4s;
     position: fixed;
@@ -63,7 +63,7 @@ body {
 .footer {
     padding: 15px;
     text-align: center;
-    background: RGB(16, 58, 99);
+    background: #C99738;
     margin-top: 15px;
     }
 
@@ -86,8 +86,8 @@ body {
     }
 
 .wrapper h1 {
-    font-family: 'Allura', cursive;
-    font-size: 32px;
+    font-family: 'Arial';
+    font-size: 40px;
     margin-bottom: 10px;
     text-align: center;
     }
@@ -101,7 +101,7 @@ body {
     }
 
 .box .box1 {
-    background: RGB(233, 201, 245);
+    background:  #F1D7A6;
     margin: 5px;
     margin-bottom: 50px;
     width: 300px;
@@ -141,6 +141,14 @@ body {
     padding: 5px;
     }
 
+.pic{
+    width:900px;
+    height:400px;
+    vertical-align:middle;
+    margin-left:300px;
+    margin-top:50px;
+
+}
 </style>
 
 <body>
@@ -157,16 +165,39 @@ body {
                 </div>
         </div>
     
-    <br><br><br>
+    <br><br><br><br>
     
     <header>
-            <img src='uni7.png' width='100%'>
+    <br><br><br>
+  <img class="pic" src="slide.jpg">
+  <img class="pic" src="slide2.png">
+  <img class="pic" src="slide3.jpg">
+  <img class="pic" src="slide4.jpg">
+
+  <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("pic");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 5 seconds
+}
+</script>
+</div>
+
         </header>
 
     <br>
 
 <div class="wrapper">
-        <h1>NEWS</h1>
+        <h1>NEWs</h1><br><br>
     <div class="box">
         <div class="box1">
             <div class="box_img">

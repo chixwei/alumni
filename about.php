@@ -16,7 +16,7 @@ body {
 
 #navbar {
     overflow: hidden;
-    background-color: RGB(16, 58, 99);
+    background-color: #C99738;
     padding: 40px 10px;
     transition: 0.4s;
     position: fixed;
