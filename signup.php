@@ -286,10 +286,10 @@ body {
 <form class="form1">
 
 
-  <input type="text" class="fn "  placeholder="FirstName"  value=<?php echo $fname?>>
+  <input type="text" class="fn"  placeholder="FirstName"  value=<?php echo $fname?>>
   <div><?php echo $errors['fname']?></div>
 
-  <input type="text" class="ln "  placeholder="LastName" value=<?php echo $lname?>>
+  <input type="text" class="ln"  placeholder="LastName" value=<?php echo $lname?>>
   <div><?php echo $errors['lname']?></div> 
 
   <input type="text" class="email"  placeholder="Email" value=<?php echo $email?>>
