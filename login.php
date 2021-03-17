@@ -19,20 +19,21 @@ body {
     }
     
     .main {
-        background-color: #F4F5F2;
+        background-color:white;
         width: 400px;
         height: 400px;
         margin: 7em auto;
         border-radius: 1.5em;
         animation: arrive 500ms ease-in-out 0.1s forwards;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        opacity:50%;
     }
     
     .sign {
         text-align: center;
         padding-top: 40px;
-        color: #213F84;
-        text-shadow: 2px 2px #9DD4EC;
+        color: #D4AF37;
+        text-shadow: 2px 1px #B7882A;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         font-size: 23px;
@@ -95,7 +96,7 @@ body {
       cursor: pointer;
         border-radius: 5em;
         color: #FFFFFF;
-        background: linear-gradient(to right, #B19CD8, #FFCCCC);
+        background: linear-gradient(to right,  #F0D971, #C1933E);
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 10px;
@@ -109,23 +110,35 @@ body {
     .forgot {
         margin: 20px 0;
         font-size: 10px;
-        color: #213F84;
+        color: #D4B03B;
         text-align: center;
     }
 
+    .forgot a {
+        text-align:right;
+        color: #D4B03B;
+        text-decoration: none;
+    }
 
     .signup{
         text-align:center;
-        color: #6CB0F2;
-        padding-top: 0px;
+        color: #D4B03B;
         font-size: 10px;
     }
     
-    a:hover{
-        color: #A86CAD;
+    .signup a {
+        text-align:right;
+        color: #D4B03B;
         text-decoration: none;
     }
-    
+
+    a:hover{
+        color: #F7E3CC;
+        text-decoration: none;
+    }
+
+
+
     @media (max-width: 700px) {
         .main {
             border-radius: 0px;
@@ -133,13 +146,13 @@ body {
     }
 
 @media (min-aspect-ratio: 16/9) {
-    #loginBack {
+    #bgvideo {
         width: 100%;
         height: auto;
     }
 }
 @media (max-aspect-ratio: 16/9) {
-    #loginBack {
+    #bgvideo {
         width: auto;
         height: 200%;
     }
@@ -163,8 +176,8 @@ body {
 <body>
 
 <div class="vid">
-    <video autoplay muted loop id="loginBack">
-    <source src="loginBack.mp4" type="video/mp4">
+    <video autoplay muted loop id="bgvideo">
+    <source src="bgvideo.mp4" type="video/mp4">
     </video>
 </div>
 

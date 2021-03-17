@@ -1,15 +1,23 @@
 <?php
-$errors=array('name'=>"",'email'=>"",'tel'=>"",'password'=>"");
-$name = $name = $email = $tel = $password ="" ;
+$errors=array('fname'=>"",'lname'=>"",'email'=>"",'tel'=>"",'password'=>"");
+$fname = $lname = $email = $tel = $password ="" ;
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['name'])){
-      $errors['name']= "Name is required". "</font>"."<br>";
+    if(empty($_POST['fname'])){
+      $errors['fname']= "First Name is required". "</font>";
 
     }
     else{
-        $name=$_POST['name'];
+        $name=$_POST['fname'];
     }
+
+    if(empty($_POST['lname'])){
+        $errors['lname']= "Last Name is required". "</font>"."<br>";
+  
+      }
+      else{
+          $name=$_POST['lname'];
+      }
 
     if(empty($_POST['email'])){
         $errors['email']= "Email is required"."<br>";
@@ -30,6 +38,15 @@ if(isset($_POST['submit'])){
          $errors['tel']= "Please insert a valid phone number. Example: +6012345678"."<br>";
         }
     }
+
+    if(empty($_POST['password'])){
+        $errors['password']= "Password is required"."<br>";
+    }
+
+    if (!array_filter($errors)){
+        echo "<script> alert('You have submitted the form')</script>";
+        $name = $email = $tel = $unit = $Sname = $code ="";
+    }
 }
 
 
@@ -37,8 +54,14 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html> 
 <html>
 <head>
+<link rel="icon" type="image/png" href="kaweiee2.png">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
+
+*{
+    padding:0px;
+    margin:0px;
+}
 
 body {
         font-family: Arial, Helvetica, sans-serif;
@@ -173,7 +196,7 @@ body {
         
     }
 
-    .submit {
+    .enter {
         font-weight:bold;
       cursor: pointer;
         border-radius: 5em;
@@ -223,7 +246,7 @@ body {
     .left{
         float:left;
         width:100%;
-        height:778px;
+        height:790px;
     }
 
 
@@ -240,19 +263,26 @@ body {
 
 <img class="sign" src="Kaweiee3.png" width="300px" height="300px">
 
+<form action="signup.php" method="post">
 <form class="form1">
 
-  <input class="fn " type="text" text-align="left" placeholder="FirstName">
 
-  <input class="ln " type="text" text-align="left" placeholder="LastName">
+  <input type="text" class="fn "  placeholder="FirstName"  value=<?php echo $fname?>>
+  <div><?php echo $errors['fname']?></div>
 
-  <input class="email" type="email" text-align="left" placeholder="Email">
+  <input type="text" class="ln "  placeholder="LastName" value=<?php echo $lname?>>
+  <div><?php echo $errors['lname']?></div> 
 
-  <input class="tel" type="tel" text-align="left" placeholder="Phone Number">
+  <input type="text" class="email"  placeholder="Email" value=<?php echo $email?>>
+  <div><?php echo $errors['email']?></div> 
 
-  <input class="pass" type="password" text-align="left" placeholder="Password">
+  <input type="text" class="tel"  placeholder="Phone Number" value=<?php echo $tel?>>
+  <div><?php echo $errors['tel']?></div> 
 
-  <a class="submit">Register</a><br><br>
+  <input type="password" class="pass"  placeholder="Password" value=<?php echo $password?>>
+  <div><?php echo $errors['password']?></div> 
+
+  <input type= "submit" class="enter" value="Submit" name="submit"><br>
 
 <p class="forgot"><b> Page to let Admin login </b><a href="admin.php">Click here to login </a>.</p>
             

@@ -4,6 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
 
+*{
+    padding:0px;
+    margin:0px;
+}
+
 body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #FBFBEF;
@@ -142,7 +147,7 @@ body {
     .left{
         float:left;
         width:100%;
-        height:777px;
+        height:790px;
         align:left;
     }
     
