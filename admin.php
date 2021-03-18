@@ -14,12 +14,6 @@ if(isset($_POST['submit'])){
         $errors['password']= "Password is required";
     }
 
-    if(empty($_POST['pswd'])) {
-        $errors['pswd']= "Please enter your password.";
-    }else {
-        $adminpswd=$_POST['pswd'];
-    }
-
     if (!array_filter($errors)){ 
         echo "<script> alert('You have submitted the form') </script>";
         $Uname= $pswd ="";
