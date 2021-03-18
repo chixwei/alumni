@@ -1,6 +1,6 @@
 <?php
 
-// include("connection.php");
+include("connection.php");
 
 $errors=array('name'=>" ",'password'=>" ");
 $name = $password ="" ;

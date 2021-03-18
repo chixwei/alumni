@@ -1,5 +1,5 @@
 <?php
-include("connectdb.php"); //include database connection
+include("connection.php"); //include database connection
 
 //write query to retrive data
 
