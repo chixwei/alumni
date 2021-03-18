@@ -2,8 +2,10 @@
 
 include("connection.php");
 
-$errors=array('name'=>" ",'email'=>" ",'tel'=>" ",'password'=>" ");
 $name = $email = $tel = $password ="" ;
+
+$errors=array('name'=>" ",'email'=>" ",'tel'=>" ",'password'=>" ");
+
 
 if(isset($_POST['submit'])){
     if(empty($_POST['name'])){
@@ -34,7 +36,10 @@ if(isset($_POST['submit'])){
 
     if(empty($_POST['password'])){
         $errors['password']= "Password is required"."<br>";
+    }else {
+        $password= $_POST['password'];
     }
+
 
     if(!array_filter($errors)){
 
@@ -43,12 +48,12 @@ if(isset($_POST['submit'])){
         $tel = mysqli_real_escape_string($conn, $_POST['tel']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        $sql = "INSERT INTO user(name, email, tel, password) VALUES('$name', '$email', '$tel', '$password')";
+        $sql = "INSERT INTO user_(Uname, Email, Tel, Upassword) VALUES('$name', '$email', '$tel', '$password')";
 
         //save to db and check
         if(mysqli_query($conn, $sql)){
             //success
-            header("location:retrive.php");
+            header("about.php");
         } else {
             //error
             echo "Query error: " . mysqli_error($conn); //showing the database connection error
@@ -176,7 +181,7 @@ body {
     }
    
     .name:focus, .tel:focus, .email:focus, .pass:focus{
-        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        border: 2px solid rgba(0, 0, 0, 0.18);
         
     }
 
@@ -247,7 +252,7 @@ body {
 
 <img class="sign" src="Kaweiee3.png" width="300px" height="300px">
 
-<form action="signup.php" method="post">
+<form action="signup.php" method="POST">
 <form class="form1">
 
   <input type="text" class="name" placeholder="Username" name="name" value=<?php echo $name?>></input>
@@ -259,10 +264,10 @@ body {
   <input type="text" class="tel" placeholder="Phone Number" name="tel" value=<?php echo $tel?>></input>
   <div><?php echo $errors['tel']?></div> 
 
-  <input type="password" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
+  <input type="text" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
   <div><?php echo $errors['password']?></div> 
 
-  <input type= "submit" class="enter" value="Register" name="submit"><br>
+  <input type= "submit" class="enter" value="Register" name="submit"></input><br>
 
 <p class="forgot"><b> Page to let Admin login </b><a href="admin.php">Click here to login </a>.</p>
 
