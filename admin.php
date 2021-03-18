@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 // include("connection.php");
 
@@ -21,17 +22,14 @@ if(isset($_POST['submit'])){
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
+=======
+>>>>>>> 8c423554a0bc230e4faf8fed7ceeb5bf6c843345
 
-*{
-    padding:0px;
-    margin:0px;
-}
+include("connection.php");
 
-body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #FBFBEF;
-    }
+$Uname = $pswd = "";
 
+<<<<<<< HEAD
     
     .right {
         float:right;
@@ -122,43 +120,41 @@ body {
         font-size: 10px;
         color: #A5782B;
         text-align: center;
+=======
+$errors= array('Uname'=> "", 'pswd'=>"");
+
+if(isset($_POST['submit'])) {
+    if(empty($_POST['Uname'])) {
+        $errors['Uname']= "Please enter your username.";
+
+    }else {
+        $admin= $_POST['Uname'];
+>>>>>>> 8c423554a0bc230e4faf8fed7ceeb5bf6c843345
     }
 
-    .forgot a {
-        text-align:right;
-        color: #E3C56D;
-        text-decoration: none;
+    if(empty($_POST['pswd'])) {
+        $errors['pswd']= "Please enter your password.";
+    }else {
+        $adminpswd=$_POST['pswd'];
     }
 
-    .signup{
-        text-align:center;
-        color: #6CB0F2;
-        padding-top: 0px;
-        font-size: 10px;
+    if (!array_filter($errors)){ 
+        echo "<script> alert('You have submitted the form') </script>";
+        $Uname= $pswd ="";
     }
-    
-    a:hover{
-        color: #A86CAD;
-        text-decoration: none;
-    }
-
-    .left{
-        float:left;
-        width:100%;
-        height:790px;
-        align:left;
-    }
-    
-    @media (max-width: 700px) {
-        .main {
-            border-radius: 0px;
-        } 
-    }
+}
 
 
-    </style>
+
+?>
+
+
+<!DOCTYPE html> 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="adminstyle.css">
 </head>
-
 <body>
 <div style="max-width:1100px">
   <img class="left" src="school2.jpg">
@@ -172,6 +168,7 @@ body {
 <form action="admin.php" method="post">
 <form class="form1">
 
+<<<<<<< HEAD
   <input type="text" class="name" placeholder="Username" name="name" value=<?php echo $name?>></input>
   <div><?php echo $errors['name']?></div> 
 
@@ -179,6 +176,15 @@ body {
   <div><?php echo $errors['password']?></div> 
 
   <input type="submit" class="enter" value="Login" name="submit"><br>
+=======
+  <input type="text" class="un" name="Uname" text-align="center" placeholder="Username" value=<?php echo $Uname ?>>
+  <div><?= $errors['Uname']?></div>
+
+  <input type="password" class="pass" name="pswd" text-align="center" placeholder="Password" value=<?php echo $pswd ?>>
+  <div><?= $errors['pswd'] ?></div>
+
+  <input type="submit" class="submit" name="submit" value="Login"><br><br>
+>>>>>>> 8c423554a0bc230e4faf8fed7ceeb5bf6c843345
 
 <p class="forgot"><b> Back to login </b><a href="login.php">Click here to login </a>.</p>
             

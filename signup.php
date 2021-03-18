@@ -234,7 +234,17 @@ body {
   <input type="text" class="name" placeholder="Username" name="name" value=<?php echo $name?>></input>
   <div><?php echo $errors['name']?></div> 
 
+<<<<<<< HEAD
   <input type="text" class="email" placeholder="Email" name="email"value=<?php echo $email?>></input>
+=======
+  <input type="text" class="fn"  placeholder="FirstName"  value=<?php echo $fname?>>
+  <div><?php echo $errors['fname']?></div>
+
+  <input type="text" class="ln"  placeholder="LastName" value=<?php echo $lname?>>
+  <div><?php echo $errors['lname']?></div> 
+
+  <input type="text" class="email"  placeholder="Email" value=<?php echo $email?>>
+>>>>>>> 8c423554a0bc230e4faf8fed7ceeb5bf6c843345
   <div><?php echo $errors['email']?></div> 
 
   <input type="text" class="tel" placeholder="Phone Number" name="tel" value=<?php echo $tel?>></input>
