@@ -4,10 +4,10 @@ include("connection.php");
 
 $name = $email = $tel = $password ="" ;
 
-$errors=array('name'=>" ",'email'=>" ",'tel'=>" ",'password'=>" ");
-
+$errors=array('name'=>"",'email'=>"",'tel'=>"",'password'=>"");
 
 if(isset($_POST['submit'])){
+
     if(empty($_POST['name'])){
         $errors['name'] = "Name is required";
     } else {
@@ -264,7 +264,7 @@ body {
   <input type="text" class="tel" placeholder="Phone Number" name="tel" value=<?php echo $tel?>></input>
   <div><?php echo $errors['tel']?></div> 
 
-  <input type="text" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
+  <input type="password" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
   <div><?php echo $errors['password']?></div> 
 
   <input type= "submit" class="enter" value="Register" name="submit"></input><br>
