@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 $servername= "25.33.84.126:10365";
 $username= "Kaweiee";
