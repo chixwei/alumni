@@ -1,6 +1,6 @@
 <?php
 
-// include("connection.php");
+include("connection.php");
 
 $errors=array('name'=>" ",'email'=>" ",'tel'=>" ",'password'=>" ");
 $name = $email = $tel = $password ="" ;
@@ -34,6 +34,25 @@ if(isset($_POST['submit'])){
 
     if(empty($_POST['password'])){
         $errors['password']= "Password is required"."<br>";
+    }
+
+    if(!array_filter($errors)){
+
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $tel = mysqli_real_escape_string($conn, $_POST['tel']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+        $sql = "INSERT INTO user(name, email, tel, password) VALUES('$name', '$email', '$tel', '$password')";
+
+        //save to db and check
+        if(mysqli_query($conn, $sql)){
+            //success
+            header("location:retrive.php");
+        } else {
+            //error
+            echo "Query error: " . mysqli_error($conn); //showing the database connection error
+        }
     }
 }
 
@@ -234,17 +253,7 @@ body {
   <input type="text" class="name" placeholder="Username" name="name" value=<?php echo $name?>></input>
   <div><?php echo $errors['name']?></div> 
 
-<<<<<<< HEAD
   <input type="text" class="email" placeholder="Email" name="email"value=<?php echo $email?>></input>
-=======
-  <input type="text" class="fn"  placeholder="FirstName"  value=<?php echo $fname?>>
-  <div><?php echo $errors['fname']?></div>
-
-  <input type="text" class="ln"  placeholder="LastName" value=<?php echo $lname?>>
-  <div><?php echo $errors['lname']?></div> 
-
-  <input type="text" class="email"  placeholder="Email" value=<?php echo $email?>>
->>>>>>> 8c423554a0bc230e4faf8fed7ceeb5bf6c843345
   <div><?php echo $errors['email']?></div> 
 
   <input type="text" class="tel" placeholder="Phone Number" name="tel" value=<?php echo $tel?>></input>
