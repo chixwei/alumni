@@ -22,6 +22,8 @@ if(isset($_POST["submit"]))
     } else {
         echo '<script type="text/javascript"> window.onload=function(){alert("Incorrect Username or Password!");} </script>';
     }
+
+    $name =$password ="" ;
 }
 
 ?>
