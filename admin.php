@@ -1,24 +1,29 @@
 <?php
 
 include("connection.php");
+if(isset($_POST["submit"]))
+{
+    $name=$_POST["name"];
+    $password=$_POST["password"];
+    $sql= "SELECT AdminUname,AdminPswd FROM admin_ WHERE AdminUname='$name' ";
+    $sql2= "SELECT AdminUname,AdminPswd FROM admin_ WHERE AdminPswd='$password' ";
+    $results= mysqli_query($conn,$sql);
+    $results2= mysqli_query($conn,$sql2);
+    if(mysqli_num_rows($results)>0 and mysqli_num_rows($results2)>0){
+        $row = mysqli_fetch_array($results);
+        $row2 = mysqli_fetch_array($results2);
 
-$errors=array('name'=>" ",'password'=>" ");
-$name = $password ="" ;
-
-if(isset($_POST['submit'])){
-    if(empty($_POST['name'])){
-        $errors['name'] = "Username is required";
-    }
-
-    if(empty($_POST['password'])){
-        $errors['password']= "Password is required";
-    }
-
-    if (!array_filter($errors)){ 
-        echo "<script> alert('You have submitted the form') </script>";
-        $Uname= $pswd ="";
+        if ($row["AdminPswd"]==$row2["AdminPswd"]){
+            echo "<script> location.href='about.php'; </script>";
+            exit;
+        } else {
+            echo '<script type="text/javascript"> window.onload=function(){alert("Incorrect Username or Password!");} </script>';
+        }
+    } else {
+        echo '<script type="text/javascript"> window.onload=function(){alert("Incorrect Username or Password!");} </script>';
     }
 }
+
 
 ?>
 
@@ -40,11 +45,9 @@ if(isset($_POST['submit'])){
 <form action="admin.php" method="post">
 <form class="form1">
 
-  <input type="text" class="un" placeholder="Username" name="name" value=<?php echo $name?>></input>
-  <div><?php echo $errors['name']?></div> 
+  <input type="text" class="un" placeholder="Username" name="name"></input>
 
-  <input type="password" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
-  <div><?php echo $errors['password']?></div> 
+  <input type="password" class="pass" placeholder="Password" name="password"></input>
 
   <input type="submit" class="submit" value="Login" name="submit"><br></input>
 

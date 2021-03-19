@@ -1,17 +1,29 @@
 <?php
 
-$errors=array('name'=>" ",'password'=>" ");
-$name = $password ="" ;
+include("connection.php");
+if(isset($_POST["submit"]))
+{
+    $name=$_POST["name"];
+    $password=$_POST["password"];
+    $sql= "SELECT Uname,Upassword FROM user_ WHERE Uname='$name' ";
+    $sql2= "SELECT Uname,Upassword FROM user_ WHERE Upassword='$password' ";
+    $results= mysqli_query($conn,$sql);
+    $results2= mysqli_query($conn,$sql2);
+    if(mysqli_num_rows($results)>0 and mysqli_num_rows($results2)>0){
+        $row = mysqli_fetch_array($results);
+        $row2 = mysqli_fetch_array($results2);
 
-if(isset($_POST['submit'])){
-    if(empty($_POST['name'])){
-        $errors['name'] = "Username is required";
-    }
-
-    if(empty($_POST['password'])){
-        $errors['password']= "Password is required";
+        if ($row["Upassword"]==$row2["Upassword"]){
+            echo "<script> location.href='about.php'; </script>";
+            exit;
+        } else {
+            echo '<script type="text/javascript"> window.onload=function(){alert("Incorrect Username or Password!");} </script>';
+        }
+    } else {
+        echo '<script type="text/javascript"> window.onload=function(){alert("Incorrect Username or Password!");} </script>';
     }
 }
+
 ?>
 
 <!DOCTYPE html> 
@@ -204,11 +216,9 @@ body {
 <form action="login.php" method="post">
 <form class="form1">
 
-  <input class="un" type="text" placeholder="Username" name="name" value=<?php echo $name?>>
-  <div><?php echo $errors['name']?></div> 
+  <input class="un" type="text" placeholder="Username" name="name">
 
-  <input class="pass" type="password"  placeholder="Password" name="password" value=<?php echo $password?>>
-  <div><?php echo $errors['password']?></div> 
+  <input class="pass" type="password"  placeholder="Password" name="password">
 
   <input type="submit" class="enter" value="Login" name="submit"><br><br>
 
