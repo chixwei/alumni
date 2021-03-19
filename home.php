@@ -39,7 +39,7 @@
                     <div class="sec-actionBox">
 
                       <p class="sec-para">Kaweiee University have founded in 2021. Want to know more about us? Explore more !</p>
-                      <button class="sec-btn"><a href="about.php"> About Us</a></button>
+                      <button class="sec-btn"><a href="login.php"> About Us</a></button>
 
                     </div>
                   </div>
@@ -77,7 +77,7 @@
                     <div class="sec-actionBox">
 
                       <p class="sec-para">Our university proviedes alots of fun activities! If you are interest on it, Let's check it out !</p>
-                      <button class="sec-btn"><a href="event.php"> News and Events</a></button>
+                      <button class="sec-btn"><a href="login.php"> News and Events</a></button>
 
                     </div>
                   </div>
@@ -116,7 +116,7 @@
                             <div class="sec-actionBox">
 
                               <p class="sec-para">If your have any problems, do not hessitate to contact us !</p>
-                              <button class="sec-btn"><a href="contact.php"> Contact</a></button>
+                              <button class="sec-btn"><a href="login.php"> Contact</a></button>
 
                             </div>
                           </div>
