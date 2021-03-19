@@ -1,6 +1,6 @@
 <?php
 
-$servername= "25.33.84.126:10365";
+$servername= "localhost:10365";
 $username= "Kaweiee";
 $password= "@Kaweieedatabase";
 $database= "kaweiee";

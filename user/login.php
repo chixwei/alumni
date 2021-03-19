@@ -207,7 +207,7 @@ body {
 
 <div class="vid">
     <video autoplay muted loop id="bgvideo">
-    <source src="bgvideo.mp4" type="video/mp4">
+    <source src="../picture/bgvideo.mp4" type="video/mp4">
     </video>
 </div>
 

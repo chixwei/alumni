@@ -36,7 +36,7 @@ if(isset($_POST["submit"]))
 <link rel="stylesheet" href="adminstyle.css">
 <body>
 <div style="max-width:1100px">
-  <img class="left" src="school2.jpg">
+  <img class="left" src="../picture/school2.jpg">
   </div>
 
 
