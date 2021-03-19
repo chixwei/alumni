@@ -58,6 +58,9 @@ if(isset($_POST['submit'])){
             //error
             echo "Query error: " . mysqli_error($conn); //showing the database connection error
         }
+
+        echo "<script> alert('You have submitted the form')</script>";
+        $name = $email = $tel = $password ="" ;
     }
 }
 
