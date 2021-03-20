@@ -1,35 +1,23 @@
-<?php
-$errors=array('name'=>"",'email'=>"",'tel'=>"",'password'=>"");
-$name = $name = $email = $tel = $password ="" ;
-
-if(isset($_POST['submit'])){
-
-    if(empty($_POST['email'])){
-        $errors['email']= "Email is required"."<br>";
-    }
-    else{
-        $email=$_POST['email'];
-        if(!preg_match("/^\w+@ (hotmail ,gmail ,outlook)\.com/",$email)){
-            $errors['email']= "Please insert a valid email. Example: email@hotmail.com"."<br>";
-        }
-}
-}
-
-
-?>
 <!DOCTYPE html> 
 <html>
 <head>
-<link rel="icon" type="image/png" href="../picture/homelogo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
+
+    .vid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -2;
+}
 
 
 body {
         font-family: Arial, Helvetica, sans-serif;
-        background-color: #F3FFFA;
     }
-
+    
     .main {
         background-color:white;
         width: 400px;
@@ -37,64 +25,21 @@ body {
         margin: 7em auto;
         border-radius: 1.5em;
         animation: arrive 500ms ease-in-out 0.1s forwards;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        opacity:50%;
     }
-
+    
     .sign {
         text-align: center;
         padding-top: 40px;
-        color: black;
-        text-shadow: 2px 1px lightgrey;
+        color: #D4AF37;
+        text-shadow: 2px 1px #B7882A;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 23px;
     }
     
-    
-    .Np {
-        width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: left;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .Cp {
-        width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: left;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    form.form1 {
-        padding-top: 40px;
-    }
-
-    .email {
+    .un {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -109,24 +54,49 @@ body {
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 50px;
     margin-left: 46px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
     }
 
 
     
-    .Np:focus, .Cp:focus, .email:focus{
-        border: 2px solid #B7882A !important;
-        
-    }
-
-    .submit {
+    .enter {
         font-weight:bold;
       cursor: pointer;
         border-radius: 5em;
         color: #FFFFFF;
-        background: linear-gradient(to right, #98D1EA, #B9ECDA);
+        background: linear-gradient(to right,  #F0D971, #C1933E);
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 10px;
@@ -140,51 +110,94 @@ body {
     .forgot {
         margin: 20px 0;
         font-size: 10px;
-        color: #213F84;
+        color: #D4B03B;
         text-align: center;
     }
 
     .forgot a {
         text-align:right;
-        color: #6CB0F2;
+        color: #D4B03B;
         text-decoration: none;
     }
 
-    
-    a:hover{
-        color: #A86CAD;
-        text-decoration: none;
+    .signup{
+        text-align:center;
+        color: #D4B03B;
+        font-size: 10px;
     }
     
+    .signup a {
+        text-align:right;
+        color: #D4B03B;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: #F7E3CC;
+        text-decoration: none;
+    }
+
+
+
     @media (max-width: 700px) {
         .main {
             border-radius: 0px;
         } 
     }
 
+@media (min-aspect-ratio: 16/9) {
+    #bgvideo {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #bgvideo {
+        width: auto;
+        height: 200%;
+    }
+}
 
 
+@keyframes arrive {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
     </style>
 </head>
 
 <body>
 
-
-<form class="main">
-<p class=sign>Change Password</p>
-<form method="post" action="">
-
-  <input class="email" type="text" text-align="center" placeholder="Email">
-
-<input class="Np" type="text" text-align="center" placeholder="New Password">
-
-<input class="Cp" type="text" text-align="center" placeholder="Confirm new Password">
-
-  <a class="submit">Comfirm</a><br><br>
-
-<p class="forgot"><b> Back to login page </b><a href="login.php">Click here to login </a>.</p>
-            
+<div class="vid">
+    <video autoplay muted loop id="bgvideo">
+    <source src="../picture/bgvideo.mp4" type="video/mp4">
+    </video>
 </div>
+
+<div class="main">
+
+<p class="sign" text-align="center">Sign in</p><br>
+
+<form action="login.php" method="post">
+<form class="form1">
+
+  <input class="un" type="text" placeholder="Username" name="name">
+
+  <input class="pass" type="password"  placeholder="Password" name="password">
+
+  <input type="submit" class="enter" value="Login" name="submit"><br><br>
+
+  <p class="signup"><a href="signup.php">Register</p>
+
+  <p class="forgot"><a href=""><b> Forgot your password? </b></p>
+            
 </div>
      
 </body>
