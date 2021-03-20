@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
     else{
         $tel=$_POST['tel'];
         if(!preg_match("/\+60\d{9,10}/i",$tel)){
-         $errors['tel']= "Please insert a valid phone number. Example: +6012345678"."<br>";
+         $errors['tel']= "Please insert a valid phone number. Example: +60123456789"."<br>";
         }
     }
 
@@ -116,10 +116,8 @@ body {
     outline: none;
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
     margin-left: 46px;
     text-align: left;
-    margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -136,10 +134,8 @@ body {
     outline: none;
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
     margin-left: 46px;
     text-align: left;
-    margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
     
@@ -156,10 +152,8 @@ body {
     outline: none;
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
     margin-left: 46px;
     text-align: left;
-    margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -176,10 +170,8 @@ body {
     outline: none;
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
     margin-left: 46px;
     text-align: left;
-    margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
    
@@ -241,6 +233,11 @@ body {
         height:790px;
     }
 
+    .error{
+        margin-left:50px;
+        color:#996515;
+    }
+
 
     </style>
 </head>
@@ -259,16 +256,16 @@ body {
 <form class="form1">
 
   <input type="text" class="name" placeholder="Username" name="name" value=<?php echo $name?>></input>
-  <div><?php echo $errors['name']?></div> 
+  <div class="error"><?php echo $errors['name']?></div> <br>
 
   <input type="text" class="email" placeholder="Email" name="email"value=<?php echo $email?>></input>
-  <div><?php echo $errors['email']?></div> 
+  <div class="error"><?php echo $errors['email']?></div> <br>
 
   <input type="text" class="tel" placeholder="Phone Number" name="tel" value=<?php echo $tel?>></input>
-  <div><?php echo $errors['tel']?></div> 
+  <div class="error"><?php echo $errors['tel']?></div> <br>
 
   <input type="password" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
-  <div><?php echo $errors['password']?></div> 
+  <div class="error"><?php echo $errors['password']?></div> <br>
 
   <input type= "submit" class="enter" value="Register" name="submit"></input><br>
 
