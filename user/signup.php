@@ -184,7 +184,7 @@ body {
     }
    
     .name:focus, .tel:focus, .email:focus, .pass:focus{
-        border: 2px solid rgba(0, 0, 0, 0.18);
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
         
     }
 
