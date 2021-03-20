@@ -1,4 +1,4 @@
-<!-- <?php 
+ <!-- <?php 
 // if (isset($_POST['approve']))
 // {
 // 	if (is_array($_POST['approve'])) {
@@ -24,29 +24,32 @@
 // {
 // 	mysql_query($sql);
 // }
-// ?>
+// ?> -->
 
 <?php
-// include("connection.php"); //include database connection
+include("connection.php"); 
 
-// //write query to retrive data
+//write query to retrive data
 
-// $sql = "SELECT Uname,Email,Tel,Upassword FROM user";
+$sql = "SELECT Uname,Email,Tel,Upassword FROM user_";
 
-// //make query and get results
+//make query and get results
 
-// $results = mysqli_query($conn, $sql);
+$results = mysqli_query($conn, $sql);
 
-// if(mysqli_num_rows($results) > 0){
-//     //output data of each row
-//     while($row = mysqli_fetch_array($results)){ //fetch the result and store as array
-//         echo " Name: " . $row["Uname"] . " Email: " . $row["email"] ." Tel: " . $row["tel"] . " Password: " .$row["Upassword"] . "<br>";
-//     } 
-// } else {
-//     echo "0 results";
-// }
-
-?> -->
+if(mysqli_num_rows($results) > 0){
+    //output data of each row
+    while($data = mysqli_fetch_array($results)){ 
+      $name= $data["Uname"];
+      $email= $data["Email"];
+      $tel= $data["Tel"];
+      $password= $data["Upassword"];
+    } 
+} 
+  else {
+      echo "0 results";
+}
+?> 
 
 <!DOCTYPE html>
 <html>
@@ -96,29 +99,34 @@ body{
 .button1 {
   background-color: white; 
   color: black; 
-  border: 2px solid #4CAF50;
+  border: 2px solid #064C0D;
 }
 
 .button1:hover {
-  background-color: #4CAF50;
+  background-color: #064C0D;
   color: white;
 }
 
 .button2 {
   background-color: white; 
   color: black; 
-  border: 2px solid red;
+  border: 2px solid #AC4C53;
 }
 
 .button2:hover {
-  background-color: red;
+  background-color: #AC4C53;
   color: white;
 }
 
 h2{
     font-size:40px;
     text-shadow:2px 2px gold;
-    color:white;
+    color:black;
+}
+
+h3{
+  font-family: "Garamond", serif;
+  font-size:22px;
 }
 
 
@@ -130,10 +138,16 @@ h2{
 <div class="card">
   <div class="container">
   <img src="../picture/approve.jpg" width="450px" height="300px">
-    <!-- <h4><b><?php echo $name?></b></h4> 
-    <p><?php echo $email?></p> 
-    <p><?php echo $tel?></p>  -->
-    <!-- <p><?php echo $password?></p> -->
+  
+  <h3>Name:  <?php echo $name?></h3>
+
+
+  <h3>Email:  <?php echo $email?></h3>
+
+    <h3>Phone Number:  <?php echo $tel?></h3>
+
+    <h3>Password:  <?php echo $password?></h3>
+    
     <button class="button button1">Approve</button>
     <button class="button button2">Reject</button>
   </div>
