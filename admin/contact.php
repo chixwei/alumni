@@ -10,6 +10,10 @@
             
         }
 
+        body{
+            margin-top:150px;
+        }
+
         #navbar {
             overflow: hidden;
             background-color: #C99738;
@@ -59,7 +63,6 @@
         }
         
         .card {
-
             background-color: #e7d9bc; /*background*/
             width: 100%;
             padding: 0px;
@@ -170,9 +173,7 @@
             }
         
     </style>
-    </head>
-    <body>
-    <nav>
+
     <div id="navbar">
         <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
             <div id="navbar-right">
@@ -184,8 +185,11 @@
                 <a href="login.php">LOG OUT</a>
                 </div>
         </div>
+    </head>
+    <body>
+    
 
-    </nav>
+    
 
 <?php
 
