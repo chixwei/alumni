@@ -199,32 +199,28 @@
         }
         }
     </script>
-    
+
     <body>
     
-
+    
     
 
 <?php
 
 include("connection.php"); 
 
-//write query to retrive data
-
 $sql = "SELECT ID, Uname, Email, Tel, Upassword FROM user_";
-
-//make query and get results
 
 $results = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($results) > 0) {
-    //output data of each row
     
-    while($data = mysqli_fetch_array($results)) {
-        $id= $data["ID"];
-        $name= $data["Uname"];
-        $email= $data["Email"];
-        $phone= $data["Tel"];
+    while($row = mysqli_fetch_array($results)) {
+        $id= $row["ID"];
+        $name= $row["Uname"];
+        $email= $row["Email"];
+        $phone= $row["Tel"];
+
     ?>
 
     
@@ -236,11 +232,14 @@ if (mysqli_num_rows($results) > 0) {
                       <p class="card-picture">profile </p>   
                     </div>
                     <div class="card-contact">
+                    <form action="contactedit.php" method="POST">
+                    
                         <table>
 
                         <tr>
                             <td colspan=5></td>
-                            <td><a href="contactedit.php"><img src="../picture/edit.png"></a></td>
+                            <td><a href="contactedit.php?edit=<?= $id?>"><img src="../picture/edit.png" name="edit"></a></td>
+                            <td><a href="delete.php?delete=<?= $id?>"><img src="../picture/delete.png" name="delete"></a></td>
                         </tr>
 
                         <tr>
@@ -275,6 +274,7 @@ if (mysqli_num_rows($results) > 0) {
 
 
                         </table>
+                        </form>
                     </div>    
                   </div>
               </div>
@@ -288,6 +288,9 @@ if (mysqli_num_rows($results) > 0) {
 }
 
 ?>
+
+</body>
+<html>
 
 
 
