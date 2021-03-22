@@ -98,10 +98,11 @@
             margin-left: auto;
         }
 
-        .card-picture {
-            padding: 9% ;
-            line-height: 1.4;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        .card-picture img{
+            height:300px;
+            width:300px;
+            margin-top: -10px;
+            border-radius: 15px;
         }
 
         .card-contact {
@@ -209,7 +210,7 @@
 
 include("connection.php"); 
 
-$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job FROM user_";
+$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile FROM user_";
 
 $results = mysqli_query($conn, $sql);
 
@@ -222,20 +223,20 @@ if (mysqli_num_rows($results) > 0) {
         $phone= $row["Tel"];
         $address= $row["Address"];
         $job= $row["Job"];
+        $profile= $row["Profile"];
 
     ?>
 
-    
     <div class="flex-container">
             <div class="card">
               <div class="card-cardtion">
                   <div class="card-container">
                     <div class="card-profile">
-                      <p class="card-picture">profile </p>   
+                      <p class="card-picture"><img src= '../profile/<?= $profile ?>'></p>   
                     </div>
                     <div class="card-contact">
                     <form action="contactedit.php" method="POST">
-                    
+
                         <table>
 
                         <tr>

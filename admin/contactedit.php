@@ -3,7 +3,7 @@
 include('connection.php');
 if (isset($_GET['edit'])) {
 $edit= $_GET['edit'];
-$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job FROM user_ WHERE ID = '$edit'";
+$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile FROM user_ WHERE ID = '$edit'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0)
@@ -17,6 +17,7 @@ if (mysqli_num_rows($result) > 0)
     $phone= $row["Tel"];
     $address= $row["Address"];
     $job= $row["Job"];
+    $profile=$row["Profile"];
   
 }
 mysqli_close($conn);
@@ -219,9 +220,15 @@ mysqli_close($conn);
     <div class="login-box">
     <h2>Update Contact</h2>
 
-        <form action="contactedit.php" method="POST" name="updateform">
+        <form action="contactedit.php" method="POST" name="updateform" enctype="multipart/form-data">
             
             <input type="hidden" name="ID" value="<?= $id; ?>"></input>
+            
+            <div class="user-box">
+            <input type="file" name="Profile" value="<?= $row['Profile']; ?>">
+            <label>Profile picture</label>
+            </div>
+
             
 
             <div class="user-box">
@@ -269,14 +276,16 @@ mysqli_close($conn);
 }else{
 
     include('connection.php');
+
     $id = $_POST['ID'];
     $name = $_POST['Uname'];
     $email = $_POST['Email'];
     $phone = $_POST['Tel'];
     $address = $_POST['Address'];
     $job = $_POST['Job'];
+    $profile = $_FILES['Profile']['name'];
 
-    $sql= "UPDATE user_ SET Uname = '$name', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job' WHERE ID = '$id' ";
+    $sql= "UPDATE user_ SET Uname = '$name', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job', Profile = '$profile' WHERE ID = '$id' ";
     $results = mysqli_query($conn, $sql);
   
     if($results) {
