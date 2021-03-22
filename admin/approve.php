@@ -1,31 +1,3 @@
- <!-- <?php 
-// if (isset($_POST['approve']))
-// {
-// 	if (is_array($_POST['approve'])) {
-// 		$keys = array_keys($_POST['approve']);
-// 		$id = $keys[0];
-		
-// 		$sql = "UPDATE `partners` SET `approved` = 1, `approved_date` = NOW() WHERE `user_id` = '$id' AND `friend_id` = {$user_info['uid']}";
-// 		header("Location: " . $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'] );
-// 	}
-// }
-// else if (isset($_POST['denyrequest']))
-// {
-// 	if (is_array($_POST['denyrequest'])) {
-// 		$keys = array_keys($_POST['denyrequest']);
-// 		$id = $keys[0];
-		
-// 		$sql = "UPDATE `partners` SET `approved` = -1, `approved_date` = NOW() WHERE `user_id` = '$id' AND `friend_id` = {$user_info['uid']}";
-// 		header("Location: " . $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'] );
-// 	}
-// }
-
-// if (isset($sql) && !empty($sql))
-// {
-// 	mysql_query($sql);
-// }
-// ?> -->
-
 <?php
 include("connection.php"); 
 
@@ -49,7 +21,25 @@ if(mysqli_num_rows($results) > 0){
   else {
       echo "0 results";
 }
-?> 
+
+// if (isset($_POST['approve']))
+// {
+// 	if (is_array($_POST['approve'])) {
+// 		$approve = array_keys($_POST['approve']);
+		
+// 		$sql = "UPDATE `status` SET `approved` = approved, `approved_date` = NOW() WHERE `Uname` = '$name'";
+// 	}
+// }
+// else if (isset($_POST['reject']))
+// {
+// 	if (is_array($_POST['reject'])) {
+// 		$reject = array_keys($_POST['reject']);
+    
+// 		$sql = "DELETE FROM user_ WHERE 'Uname = '$name'";
+// 	}
+// }
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -148,8 +138,8 @@ h3{
 
     <h3>Password:  <?php echo $password?></h3>
     
-    <button class="button button1">Approve</button>
-    <button class="button button2">Reject</button>
+    <button class="button button1" name="approve">Approve</button>
+    <button class="button button2" name="reject" >Reject</button>
   </div>
 </div>
 </body>

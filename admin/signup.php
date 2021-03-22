@@ -267,7 +267,7 @@ body {
   <input type="password" class="pass" placeholder="Password" name="password" value=<?php echo $password?>></input>
   <div class="error"><?php echo $errors['password']?></div> <br>
 
-  <input type= "submit" class="enter" value="Register" name="submit"></input><br>
+  <input type= "submit" class="enter" value="Register" name="submit" ></a></input><br>
 
 <p class="forgot"><b> Page to let Admin login </b><a href="admin.php">Click here to login </a>.</p>
 
