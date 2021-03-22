@@ -2,8 +2,8 @@
 
 include('connection.php');
 if (isset($_GET['edit'])) {
-$halo= $_GET['edit'];
-$sql = "SELECT ID, Uname, Email, Tel, Upassword FROM user_ WHERE ID = '$halo'";
+$edit= $_GET['edit'];
+$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job FROM user_ WHERE ID = '$edit'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0)
@@ -15,6 +15,8 @@ if (mysqli_num_rows($result) > 0)
     $name= $row["Uname"];
     $email= $row["Email"];
     $phone= $row["Tel"];
+    $address= $row["Address"];
+    $job= $row["Job"];
   
 }
 mysqli_close($conn);
@@ -35,7 +37,7 @@ mysqli_close($conn);
             margin:0;
             padding:0;
             font-family: sans-serif;
-            background: linear-gradient(#141e30, #243b55);
+            background: linear-gradient(#e6b800, #ffeb99);
         }
 
         .login-box {
@@ -88,15 +90,15 @@ mysqli_close($conn);
         .login-box .user-box input:valid ~ label {
             top: -20px;
             left: 0;
-            color: #03e9f4;
-            font-size: 12px;
+            color: black;
+            font-weight:bold;
+            font-size: 14px;
         }
 
         .login-box form a {
             position: relative;
             display: inline-block;
-            padding: 10px 20px;
-            color: #03e9f4;
+            padding: 3px 3px;
             font-size: 16px;
             text-decoration: none;
             text-transform: uppercase;
@@ -106,14 +108,26 @@ mysqli_close($conn);
             letter-spacing: 4px
         }
 
-        .login-box a:hover {
-            background: #03e9f4;
+        .login-box form .btn{
+            background:rgba(245, 208, 89, 0.863);
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            letter-spacing: 4px
+        }
+
+        .login-box a .btn:hover {
+            background: rgb(255, 180, 67);;
             color: #fff;
             border-radius: 5px;
-            box-shadow: 0 0 5px #03e9f4,
-                        0 0 25px #03e9f4,
-                        0 0 50px #03e9f4,
-                        0 0 100px #03e9f4;
+            box-shadow: 0 0 5px rgb(251, 255, 9),
+                        0 0 25px rgb(251, 255, 9),
+                        0 0 50px rgb(251, 255, 9),
+                        0 0 100px rgb(251, 255, 9);
         }
 
         .login-box a span {
@@ -126,7 +140,7 @@ mysqli_close($conn);
             left: -100%;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #03e9f4);
+            background: linear-gradient(90deg, transparent, #fab319);
             animation: btn-anim1 1s linear infinite;
         }
 
@@ -144,7 +158,7 @@ mysqli_close($conn);
             right: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(180deg, transparent, #03e9f4);
+            background: linear-gradient(180deg, transparent, #fab319);
             animation: btn-anim2 1s linear infinite;
             animation-delay: .25s
         }
@@ -163,7 +177,7 @@ mysqli_close($conn);
             right: -100%;
             width: 100%;
             height: 2px;
-            background: linear-gradient(270deg, transparent, #03e9f4);
+            background: linear-gradient(270deg, transparent, #fab319);
             animation: btn-anim3 1s linear infinite;
             animation-delay: .5s
         }
@@ -182,7 +196,7 @@ mysqli_close($conn);
             left: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(360deg, transparent, #03e9f4);
+            background: linear-gradient(360deg, transparent, #fab319);
             animation: btn-anim4 1s linear infinite;
             animation-delay: .75s
         }
@@ -196,16 +210,16 @@ mysqli_close($conn);
             }
         }
 
-
+        
 
     </style>
 </head>
 <body>
 
     <div class="login-box">
-    <h2>EDIT</h2>
+    <h2>Update Contact</h2>
 
-        <form action="contactedit.php" method="POST">
+        <form action="contactedit.php" method="POST" name="updateform">
             
             <input type="hidden" name="ID" value="<?= $id; ?>"></input>
             
@@ -225,18 +239,29 @@ mysqli_close($conn);
             <label>Phone</label>
             </div>
 
+            <div class="user-box">
+            <input type="text" name="Address" value="<?= $address; ?>">
+            <label>Address</label>
+            </div>
 
+            <div class="user-box">
+            <input type="text" name="Job" value="<?= $job; ?>">
+            <label>Job</label>
+            </div>
+
+            
             <a href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <input type="submit" name="update" value="update">Update
+            
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="submit" class="btn" name="update">
+            
             </a>
 
     </form>
     </div>
-
 
 
 <?php 
@@ -248,15 +273,20 @@ mysqli_close($conn);
     $name = $_POST['Uname'];
     $email = $_POST['Email'];
     $phone = $_POST['Tel'];
+    $address = $_POST['Address'];
+    $job = $_POST['Job'];
 
-    $sql= "UPDATE user_ SET Uname = '$name', Email = '$email', Tel = '$phone' WHERE ID = '$id' ";
+    $sql= "UPDATE user_ SET Uname = '$name', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job' WHERE ID = '$id' ";
     $results = mysqli_query($conn, $sql);
   
     if($results) {
-        echo "Data is updated.";
+
+        include('contact.php');
+        echo "<script>alert('Data is updated.')</script>";
+        
 
     }else {
-        echo "Data is NOT updated.";
+        echo "<script>alert('Data is NOT updated.')</script>";
     }
     
     mysqli_close($conn);

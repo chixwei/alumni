@@ -209,7 +209,7 @@
 
 include("connection.php"); 
 
-$sql = "SELECT ID, Uname, Email, Tel, Upassword FROM user_";
+$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job FROM user_";
 
 $results = mysqli_query($conn, $sql);
 
@@ -220,6 +220,8 @@ if (mysqli_num_rows($results) > 0) {
         $name= $row["Uname"];
         $email= $row["Email"];
         $phone= $row["Tel"];
+        $address= $row["Address"];
+        $job= $row["Job"];
 
     ?>
 
@@ -264,12 +266,12 @@ if (mysqli_num_rows($results) > 0) {
 
                         <tr>
                             <td>Address: </td>
-                            <td></td>
+                            <td><?= $address ?></td>
                         </tr>
 
                         <tr>
                             <td>Job: </td>
-                            <td></td>
+                            <td><?= $job ?></td>
                         </tr>
 
 
