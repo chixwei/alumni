@@ -3,41 +3,52 @@ include("connection.php");
 
 //write query to retrive data
 
-$sql = "SELECT Uname,Email,Tel,Upassword FROM user_";
+$sql = "SELECT Uname,Email,Tel,Upassword FROM user_ WHERE status_='registered'";
 
 //make query and get results
 
 $results = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($results) > 0){
-    //output data of each row
-    while($data = mysqli_fetch_array($results)){ 
-      $name= $data["Uname"];
-      $email= $data["Email"];
-      $tel= $data["Tel"];
-      $password= $data["Upassword"];
-    } 
-} 
-  else {
-      echo "0 results";
-}
-
-// if (isset($_POST['approve']))
-// {
-// 	if (is_array($_POST['approve'])) {
-// 		$approve = array_keys($_POST['approve']);
-		
-// 		$sql = "UPDATE `status` SET `approved` = approved, `approved_date` = NOW() WHERE `Uname` = '$name'";
-// 	}
-// }
-// else if (isset($_POST['reject']))
-// {
-// 	if (is_array($_POST['reject'])) {
-// 		$reject = array_keys($_POST['reject']);
+    //output data of each row?>
     
-// 		$sql = "DELETE FROM user_ WHERE 'Uname = '$name'";
-// 	}
-// }
+<?php
+if (isset($_POST['approve'])) {
+
+
+    $username= $_POST['username'];		
+		$sql1 = "UPDATE user_ SET status_ = 'approved' WHERE Uname = '$username'";
+    //$results1 = mysqli_query($conn,$sql1);
+
+    if(mysqli_query($conn,$sql1)){
+      echo "<script> alert('Approved.') </script>";
+      echo "<script> location.href='about.php'; </script>";
+    }
+    else{
+      echo "<script> alert('Failed to register.') </script>";
+      echo "<script> location.href='approve.php'; </script>";
+    }
+
+} 
+?>
+
+<?php
+if (isset($_POST['reject']))  {
+    
+    $username= $_POST['username'];
+		$sql2 = "DELETE FROM user_ WHERE Uname = '$username'";
+    //$results2 = mysqli_query($conn,$sql2);
+	
+    if(mysqli_query($conn,$sql2)){
+      echo "<script> alert('Rejected.') </script>";
+      echo "<script> location.href='about.php'; </script>";
+    }
+    else{
+      echo "<script> alert('failed to reject.') </script>";
+      echo "<script> location.href='approve.php'; </script>";
+    }
+
+}
 
 ?>
 
@@ -124,23 +135,36 @@ h3{
 </head>
 <body>
 <h2 style= margin-left:500px>Admin Approval</h2>
-
+<?php //while($data = mysqli_fetch_array($results)){ 
+  while($row= mysqli_fetch_array($results)) {?>
 <div class="card">
   <div class="container">
   <img src="../picture/approve.jpg" width="450px" height="300px">
-  
-  <h3>Name:  <?php echo $name?></h3>
+  <form action="approve.php" method="POST">
+  <h3>Name:  <?php echo $row['Uname']?></h3>
+  <input type="hidden" name="username" value="<?php echo $row["Uname"]?>"/><br>
 
 
-  <h3>Email:  <?php echo $email?></h3>
+  <h3>Email:  <?php echo $row['Email']?></h3>
 
-    <h3>Phone Number:  <?php echo $tel?></h3>
+    <h3>Phone Number:  <?php echo $row['Tel']?></h3>
 
-    <h3>Password:  <?php echo $password?></h3>
+    <h3>Password:  <?php echo $row['Upassword']?></h3>
+    
     
     <button class="button button1" name="approve">Approve</button>
     <button class="button button2" name="reject" >Reject</button>
+    </form>
   </div>
 </div>
 </body>
 </html> 
+
+
+ <?php    // $name= $data["Uname"];$email= $data["Email"]; $tel= $data["Tel"]; $password= $data["Upassword"];
+    } 
+} 
+  else {
+      echo "0 results";
+}
+?>

@@ -16,14 +16,15 @@ if(isset($_POST["submit"]))
         if ($row["Upassword"]==$row2["Upassword"]){
             echo "<script> location.href='about.php'; </script>";
             exit;
-        } else {
+        } 
+        else 
+        {
             echo '<script type="text/javascript"> window.onload=function(){alert("Incorrect Username or Password!");} </script>';
         }
-    } else {
-        echo '<script type="text/javascript"> window.onload=function(){alert("Incorrect Username or Password!");} </script>';
-    }
+
 
     $name =$password ="" ;
+}
 }
 
 ?>
