@@ -1,4 +1,5 @@
 <?php
+// session_start();
 
 include('connection.php');
 if (isset($_GET['edit'])) {
@@ -6,11 +7,9 @@ $edit= $_GET['edit'];
 $sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile FROM user_ WHERE ID = '$edit'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0)
-{
+if (mysqli_num_rows($result) > 0) {
 
-    while($row = mysqli_fetch_array($result))
-{
+    while($row = mysqli_fetch_array($result)) {
     $id= $row["ID"];
     $name= $row["Uname"];
     $email= $row["Email"];
@@ -290,8 +289,8 @@ mysqli_close($conn);
   
     if($results) {
 
-        include('contact.php');
         echo "<script>alert('Data is updated.')</script>";
+        echo "<script> location.href='contact.php'; </script>";
         
 
     }else {
