@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
-        *{
+*{
             padding:0;
             margin:0;
             
@@ -245,26 +245,27 @@
         </form>
     
     
-<?php
+    <?php
 
-include("connection.php"); 
+        include('connection.php');
 
-$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile FROM user_";
+        if (isset($_POST['search'])) {
 
-$results = mysqli_query($conn, $sql);
+        $name= $_POST['name'];
+        $sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile FROM user_ WHERE Uname = '$name'";
+        $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($results) > 0) {
-    
-    while($row = mysqli_fetch_array($results)) {
-        $id= $row["ID"];
-        $name= $row["Uname"];
-        $email= $row["Email"];
-        $phone= $row["Tel"];
-        $address= $row["Address"];
-        $job= $row["Job"];
-        $profile= $row["Profile"];
+        if (mysqli_num_rows($result) > 0) {
 
-    ?>      
+            while($row = mysqli_fetch_array($result)) {
+                $id= $row["ID"];
+                $name= $row["Uname"];
+                $email= $row["Email"];
+                $phone= $row["Tel"];
+                $address= $row["Address"];
+                $job= $row["Job"];
+                $profile= $row["Profile"];
+    ?> 
 
     <div class="flex-container">
             <div class="card">
@@ -274,7 +275,7 @@ if (mysqli_num_rows($results) > 0) {
                       <p class="card-picture"><img src= '../profile/<?= $profile ?>'></p>   
                     </div>
                     <div class="card-contact">
-                    <form action="contactedit.php" method="POST">
+                    <form action="search.php" method="POST">
 
                         <table>
 
@@ -324,9 +325,14 @@ if (mysqli_num_rows($results) > 0) {
 
 
 <?php
+        }
+        
+    }else {
+        echo "<script>alert('The User is not found.')</script>";
+        echo "<script> location.href='contact.php'; </script>";
+
     }
-}else {
-    echo "0 results";
+
 }
 
 ?>
