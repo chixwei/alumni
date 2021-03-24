@@ -1,34 +1,57 @@
-*{
-    padding:0px;
-    margin:0px;
+<?php
+$errors=array('name'=>"",'email'=>"",'tel'=>"",'password'=>"");
+$name = $name = $email = $tel = $password ="" ;
+
+if(isset($_POST['submit'])){
+
+    if(empty($_POST['email'])){
+        $errors['email']= "Email is required"."<br>";
+    }
+    else{
+        $email=$_POST['email'];
+        if(!preg_match("/^\w+@ (hotmail ,gmail ,outlook)\.com/",$email)){
+            $errors['email']= "Please insert a valid email. Example: email@hotmail.com"."<br>";
+        }
 }
+}
+
+
+?>
+<!DOCTYPE html> 
+<html>
+<head>
+<link rel="icon" type="image/png" href="picture/homelogo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+
 
 body {
         font-family: Arial, Helvetica, sans-serif;
-        background-color: #FBFBEF;
+        background-color: #F3FFFA;
     }
 
-    
-    .right {
-        float:right;
-        margin-top:100px;
-        background-color: #FBFBEF;
+    .main {
+        background-color:white;
         width: 400px;
-        height: 400px;  
+        height: 400px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        animation: arrive 500ms ease-in-out 0.1s forwards;
     }
-    
+
     .sign {
         text-align: center;
         padding-top: 40px;
-        color: #EB9A2E;
-        text-shadow: 2px 2px #F0DE6C;
+        color: black;
+        text-shadow: 2px 1px lightgrey;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 35px;
+        font-size: 25px;
     }
     
-    .un {
-    width: 76%;
+    
+    .Np {
+        width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
     font-size: 14px;
@@ -42,8 +65,28 @@ body {
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 50px;
     margin-left: 46px;
-    text-align: center;
-    margin-bottom: 10px;
+    text-align: left;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .Cp {
+        width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: left;
+    margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
     
@@ -51,7 +94,7 @@ body {
         padding-top: 40px;
     }
 
-    .tel {
+    .email {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -66,43 +109,24 @@ body {
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 50px;
     margin-left: 46px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
+
+
     
-    .pass {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-    
-   
-    .un:focus, .tel:focus, .pass:focus {
-        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    .Np:focus, .Cp:focus, .email:focus{
+        border: 2px solid #B7882A !important;
         
     }
 
-    .submit{
+    .submit {
         font-weight:bold;
       cursor: pointer;
         border-radius: 5em;
         color: #FFFFFF;
-        background: linear-gradient(to right, #ECD099, #F0AF82);
+        background: linear-gradient(to right, #98D1EA, #B9ECDA);
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 10px;
@@ -116,33 +140,20 @@ body {
     .forgot {
         margin: 20px 0;
         font-size: 10px;
-        color: #A5782B;
+        color: #213F84;
         text-align: center;
     }
 
     .forgot a {
         text-align:right;
-        color: #E3C56D;
+        color: #6CB0F2;
         text-decoration: none;
     }
 
-    .signup{
-        text-align:center;
-        color: #6CB0F2;
-        padding-top: 0px;
-        font-size: 10px;
-    }
     
     a:hover{
         color: #A86CAD;
         text-decoration: none;
-    }
-
-    .left{
-        float:left;
-        width:100%;
-        height:790px;
-        box-align:left;
     }
     
     @media (max-width: 700px) {
@@ -151,3 +162,31 @@ body {
         } 
     }
 
+
+
+    </style>
+</head>
+
+<body>
+
+
+<form class="main">
+<p class=sign>Change Password</p>
+<form method="post" action="">
+
+  <input class="email" type="text" text-align="center" placeholder="Email">
+
+<input class="Np" type="text" text-align="center" placeholder="New Password">
+
+<input class="Cp" type="text" text-align="center" placeholder="Confirm new Password">
+
+  <a class="submit">Comfirm</a><br><br>
+
+<p class="forgot"><b> Back to login page </b><a href="login.php">Click here to login </a>.</p>
+            
+</div>
+</div>
+     
+</body>
+
+</html>

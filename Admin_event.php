@@ -158,10 +158,10 @@ body {
             <div id="navbar-right">
                 <br>
                 <a href="home.php">HOME</a>
-                <a href="about.php">ABOUT US</a>
-                <a href="event.php">NEWS & EVENTS</a>
-                <a href="contact.php">CONTACT</a>
-                <a href="login.php">LOG OUT</a>
+                <a href="Admin_about.php">ABOUT US</a>
+                <a href="Admin_event.php">NEWS & EVENTS</a>
+                <a href="Admin_contact.php">CONTACT</a>
+                <a href="home.php">LOG OUT</a>
                 </div>
         </div>
     
@@ -169,10 +169,10 @@ body {
     
     <header>
     <br><br><br>
-  <img class="pic" src="../picture/slide.jpg">
-  <img class="pic" src="../picture/slide2.png">
-  <img class="pic" src="../picture/slide3.jpg">
-  <img class="pic" src="../picture/slide4.jpg">
+  <img class="pic" src="picture/slide.jpg">
+  <img class="pic" src="picture/slide2.png">
+  <img class="pic" src="picture/slide3.jpg">
+  <img class="pic" src="picture/slide4.jpg">
 
   <script>
 var myIndex = 0;
@@ -201,7 +201,7 @@ function carousel() {
     <div class="box">
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/news1.png">
+                <img src="picture/news1.png">
             </div>
                 <h3>6-STAR RATING</h3>
                     <br>
@@ -212,7 +212,7 @@ function carousel() {
 
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/news2.png">
+                <img src="picture/news2.png">
             </div>
                 <h3>A Beginners Guide to Investing</h3>
                     <br>
@@ -224,7 +224,7 @@ function carousel() {
 
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/news3.png">
+                <img src="picture/news3.png">
             </div>
                 <h3>Building Better Relationships</h3>
                 <br>
@@ -235,7 +235,7 @@ function carousel() {
         
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/news4.png">
+                <img src="picture/news4.png">
             </div>
                 <h3>Launches the First Robotic Design in Malaysia</h3>
                 <br>
@@ -245,7 +245,7 @@ function carousel() {
                 
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/news5.png">
+                <img src="picture/news5.png">
             </div>
                 <h3>Moving Into 2021 With Hopeful Resolutions</h3>
                 <br>
@@ -255,7 +255,7 @@ function carousel() {
                 
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/news6.png">
+                <img src="picture/news6.png">
             </div>
                 <h3>A Year of Gratitude A Future Filled With Hope</h3>
                 <br>
@@ -273,7 +273,7 @@ function carousel() {
 
     <div class="box1">
         <div class="box_img">
-            <img src="../picture/events0.png">
+            <img src="picture/events0.png">
         </div>
             <h3>'Energy From The Sun : Role of Nanotechnology'</h3>
                 <br>
@@ -284,7 +284,7 @@ function carousel() {
 
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/events2.png">
+                <img src="picture/events2.png">
             </div>
                 <h3>Entrepreneurship & Innovation During Pandemic</h3>
                     <br>
@@ -294,7 +294,7 @@ function carousel() {
 
         <div class="box1">
             <div class="box_img">
-                <img src="../picture/events1.png">
+                <img src="picture/events1.png">
             </div>
                 <h3>From Basics to Getting it Right!</h3>
                     <br><br>

@@ -22,11 +22,11 @@ if (isset($_POST['approve'])) {
 
     if(mysqli_query($conn,$sql1)){
       echo "<script> alert('Approved.') </script>";
-      echo "<script> location.href='about.php'; </script>";
+      echo "<script> location.href='User_about.php'; </script>";
     }
     else{
       echo "<script> alert('Failed to register.') </script>";
-      echo "<script> location.href='approve.php'; </script>";
+      echo "<script> location.href='Admin_approve.php'; </script>";
     }
 
 } 
@@ -41,11 +41,11 @@ if (isset($_POST['reject']))  {
 	
     if(mysqli_query($conn,$sql2)){
       echo "<script> alert('Rejected.') </script>";
-      echo "<script> location.href='about.php'; </script>";
+      echo "<script> location.href='User_about.php'; </script>";
     }
     else{
       echo "<script> alert('failed to reject.') </script>";
-      echo "<script> location.href='approve.php'; </script>";
+      echo "<script> location.href='Admin_approve.php'; </script>";
     }
 
 }
@@ -59,7 +59,7 @@ if (isset($_POST['reject']))  {
 <style>
 
 body{    
-    background-image: url('../picture/approve4.png');
+    background-image: url('picture/approve4.png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
@@ -139,8 +139,8 @@ h3{
   while($row= mysqli_fetch_array($results)) {?>
 <div class="card">
   <div class="container">
-  <img src="../picture/approve.jpg" width="450px" height="300px">
-  <form action="approve.php" method="POST">
+  <img src="picture/approve.jpg" width="450px" height="300px">
+  <form action="Admin_approve.php" method="POST">
   <h3>Name:  <?php echo $row['Uname']?></h3>
   <input type="hidden" name="username" value="<?php echo $row["Uname"]?>"/><br>
 

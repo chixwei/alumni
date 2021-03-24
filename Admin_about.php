@@ -115,17 +115,17 @@ body {
         <div id="navbar-right">
             <br>
             <a href="home.php">HOME</a>
-            <a href="about.php">ABOUT US</a>
-            <a href="event.php">NEWS & EVENTS</a>
-            <a href="contact.php">CONTACT</a>
-            <a href="login.php">LOG OUT</a>
+            <a href="Admin_about.php">ABOUT US</a>
+            <a href="Admin_event.php">NEWS & EVENTS</a>
+            <a href="Admin_contact.php">CONTACT</a>
+            <a href="home.php">LOG OUT</a>
         </div>
     </div>
 
 <br><br><br>
 
 <header>
-        <img src='../picture/uni0.png' width='100%'>
+        <img src='picture/uni0.png' width='100%'>
     </header>
 
 <div class="row">
@@ -133,7 +133,7 @@ body {
         <div class="card">
             <h2>The University</h2>
             <h4>Introduction</h4>
-            <div class="fakeimg" style="height:215px;"><img src='../picture/uni.png' width='100%'></div>
+            <div class="fakeimg" style="height:215px;"><img src='picture/uni.png' width='100%'></div>
 
 <br><br>            
         
@@ -156,7 +156,7 @@ body {
     <div class="card">
         <h2>Vision & Mission</h2>
             <h2>Educational Goals & Creed</h2>
-                <div class="fakeimg" style="height:210px;"><img src='../picture/uni1.png' width='100%'></div>
+                <div class="fakeimg" style="height:210px;"><img src='picture/uni1.png' width='100%'></div>
 
             <h5>Our Vision</h5>
                 <ul><li>Making international engagement our distinctive cross-cutting theme.</li></ul>
@@ -183,7 +183,7 @@ body {
 <div class="rightcolumn">
     <div class="card">
         <h2>About Us</h2>
-            <div class="fakeimg" style="height:130px;"><img src='../picture/uni2.png' width='100%'></div>
+            <div class="fakeimg" style="height:130px;"><img src='picture/uni2.png' width='100%'></div>
 
             <p>We make lives better by producing leaders of society and equipping our people with leadership qualities 
                so they can serve our communities at every level.
@@ -192,16 +192,16 @@ body {
 
 <div class="card">
     <h2>Popular Post</h2>
-        <div class="fakeimg" style="height:145px;"><img src='../picture/uni3.png' width='100%'></div><br>
-        <div class="fakeimg" style="height:158px;"><img src='../picture/uni4.png' width='100%'></div><br>
-        <div class="fakeimg" style="height:142px;"><img src='../picture/uni5.png' width='100%'></div><br>
+        <div class="fakeimg" style="height:145px;"><img src='picture/uni3.png' width='100%'></div><br>
+        <div class="fakeimg" style="height:158px;"><img src='picture/uni4.png' width='100%'></div><br>
+        <div class="fakeimg" style="height:142px;"><img src='picture/uni5.png' width='100%'></div><br>
     </div>
 
 <div class="card">
     <h2>History</h2>
         <p>Kaweiee University or KU, Malaysia's technology university, is situated on a 922 acre (373.12 hectare) 
         campus in the southwest of Kuala Lumpur, the capital of Malaysia.
-        <div class="fakeimg" style="height:225px;"><img src='../picture/uni6.png' width='100%'></div><br>
+        <div class="fakeimg" style="height:225px;"><img src='picture/uni6.png' width='100%'></div><br>
         </p>
         </div>
     </div>

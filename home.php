@@ -10,12 +10,12 @@
         <header>
 
             <div class="logo">
-                <img src="../picture/homelogo.png" alt="Kaweiee Logo">
+                <img src="picture/homelogo.png" alt="Kaweiee Logo">
             </div>
 
             <div class="vid">
                 <video autoplay muted loop id="homevideo">
-                    <source src="../picture/homevideo.mp4" type="video/mp4">
+                    <source src="picture/homevideo.mp4" type="video/mp4">
                         Your browser does not support HTML5 video
                 </video>
             </div>
@@ -51,17 +51,17 @@
             <div class="slideshow-container"  data-cycle="2000">
 
               <div class="mySlides fade">
-                <img src="../picture/homeabout.jpg" style="width:100%; height:450px;">
+                <img src="picture/homeabout.jpg" style="width:100%; height:450px;">
 
               </div>
               
               <div class="mySlides fade">
-                <img src="../picture/homeevents.jpg" style="width:100%; height:450px;">
+                <img src="picture/homeevents.jpg" style="width:100%; height:450px;">
 
               </div>
               
               <div class="mySlides fade">
-                <img src="../picture/homecontact.jpg" style="width:100%; height:450px;">
+                <img src="picture/homecontact.jpg" style="width:100%; height:450px;">
 
               </div>
               </div>
@@ -89,17 +89,17 @@
             <div class="slideshow-container"  data-cycle="2500">
 
               <div class="mySlides fade">
-                <img src="../picture/event1.jpg" style="width:100%; height:450px;">
+                <img src="picture/event1.jpg" style="width:100%; height:450px;">
 
               </div>
               
               <div class="mySlides fade">
-                <img src="../picture/event2.jpg" style="width:100%; height:450px;">
+                <img src="picture/event2.jpg" style="width:100%; height:450px;">
 
               </div>
               
               <div class="mySlides fade">
-                <img src="../picture/event3.jpg" style="width:100%; height:450px;">
+                <img src="picture/event3.jpg" style="width:100%; height:450px;">
 
               </div>
               
@@ -128,17 +128,17 @@
                     <div class="slideshow-container"  data-cycle="2000">
 
                       <div class="mySlides fade">
-                        <img src="../picture/contact1.jpg" style="width:100%; height:450px;">
+                        <img src="picture/contact1.jpg" style="width:100%; height:450px;">
 
                       </div>
                       
                       <div class="mySlides fade">
-                        <img src="../picture/contact2.jpg" style="width:100%; height:450px;">
+                        <img src="picture/contact2.jpg" style="width:100%; height:450px;">
 
                       </div>
                       
                       <div class="mySlides fade">
-                        <img src="../picture/contact3.jpg" style="width:100%; height:450px;">
+                        <img src="picture/contact3.jpg" style="width:100%; height:450px;">
 
                       </div>
                       

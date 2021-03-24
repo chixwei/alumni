@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
-*{
+        *{
             padding:0;
             margin:0;
             
@@ -211,10 +211,10 @@
             <div id="navbar-right">
                 <br>
                 <a href="home.php">HOME</a>
-                <a href="about.php">ABOUT US</a>
-                <a href="event.php">NEWS & EVENTS</a>
-                <a href="contact.php">CONTACT</a>
-                <a href="login.php">LOG OUT</a>
+                <a href="User_about.php">ABOUT US</a>
+                <a href="User_event.php">NEWS & EVENTS</a>
+                <a href="User_contact.php">CONTACT</a>
+                <a href="home.php">LOG OUT</a>
                 </div>
         </div>
     </head>
@@ -238,8 +238,8 @@
         <form action="search.php" method="POST" class="search" >
             <table>
                 <tr>
-                    <td><input type="text" name="name" placeholder="Search Name..."></td>
-                    <td><button type="submit" name="search"><img src= "../picture/search.png"></td>
+                    <td><input type="text" name="name" placeholder="  Search Name..."></td>
+                    <td><button type="submit" name="search"><img src= "picture/search.png"></td>
                 </tr>
             </table>
         </form>
@@ -272,7 +272,7 @@
               <div class="card-cardtion">
                   <div class="card-container">
                     <div class="card-profile">
-                      <p class="card-picture"><img src= '../profile/<?= $profile ?>'></p>   
+                      <p class="card-picture"><img src= 'profile/<?= $profile ?>'></p>   
                     </div>
                     <div class="card-contact">
                     <form action="search.php" method="POST">
@@ -281,8 +281,8 @@
 
                         <tr>
                             <td colspan=5></td>
-                            <td><a href="contactedit.php?edit=<?= $id?>"><img src="../picture/edit.png" name="edit"></a></td>
-                            <td><a href="delete.php?delete=<?= $id?>"><img src="../picture/delete.png" name="delete"></a></td>
+                            <td><a href="contactedit.php?edit=<?= $id?>"><img src="picture/edit.png" name="edit"></a></td>
+                            <td><a href="delete.php?delete=<?= $id?>"><img src="picture/delete.png" name="delete"></a></td>
                         </tr>
 
                         <tr>
@@ -329,7 +329,7 @@
         
     }else {
         echo "<script>alert('The User is not found.')</script>";
-        echo "<script> location.href='contact.php'; </script>";
+        echo "<script> location.href='User_contact.php'; </script>";
 
     }
 

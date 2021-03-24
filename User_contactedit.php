@@ -219,7 +219,7 @@ mysqli_close($conn);
     <div class="login-box">
     <h2>Update Contact</h2>
 
-        <form action="contactedit.php" method="POST" name="updateform" enctype="multipart/form-data">
+        <form action="User_contactedit.php" method="POST" name="updateform" enctype="multipart/form-data">
             
             <input type="hidden" name="ID" value="<?= $id; ?>"></input>
             
@@ -290,7 +290,7 @@ mysqli_close($conn);
     if($results) {
 
         echo "<script>alert('Data is updated.')</script>";
-        echo "<script> location.href='contact.php'; </script>";
+        echo "<script> location.href='User_contact.php'; </script>";
         
 
     }else {

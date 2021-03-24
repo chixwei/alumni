@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
             echo "Query error: " . mysqli_error($conn); //showing the database connection error
         }
 
-        echo "<script> alert('You have submitted the form')</script>";
+        echo "<script> location.href='User_waiting.php'; </script>";
         $name = $email = $tel = $password ="" ;
     }
 }
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html> 
 <html>
 <head>
-<link rel="icon" type="image/png" href="../picture/kaweiee2.png">
+<link rel="icon" type="image/png" href="picture/kaweiee2.png">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
 
@@ -244,13 +244,13 @@ body {
 
 <body>
 <div style="max-width:1100px">
-  <img class="left" src="../picture/college.jpg ">
+  <img class="left" src="picture/college.jpg ">
   </div>
 
 
 <div class="right">
 
-<img class="sign" src="../picture/Kaweiee3.png" width="300px" height="300px">
+<img class="sign" src="picture/Kaweiee3.png" width="300px" height="300px">
 
 <form action="signup.php" method="POST">
 <form class="form1">

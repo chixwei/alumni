@@ -1,8 +1,8 @@
 <?php
 
 include("connection.php");
-if(isset($_POST["submit"]))
-{
+if(isset($_POST["submit"])) {
+    
     $name=$_POST["name"];
     $password=$_POST["password"];
     $sql= "SELECT Uname,Upassword FROM user_ WHERE Uname='$name' ";
@@ -14,7 +14,7 @@ if(isset($_POST["submit"]))
         $row2 = mysqli_fetch_array($results2);
 
         if ($row["Upassword"]==$row2["Upassword"]){
-            echo "<script> location.href='about.php'; </script>";
+            echo "<script> location.href='User_about.php'; </script>";
             exit;
         } 
         else 
@@ -39,8 +39,8 @@ if(isset($_POST["submit"]))
     position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
+    width: 100%; 
+    height: 100%;
     z-index: -2;
 }
 
@@ -208,7 +208,7 @@ body {
 
 <div class="vid">
     <video autoplay muted loop id="bgvideo">
-    <source src="../picture/bgvideo.mp4" type="video/mp4">
+    <source src="picture/bgvideo.mp4" type="video/mp4">
     </video>
 </div>
 

@@ -39,7 +39,7 @@ body, html {
 
 .bg-image {
   /* The image used */
-  background-image: url("../picture/grad.jpg");
+  background-image: url("picture/grad.jpg");
   
   /* Add the blur effect */
   filter: blur(8px);
