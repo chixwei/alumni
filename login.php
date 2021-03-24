@@ -227,7 +227,7 @@ body {
 
   <p class="signup"><a href="signup.php">Register</p>
 
-  <p class="forgot"><a href=""><b> Forgot your password? </b></p>
+  <p class="forgot"><a href="forgot.php"><b> Forgot your password? </b></p>
             
 </div>
      
