@@ -274,14 +274,14 @@ if (mysqli_num_rows($results) > 0) {
                       <p class="card-picture"><img src= 'profile/<?= $profile ?>' value="profile picture"></p>   
                     </div>
                     <div class="card-contact">
-                    <form action="User_contactedit.php" method="POST">
+                    <form action="User_contact.php" method="POST">
 
                         <table>
 
-                        <tr>
-                            <td colspan=5></td>
-                            <td><a href="contactedit.php?edit=<?= $id?>"><img src="picture/edit.png" name="edit"></a></td>
-                            <td><a href="delete.php?delete=<?= $id?>"><img src="picture/delete.png" name="delete"></a></td>
+                        <tr style="height:30px;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
 
                         <tr>

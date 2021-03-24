@@ -235,7 +235,7 @@
     <body>
 
     
-        <form action="search.php" method="POST" class="search" >
+        <form action="User_search.php" method="POST" class="search" >
             <table>
                 <tr>
                     <td><input type="text" name="name" placeholder="  Search Name..."></td>
@@ -279,10 +279,10 @@
 
                         <table>
 
-                        <tr>
-                            <td colspan=5></td>
-                            <td><a href="contactedit.php?edit=<?= $id?>"><img src="picture/edit.png" name="edit"></a></td>
-                            <td><a href="delete.php?delete=<?= $id?>"><img src="picture/delete.png" name="delete"></a></td>
+                        <tr style="height:30px;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
 
                         <tr>
