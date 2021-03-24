@@ -3,7 +3,7 @@ include("connection.php");
 
 //write query to retrive data
 
-$sql = "SELECT Uname,Email,Tel,Upassword FROM user_ WHERE status_='registered'";
+$sql = "SELECT Uname,Email,Tel,Upassword FROM user_ WHERE status_=''";
 
 //make query and get results
 
@@ -22,11 +22,11 @@ if (isset($_POST['approve'])) {
 
     if(mysqli_query($conn,$sql1)){
       echo "<script> alert('Approved.') </script>";
-      echo "<script> location.href='User_about.php'; </script>";
+      echo "<script> location.href='about.php'; </script>";
     }
     else{
       echo "<script> alert('Failed to register.') </script>";
-      echo "<script> location.href='Admin_approve.php'; </script>";
+      echo "<script> location.href='approve.php'; </script>";
     }
 
 } 
@@ -41,11 +41,11 @@ if (isset($_POST['reject']))  {
 	
     if(mysqli_query($conn,$sql2)){
       echo "<script> alert('Rejected.') </script>";
-      echo "<script> location.href='User_about.php'; </script>";
+      echo "<script> location.href='about.php'; </script>";
     }
     else{
       echo "<script> alert('failed to reject.') </script>";
-      echo "<script> location.href='Admin_approve.php'; </script>";
+      echo "<script> location.href='approve.php'; </script>";
     }
 
 }
@@ -64,8 +64,6 @@ body{
   background-attachment: fixed; 
   background-size: 100% 100%;
 }
-
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -132,18 +130,20 @@ h3{
 
 
 </style>
-</head>
 <body>
 <h2 style= margin-left:500px>Admin Approval</h2>
+
 <?php //while($data = mysqli_fetch_array($results)){ 
   while($row= mysqli_fetch_array($results)) {?>
+
+
 <div class="card">
   <div class="container">
   <img src="picture/approve.jpg" width="450px" height="300px">
   <form action="Admin_approve.php" method="POST">
-  <h3>Name:  <?php echo $row['Uname']?></h3>
-  <input type="hidden" name="username" value="<?php echo $row["Uname"]?>"/><br>
 
+  <h3>Name:  <?php echo $row['Uname']?></h3>
+  <input type="hidden" name="username" value="<?php echo $row["Uname"]?>"/>
 
   <h3>Email:  <?php echo $row['Email']?></h3>
 

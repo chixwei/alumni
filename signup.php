@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
     else{
         $tel=$_POST['tel'];
         if(!preg_match("/\+60\d{9,10}/i",$tel)){
-         $errors['tel']= "Please insert a valid phone number. Example: +60123456789"."<br>";
+         $errors['tel']= "Please insert a valid phone number. Example: +6012345678"."<br>";
         }
     }
 
@@ -48,29 +48,29 @@ if(isset($_POST['submit'])){
         $tel = mysqli_real_escape_string($conn, $_POST['tel']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        $sql = "INSERT INTO user_(Uname, Email, Tel, Upassword) VALUES('$name', '$email', '$tel', '$password')";
+        $sql = "INSERT INTO user_(Uname, Email, Tel, Upassword, status_) VALUES('$name', '$email', '$tel', '$password','')";
 
         //save to db and check
         if(mysqli_query($conn, $sql)){
             //success
-            header("about.php");
+            header("waiting.php");
         } else {
             //error
             echo "Query error: " . mysqli_error($conn); //showing the database connection error
         }
 
         echo "<script> location.href='User_waiting.php'; </script>";
-        $name = $email = $tel = $password ="" ;
+
     }
 }
-
-
-
 ?>
+<?php
+?>
+
 <!DOCTYPE html> 
 <html>
 <head>
-<link rel="icon" type="image/png" href="picture/kaweiee2.png">
+<link rel="icon" type="image/png" href="../picture/kaweiee2.png">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
 
