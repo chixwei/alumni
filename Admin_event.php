@@ -161,6 +161,7 @@ body {
                 <a href="Admin_about.php">ABOUT US</a>
                 <a href="Admin_event.php">NEWS & EVENTS</a>
                 <a href="Admin_contact.php">CONTACT</a>
+                <a href="Admin_approve.php">APPROVE</a>
                 <a href="home.php">LOG OUT</a>
                 </div>
         </div>
