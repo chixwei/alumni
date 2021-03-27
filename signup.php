@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
         $tel = mysqli_real_escape_string($conn, $_POST['tel']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        $sql = "INSERT INTO user_(Uname, Email, Tel, Upassword, status_) VALUES('$name', '$email', '$tel', '$password','')";
+        $sql = "INSERT INTO user_(Uname, Email, Tel, Upassword, Status_) VALUES('$name', '$email', '$tel', '$password','')";
 
         //save to db and check
         if(mysqli_query($conn, $sql)){
