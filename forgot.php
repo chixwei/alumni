@@ -6,7 +6,7 @@ if(isset($_POST["submit"]))
     
     $email=$_POST["email"];
     $password=$_POST["password"];
-    $sql= "SELECT Email,Upassword FROM user_ WHERE Email='$email' ";
+    $sql= "SELECT Email,Upassword FROM user_ WHERE Email='$email'";
     $results= mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($results)>0) {
@@ -15,7 +15,6 @@ if(isset($_POST["submit"]))
         if ($row["Email"]){
 
             echo "<script> location.href='login.php'; </script>";
-            exit;
         }
         else 
         {
@@ -24,32 +23,26 @@ if(isset($_POST["submit"]))
         }
         
         mysqli_close($conn);
-
-
-    $email ="" ;
+   }
 }
 
-else
-{
-    echo '<script type="text/javascript"> window.onload=function(){alert("Something went wrong with your email or password."); window.location.href="forgot.php";} </script>';
-exit;
-}
-}
+    $email ="";
+ 
 
 ?>
 <?php
-
+session_start();
 include("connection.php");
 if(isset($_POST["submit"])) {
     
-    $password=$_POST["password"];
     $email=$_POST["email"];
-    $sql= "UPDATE user_ SET Upassword = '$password' WHERE email= '$email'";
+    $password=$_POST["password"];
+    $sql= "UPDATE user_ SET Upassword ='$password' WHERE Email='$email'";
     $results= mysqli_query($conn,$sql);
     if($results) {
 
         echo "<script>alert('Password had been changed.')</script>";
-        echo "<script> location.href='login.php'; </script>";
+        // echo "<script> location.href='login.php'; </script>";
         
 
     }else {
@@ -61,7 +54,7 @@ if(isset($_POST["submit"])) {
 } 
 
 
-    $password ="" ;
+    $password ="";
 
 
 
@@ -69,7 +62,6 @@ if(isset($_POST["submit"])) {
 
 
 <!DOCTYPE html> 
-<html>
 <head>
 <link rel="icon" type="image/png" href="picture/homelogo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,21 +214,18 @@ body {
 
 
 <div class="main">
-<p class=sign>Change Password</p><br><br>
+<p class="sign">Change Password</p><br><br>
 <form action="forgot.php" method="POST">
 
   <input class="email" type="text" text-align="center" placeholder="Email" name="email">
-  <input type="hidden" value="forgotpassword and login"/>
+  <!-- <input type="hidden" value="forgotpassword and login"/> -->
 
 <input class="Np" type="password" text-align="center" placeholder="New Password" name="password">
 
 
 <input type="submit" class="enter" value="Submit" name="submit">
+
 </form>
-<p class="forgot"><b> Back to login page </b><a href="login.php">Click here to login </a>.</p>
-
-</div>
-     
+</div>   
 </body>
-
 </html>
