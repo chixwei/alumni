@@ -5,8 +5,8 @@ if(isset($_POST["submit"])) {
     
     $name=$_POST["name"];
     $password=$_POST["password"];
-    $sql= "SELECT Uname,Upassword FROM user_ WHERE Uname='$name' ";
-    $sql2= "SELECT Uname,Upassword FROM user_ WHERE Upassword='$password' ";
+    $sql= "SELECT Uname,Upassword, Email, Tel, Address, Job, Profile, Gender, Nick, DOB, Edu, Fax, Company, ID FROM user_ WHERE Uname='$name' ";
+    $sql2= "SELECT Uname,Upassword, Email, Tel, Address, Job, Profile, Gender, Nick, DOB, Edu, Fax, Company, ID FROM user_ WHERE Upassword='$password' ";
     $results= mysqli_query($conn,$sql);
     $results2= mysqli_query($conn,$sql2);
     if(mysqli_num_rows($results)>0 and mysqli_num_rows($results2)>0){
@@ -15,19 +15,19 @@ if(isset($_POST["submit"])) {
 
         if ($row["Upassword"]==$row2["Upassword"]){
 
-            $_SESSION['ID'] = $id;
+            $_SESSION['ID'] = $row["ID"];
             $_SESSION['name'] = $row["Uname"];
             $_SESSION['email'] = $row["Email"];
             $_SESSION['phone'] = $row["Tel"];
             $_SESSION['address'] = $row["Address"];
-            $_SESSION['department'] = $row["Job"];
+            $_SESSION['job'] = $row["Job"];
             $_SESSION['profile'] = $row["Profile"];
             $_SESSION['gender'] = $row["Gender"];
             $_SESSION['nickname'] = $row["Nick"];
             $_SESSION['birth'] = $row["DOB"];
             $_SESSION['edu'] = $row["Edu"];
             $_SESSION['fax'] = $row["Fax"];
-            $_SESSION['company'] = $row["company"];
+            $_SESSION['company'] = $row["Company"];
 
             echo "<script> location.href='User_about.php'; </script>";
             exit;
@@ -235,6 +235,7 @@ body {
 
 <form action="login.php" method="post">
 <form class="form1">
+
 
   <input class="un" type="text" placeholder="Username" name="name">
 

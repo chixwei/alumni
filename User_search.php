@@ -214,6 +214,7 @@
                 <a href="User_about.php">ABOUT US</a>
                 <a href="User_event.php">NEWS & EVENTS</a>
                 <a href="User_contact.php">CONTACT</a>
+                <a href="User_profile.php">PROFILE</a>
                 <a href="home.php">LOG OUT</a>
                 </div>
         </div>

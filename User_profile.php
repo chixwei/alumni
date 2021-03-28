@@ -2,20 +2,30 @@
 session_start();
 include("connection.php"); 
 
-$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile FROM user_";
+// $sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile, Gender, Nick, DOB, Edu, Fax, Company FROM user_";
 
-$results = mysqli_query($conn, $sql);
+// $results = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($results) > 0) {
+// if (mysqli_num_rows($results) > 0) {
     
-    while($row = mysqli_fetch_array($results)) {
-        $id= $row["ID"];
-        $name= $row["Uname"];
-        $email= $row["Email"];
-        $phone= $row["Tel"];
-        $address= $row["Address"];
-        $job= $row["Job"];
-        $profile= $row["Profile"];
+//     $row = mysqli_fetch_array($results);
+//         if($SESSION['name']== $row["Uname"]){
+//         $id= $row["ID"];
+//         $name= $row["Uname"];
+//         $email= $row["Email"];
+//         $phone= $row["Tel"];
+//         $address= $row["Address"];
+//         $job= $row["Job"];
+//         $profile= $row["Profile"];
+//         $gender= $row["Gender"];
+//         $nick= $row["Nick"];
+//         $DOB= $row["DOB"];
+//         $edu= $row["Edu"];
+//         $fax= $row["Fax"];
+//         $company= $row["Company"];
+//         }
+    
+// }
 
     ?>  
 
@@ -77,12 +87,6 @@ if (mysqli_num_rows($results) > 0) {
         #navbar-right {
             float: right;
         }
-
-        .flex-container {
-            display: flex;
-            flex-direction: column;
-            
-        }
         
         .card {
             background-color: #e7d9bc; /*background*/
@@ -100,84 +104,39 @@ if (mysqli_num_rows($results) > 0) {
             font-weight: normal;
             font-size: 1.6rem;
             line-height: 1.3;
-            margin: 90px;
+            margin: 100px;
         }
 
         .card-container {
-            display: flex;
-            margin: 50px;
+            display: center;
+            margin: 100px;
             width: 100%;
         }
 
-        .card-profile {
-            width: 400px;
-            height: 280px;
-            background: linear-gradient(to right, #FFA500, #e5c063);
-            text-align: center;
-            color: black;
-            padding: 40px;
-            border-radius: 10px;
-            margin-left: auto;
-        }
 
         .card-picture img{
-            height:300px;
-            width:300px;
+            height:400px;
+            width:400px;
             margin-top: -10px;
             border-radius: 15px;
+            display: center;
         }
 
         .card-contact {
             background: linear-gradient(to right, #fbf6e9, #fdfaf4);
-            height: 350px;
-            width: 600px;
+            height: 650px;
+            width: 750px;
             border-radius: 10px;
-            text-align: left;
+            text-align: center;
             color: black;
             padding: 5px;
             margin-right:auto;
-            
-        }
-
-        table {
-            border-collapse: seperate;
-            border-spacing: 10px;
-            width: 600px;
-            height: auto;
-            margin-left:10px;
-
+            display: center;
         }
 
         img{
             width:25px;
         }
-
-        .search {
-            background: #e7d9bc;
-        }
-
-        .search table {
-            width: 250px;
-            margin-left: 1150px;
-            margin-top:200px;
-        }
-
-        .search input {
-            width: 200px;
-            height: 30px;
-            border-radius: 20px;
-            
-        }
-
-        .search input:hover {
-            background: rgba(207, 198, 168, 0.918);
-            box-shadow: 4px 4px rgba(212, 130, 92, 0.952);
-        }
-
-        .search button:hover {
-            box-shadow: 4px 4px rgba(212, 130, 92, 0.952);
-        }
-        
 
         @media screen and (max-width: 1000px) {
             .card-container {
@@ -187,7 +146,7 @@ if (mysqli_num_rows($results) > 0) {
 
             .card-profile {
                 height: 280px;
-                width: 500px;
+                width: 800px;
                 margin-left:-5%;
             }
 
@@ -195,19 +154,6 @@ if (mysqli_num_rows($results) > 0) {
                margin-left:-5%;
                height: 400px;
                width: 570px;
-            }
-
-            table {
-                border-collapse: seperate;
-                border-spacing: 10px;
-                width: 550px;
-                height: auto;
-                margin-left:10px;
-            }
-
-            .search {
-                margin-top: 260px;
-                margin-left:-700px;
             }
             
         }
@@ -264,49 +210,89 @@ if (mysqli_num_rows($results) > 0) {
               <div class="card-cardtion">
                   <div class="card-container">
                     <div class="card-profile">
-                      <p class="card-picture"><img src= 'profile/<?= $profile ?>'></p>   
+                      <p class="card-picture"><img src= 'profile/<?= $_SESSION['profile'] ?>'></p>   
                     </div>
                     <div class="card-contact">
-                    <form action="Admin_contactedit.php" method="POST">
+                    <form action="User_profile.php" method="POST">
 
                         <table>
-
+                        <!-- $_SESSION['ID'] = $id;
+            $_SESSION['name'] = $row["Uname"];
+            $_SESSION['email'] = $row["Email"];
+            $_SESSION['phone'] = $row["Tel"];
+            $_SESSION['address'] = $row["Address"];
+            $_SESSION['job'] = $row["Job"];
+            $_SESSION['profile'] = $row["Profile"];
+            $_SESSION['gender'] = $row["Gender"];
+            $_SESSION['nickname'] = $row["Nick"];
+            $_SESSION['birth'] = $row["DOB"];
+            $_SESSION['edu'] = $row["Edu"];
+            $_SESSION['fax'] = $row["Fax"];
+            $_SESSION['company'] = $row["company"]; -->
                         <tr>
-                            <td colspan=5></td>
-                            <td><a href="Admin_contactedit.php?edit=<?= $id?>"><img src="picture/edit.png" name="edit"></a></td>
-                            <td><a href="Admin_delete.php?delete=<?= $id?>"><img src="picture/delete.png" name="delete"></a></td>
+                            <td colspan=12></td>
+                            <td><a href="User_profileedit.php?edit=<?= $_SESSION['ID'] ?>"><img src="picture/edit.png" name="edit"></a></td>
                         </tr>
 
                         <tr>
                             <td>ID: </td>
-                            <td><?= $id ?></td>
+                            <td><?=  $_SESSION['ID'] ?></td>
                         </tr>
 
                         <tr>
                             <td>Name: </td>
-                            <td><?= $name ?></td>
+                            <td><?=  $_SESSION['name']; ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Nickname: </td>
+                            <td><?= $_SESSION['nickname'] ?></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><?= $email ?></td>
+                            <td><?= $_SESSION['email'] ?></td>
                         </tr>
 
                         <tr>
                             <td>Phone: </td>
-                            <td><?= $phone ?></td>
+                            <td><?= $_SESSION['phone'] ?></td>
                         </tr>
 
                         <tr>
                             <td>Address: </td>
-                            <td><?= $address ?></td>
+                            <td><?= $_SESSION['address'] ?></td>
                         </tr>
 
                         <tr>
                             <td>Job: </td>
-                            <td><?= $job ?></td>
+                            <td><?= $_SESSION['job'] ?></td>
                         </tr>
 
+                        <tr>
+                            <td>Gender: </td>
+                            <td><?= $_SESSION['gender'] ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Date of Birthday: </td>
+                            <td><?= $_SESSION['birth'] ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Education: </td>
+                            <td><?= $_SESSION['edu'] ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fax Number: </td>
+                            <td><?= $_SESSION['fax'] ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Company: </td>
+                            <td><?= $_SESSION['company']?></td>
+                        </tr>
 
                         </table>
                         </form>
@@ -316,17 +302,13 @@ if (mysqli_num_rows($results) > 0) {
             </div>
 
 
-<?php
-    }
-}else {
-    echo "0 results";
-}
+<!-- <?php
+//     }
+// }else {
+//     echo "0 results";
+// }
 
-?>
+?> -->
 
 </body>
 <html>
-
-
-
-
