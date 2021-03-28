@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("connection.php");
 if(isset($_POST["submit"])) {
     
@@ -14,6 +14,21 @@ if(isset($_POST["submit"])) {
         $row2 = mysqli_fetch_array($results2);
 
         if ($row["Upassword"]==$row2["Upassword"]){
+
+            $_SESSION['ID'] = $id;
+            $_SESSION['name'] = $row["Uname"];
+            $_SESSION['email'] = $row["Email"];
+            $_SESSION['phone'] = $row["Tel"];
+            $_SESSION['address'] = $row["Address"];
+            $_SESSION['department'] = $row["Job"];
+            $_SESSION['profile'] = $row["Profile"];
+            $_SESSION['gender'] = $row["Gender"];
+            $_SESSION['nickname'] = $row["Nick"];
+            $_SESSION['birth'] = $row["DOB"];
+            $_SESSION['edu'] = $row["Edu"];
+            $_SESSION['fax'] = $row["Fax"];
+            $_SESSION['company'] = $row["company"];
+
             echo "<script> location.href='User_about.php'; </script>";
             exit;
         } 
@@ -50,21 +65,21 @@ body {
     }
     
     .main {
-        background-color:white;
+        background-color: #F3EBE9;
         width: 400px;
         height: 400px;
         margin: 7em auto;
         border-radius: 1.5em;
         animation: arrive 500ms ease-in-out 0.1s forwards;
-        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        box-shadow: 0px 11px 35px 2px black;
         opacity:50%;
     }
     
     .sign {
         text-align: center;
         padding-top: 40px;
-        color: #D4AF37;
-        text-shadow: 2px 1px #B7882A;
+        color: #C07B18;
+        text-shadow: 2px 1px #F1D7A6;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         font-size: 23px;
@@ -116,7 +131,7 @@ body {
     
    
     .un:focus, .pass:focus {
-        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        border: 2px solid #B7882A !important;
         
     }
 
@@ -135,7 +150,7 @@ body {
         font-family: Arial, Helvetica, sans-serif;
         margin-left: 35%;
         font-size: 14px;
-        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.08);
     }
     
     .forgot {
@@ -164,9 +179,11 @@ body {
     }
 
     a:hover{
-        color: #F7E3CC;
+        color: #9B5B34;
         text-decoration: none;
+            
     }
+
 
 
 
@@ -225,7 +242,7 @@ body {
 
   <input type="submit" class="enter" value="Login" name="submit"><br><br>
 
-  <p class="signup"><a href="signup.php">Register</p>
+  <p class="signup"><a href="signup.php"><b>Register</b></p>
 
   <p class="forgot"><a href="forgot.php"><b> Forgot your password? </b></p>
             

@@ -211,18 +211,11 @@
             <div id="navbar-right">
                 <br>
                 <a href="home.php">HOME</a>
-<<<<<<< Updated upstream:Admin_contact.php
                 <a href="Admin_about.php">ABOUT US</a>
                 <a href="Admin_event.php">NEWS & EVENTS</a>
                 <a href="Admin_contact.php">CONTACT</a>
+                <a href="Admin_approve.php">APPROVE</a>
                 <a href="home.php">LOG OUT</a>
-=======
-                <a href="about.php">ABOUT US</a>
-                <a href="event.php">NEWS & EVENTS</a>
-                <a href="contact.php">CONTACT</a>
-                <a href="approve.php">APPROVE</a>
-                <a href="login.php">LOG OUT</a>
->>>>>>> Stashed changes:admin/contact.php
                 </div>
         </div>
     </head>

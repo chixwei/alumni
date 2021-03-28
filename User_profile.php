@@ -6,21 +6,22 @@ $sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile, Gender, 
 
 $results = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($results) > 0) {
+// if (mysqli_num_rows($results) > 0) {
     
-    while($row = mysqli_fetch_array($results)) {
-        $name= $row["Uname"];
-        $email= $row["Email"];
-        $phone= $row["Tel"];
-        $address= $row["Address"];
-        $job= $row["Job"];
-        $profile= $row["Profile"];
-        $gender= $row["Gender"];
-        $nick= $row["Nick"];
-        $DOB= $row["DOB"];
-        $edu= $row["Edu"];
-        $fax= $row["Fax"];
-        $company= $row["Company"];
+//     while($row = mysqli_fetch_array($results)) {
+//         $id= $row["ID"];
+//         $name= $row["Uname"];
+//         $email= $row["Email"];
+//         $phone= $row["Tel"];
+//         $address= $row["Address"];
+//         $job= $row["Job"];
+//         $profile= $row["Profile"];
+//         $gender= $row["Gender"];
+//         $nick= $row["Nick"];
+//         $DOB= $row["DOB"];
+//         $edu= $row["Edu"];
+//         $fax= $row["Fax"];
+//         $company= $row["Company"];
 
     ?>  
 
@@ -205,76 +206,88 @@ if (mysqli_num_rows($results) > 0) {
               <div class="card-cardtion">
                   <div class="card-container">
                     <div class="card-profile">
-                      <p class="card-picture"><img src= 'profile/<?= $profile ?>'></p>   
+                      <p class="card-picture"><img src= 'profile/<?= $_SESSION['profile']; ?>'></p>   
                     </div>
                     <div class="card-contact">
                     <form action="User_profileedit.php" method="POST">
 
                         <table>
-
+                        <!-- $_SESSION['ID'] = $id;
+            $_SESSION['name'] = $row["Uname"];
+            $_SESSION['email'] = $row["Email"];
+            $_SESSION['phone'] = $row["Tel"];
+            $_SESSION['address'] = $row["Address"];
+            $_SESSION['department'] = $row["Job"];
+            $_SESSION['profile'] = $row["Profile"];
+            $_SESSION['gender'] = $row["Gender"];
+            $_SESSION['nickname'] = $row["Nick"];
+            $_SESSION['birth'] = $row["DOB"];
+            $_SESSION['edu'] = $row["Edu"];
+            $_SESSION['fax'] = $row["Fax"];
+            $_SESSION['company'] = $row["company"]; -->
                         <tr>
                             <td colspan=12></td>
-                            <td><a href="User_profileedit.php?edit=<?= $id?>"><img src="picture/edit.png" name="edit"></a></td>
+                            <td><a href="User_profileedit.php?edit=<?= $_SESSION['ID']; ?>"><img src="picture/edit.png" name="edit"></a></td>
                         </tr>
 
                         <tr>
                             <td>ID: </td>
-                            <td><?= $id ?></td>
+                            <td><?=  $_SESSION['ID']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Name: </td>
-                            <td><?= $name ?></td>
+                            <td><?=  $_SESSION['name']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><?= $email ?></td>
+                            <td><?= $_SESSION['email']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Phone: </td>
-                            <td><?= $phone ?></td>
+                            <td><?= $_SESSION['phone']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Address: </td>
-                            <td><?= $address ?></td>
+                            <td><?= $_SESSION['address']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Job: </td>
-                            <td><?= $job ?></td>
+                            <td><?= $_SESSION['job']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Gender: </td>
-                            <td><?= $gender ?></td>
+                            <td><?= $_SESSION['gender']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Nickname: </td>
-                            <td><?= $nick ?></td>
+                            <td><?= $_SESSION['nickname']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Date of Birthday: </td>
-                            <td><?= $DOB ?></td>
+                            <td><?= $_SESSION['birth']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Education: </td>
-                            <td><?= $edu ?></td>
+                            <td><?= $_SESSION['edu']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Fax Number: </td>
-                            <td><?= $fax ?></td>
+                            <td><?= $_SESSION['fax']; ?></td>
                         </tr>
 
                         <tr>
                             <td>Company: </td>
-                            <td><?= $company ?></td>
+                            <td><?= $_SESSION['company']; ?></td>
                         </tr>
 
                         </table>
@@ -285,13 +298,13 @@ if (mysqli_num_rows($results) > 0) {
             </div>
 
 
-<?php
-    }
-}else {
-    echo "0 results";
-}
+<!-- <?php
+//     }
+// }else {
+//     echo "0 results";
+// }
 
-?>
+?> -->
 
 </body>
 <html>

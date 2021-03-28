@@ -1,22 +1,66 @@
 <?php
-$errors=array('name'=>"",'email'=>"",'tel'=>"",'password'=>"");
-$name = $name = $email = $tel = $password ="" ;
 
-if(isset($_POST['submit'])){
+include("connection.php");
+if(isset($_POST["submit"])) {
+    
+    $email=$_POST["email"];
+    $password=$_POST["password"];
+    $sql= "SELECT Email,Upassword FROM user_ WHERE Email='$email' ";
+    $sql2= "SELECT Email,Upassword FROM user_ WHERE Upassword='$password' ";
+    $results= mysqli_query($conn,$sql);
+    $results2= mysqli_query($conn,$sql2);
+    if(mysqli_num_rows($results)>0 and mysqli_num_rows($results2)>0){
+        $row = mysqli_fetch_array($results);
+        $row2 = mysqli_fetch_array($results2);
 
-    if(empty($_POST['email'])){
-        $errors['email']= "Email is required"."<br>";
-    }
-    else{
-        $email=$_POST['email'];
-        if(!preg_match("/^\w+@ (hotmail ,gmail ,outlook)\.com/",$email)){
-            $errors['email']= "Please insert a valid email. Example: email@hotmail.com"."<br>";
+        if ($row["Email"]==$row2["Email"]){
+
+            echo "<script> location.href='login.php'; </script>";
+            exit;
         }
+        else 
+        {
+            echo '<script type="text/javascript"> window.onload=function(){alert("Something went wrong with your email or password.");} </script>';
+        }
+
+        mysqli_close($conn);
+
+
+    $email ="" ;
 }
 }
+
+?>
+<?php
+
+include("connection.php");
+if(isset($_POST["submit"])) {
+    
+    $password=$_POST["password"];
+    $sql= "UPDATE user_ SET Upassword = '$password'";
+    $results= mysqli_query($conn,$sql);
+    if($results) {
+
+        echo "<script>alert('Password had been changed.')</script>";
+        echo "<script> location.href='login.php'; </script>";
+        
+
+    }else {
+        echo "<script>alert('Something went wrong.')</script>";
+    }
+    
+    mysqli_close($conn);
+
+} 
+
+
+    $password ="" ;
+
 
 
 ?>
+
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -46,7 +90,7 @@ body {
         text-shadow: 2px 1px lightgrey;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 30px;
     }
     
     
@@ -121,7 +165,7 @@ body {
         
     }
 
-    .submit {
+    .enter {
         font-weight:bold;
       cursor: pointer;
         border-radius: 5em;
@@ -152,7 +196,7 @@ body {
 
     
     a:hover{
-        color: #A86CAD;
+        color: black;
         text-decoration: none;
     }
     
@@ -171,16 +215,15 @@ body {
 
 
 <form class="main">
-<p class=sign>Change Password</p>
-<form method="post" action="">
+<p class=sign>Change Password</p><br><br>
+<form action="forgot.php" method="POST">
 
-  <input class="email" type="text" text-align="center" placeholder="Email">
+  <input class="email" type="text" text-align="center" placeholder="Email" name="email">
 
-<input class="Np" type="text" text-align="center" placeholder="New Password">
+<input class="Np" type="password" text-align="center" placeholder="New Password" name="password">
 
-<input class="Cp" type="text" text-align="center" placeholder="Confirm new Password">
 
-  <a class="submit">Comfirm</a><br><br>
+<input type="submit" class="enter" value="Submit" name="submit">
 
 <p class="forgot"><b> Back to login page </b><a href="login.php">Click here to login </a>.</p>
             
