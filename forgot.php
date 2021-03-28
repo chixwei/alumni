@@ -1,19 +1,18 @@
 <?php
 
 include("connection.php");
-if(isset($_POST["submit"])) {
+if(isset($_POST["submit"]))
+   {
     
     $email=$_POST["email"];
     $password=$_POST["password"];
     $sql= "SELECT Email,Upassword FROM user_ WHERE Email='$email' ";
-    $sql2= "SELECT Email,Upassword FROM user_ WHERE Upassword='$password' ";
     $results= mysqli_query($conn,$sql);
-    $results2= mysqli_query($conn,$sql2);
-    if(mysqli_num_rows($results)>0 and mysqli_num_rows($results2)>0){
-        $row = mysqli_fetch_array($results);
-        $row2 = mysqli_fetch_array($results2);
 
-        if ($row["Email"]==$row2["Email"]){
+    if(mysqli_num_rows($results)>0) {
+        $row = mysqli_fetch_array($results);
+
+        if ($row["Email"]){
 
             echo "<script> location.href='login.php'; </script>";
             exit;
@@ -21,12 +20,19 @@ if(isset($_POST["submit"])) {
         else 
         {
             echo '<script type="text/javascript"> window.onload=function(){alert("Something went wrong with your email or password.");} </script>';
+        exit;
         }
-
+        
         mysqli_close($conn);
 
 
     $email ="" ;
+}
+
+else
+{
+    echo '<script type="text/javascript"> window.onload=function(){alert("Something went wrong with your email or password."); window.location.href="forgot.php";} </script>';
+exit;
 }
 }
 
@@ -37,7 +43,8 @@ include("connection.php");
 if(isset($_POST["submit"])) {
     
     $password=$_POST["password"];
-    $sql= "UPDATE user_ SET Upassword = '$password'";
+    $email=$_POST["email"];
+    $sql= "UPDATE user_ SET Upassword = '$password' WHERE email= '$email'";
     $results= mysqli_query($conn,$sql);
     if($results) {
 
@@ -214,20 +221,20 @@ body {
 <body>
 
 
-<form class="main">
+<div class="main">
 <p class=sign>Change Password</p><br><br>
 <form action="forgot.php" method="POST">
 
   <input class="email" type="text" text-align="center" placeholder="Email" name="email">
+  <input type="hidden" value="forgotpassword and login"/>
 
 <input class="Np" type="password" text-align="center" placeholder="New Password" name="password">
 
 
 <input type="submit" class="enter" value="Submit" name="submit">
-
+</form>
 <p class="forgot"><b> Back to login page </b><a href="login.php">Click here to login </a>.</p>
-            
-</div>
+
 </div>
      
 </body>
