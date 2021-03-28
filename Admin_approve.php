@@ -22,11 +22,11 @@ if (isset($_POST['approve'])) {
 
     if(mysqli_query($conn,$sql1)){
       echo "<script> alert('Approved.') </script>";
-      echo "<script> location.href='about.php'; </script>";
+      echo "<script> location.href='Admin_about.php'; </script>";
     }
     else{
       echo "<script> alert('Failed to register.') </script>";
-      echo "<script> location.href='approve.php'; </script>";
+      echo "<script> location.href='Admin_approve.php'; </script>";
     }
 
 } 
@@ -41,11 +41,11 @@ if (isset($_POST['reject']))  {
 	
     if(mysqli_query($conn,$sql2)){
       echo "<script> alert('Rejected.') </script>";
-      echo "<script> location.href='about.php'; </script>";
+      echo "<script> location.href='User_about.php'; </script>";
     }
     else{
       echo "<script> alert('failed to reject.') </script>";
-      echo "<script> location.href='approve.php'; </script>";
+      echo "<script> location.href='Admin_approve.php'; </script>";
     }
 
 }
