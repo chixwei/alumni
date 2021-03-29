@@ -7,10 +7,11 @@
 
 * {box-sizing: border-box;}
 
+
 body { 
     margin: 0;
     padding; 0;
-    background-color: RGB(255, 237, 173);
+    background-color:  #B9B49E;
     font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -68,13 +69,13 @@ body {
     }
 
 .fakeimg {
-    background-color: RGB(227, 139, 25);
+    background-color:#DBAFAD;
     width: 70%;
     padding: 5px;
     }
 
 .card {
-    background-color: RGB(126, 192, 242);
+    background-color:#F2DCBD;
     padding: 20px;
     margin-top: 20px;
     }
@@ -110,6 +111,10 @@ body {
 </head>
 <body>
 
+</style>
+</head>
+<body>
+
 <div id="navbar">
     <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
         <div id="navbar-right">
@@ -123,7 +128,7 @@ body {
         </div>
     </div>
 
-<br><br><br>
+    <br><br><br>
 
 <header>
         <img src='picture/uni0.png' width='100%'>
@@ -157,24 +162,24 @@ body {
     <div class="card">
         <h2>Vision & Mission</h2>
             <h2>Educational Goals & Creed</h2>
-                <div class="fakeimg" style="height:210px;"><img src='picture/uni1.png' width='100%'></div>
+                <div class="fakeimg" style="height:210px;"><img src='picture/uni1.png' width='100%'></div><br>
 
-            <h5>Our Vision</h5>
+            <h4>Our Vision</h4>
                 <ul><li>Making international engagement our distinctive cross-cutting theme.</li></ul>
                 <ul><li>Maintaining our reputation for teaching excellence and a quality student experience.</li></ul>
 
-        <h5>Our Mission</h5>
+        <b><h4>Our Mission</h4></b>
                 <ul><li>To nurture all-round individuals and devote ourselves to the discovery, advancement,
                         transmission and application of knowledge that meet the needs of our society and the global community.
                     </li></ul>
 
-        <h5>Our Educational Goals</h5>
+        <h4>Our Educational Goals</h4>
                 <ul><li>become independent, lifelong learners who actively pursue knowledge and appreciate its global application to economic, 
                         political, social and cultural development.
                     </li></ul>
                 <ul><li>value integrity and become ethical, accountable, caring and responsible members of society.</li></ul>
 
-        <h5>Our Creed</h5>
+        <h4>Our Creed</h4>
                 <ul><li>Kaweiee University will carry out its mission with integrity and unwavering dedication to excellence, 
                         enterprise, professionalism, financial self-reliance, innovation, mutual respect and team spirit.
                     </li></ul>
@@ -184,7 +189,7 @@ body {
 <div class="rightcolumn">
     <div class="card">
         <h2>About Us</h2>
-            <div class="fakeimg" style="height:130px;"><img src='picture/uni2.png' width='100%'></div>
+            <div class="fakeimg" style="height:130px;"><img src='picture/uni2.png' width='100%'></div><br>
 
             <p>We make lives better by producing leaders of society and equipping our people with leadership qualities 
                so they can serve our communities at every level.
@@ -193,8 +198,8 @@ body {
 
 <div class="card">
     <h2>Popular Post</h2>
-        <div class="fakeimg" style="height:145px;"><img src='picture/uni3.png' width='100%'></div><br>
-        <div class="fakeimg" style="height:158px;"><img src='picture/uni4.png' width='100%'></div><br>
+        <div class="fakeimg" style="height:145px;"><img src='picture/uni3.png' width='100%'></div><br><br>
+        <div class="fakeimg" style="height:158px;"><img src='picture/uni4.png' width='100%'></div><br><br>
         <div class="fakeimg" style="height:142px;"><img src='picture/uni5.png' width='100%'></div><br>
     </div>
 
