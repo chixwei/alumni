@@ -2,6 +2,51 @@
 session_start();
 include("connection.php"); 
 
+if(isset($_POST['update'])){
+    $id = $_POST['ID'];
+    $name = $_POST['Uname'];
+    $nick= $_POST["Nick"];
+    $email = $_POST['Email'];
+    $phone = $_POST['Tel'];
+    $address = $_POST['Address'];
+    $job = $_POST['Job'];
+    $profile = $_FILES['Profile']['name'];
+    $gender= $_POST["Gender"];
+    $DOB= $_POST["DOB"];
+    $edu= $_POST["Edu"];
+    $fax= $_POST["Fax"];
+    $company= $_POST["Company"];
+
+$sql= "UPDATE user_ SET Uname = '$name', Nick = '$nick', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job', Profile = '$profile', Gender = '$gender', DOB = '$DOB', Edu = '$edu', Fax = '$fax', Company = '$company', WHERE Uname = '$name' ";
+$results = mysqli_query($conn, $sql);
+
+if($results) {
+    $_SESSION['ID']= $id;
+    $_SESSION['name']= $name;
+    $_SESSION['nickname']= $nick;
+    $_SESSION['email']= $email;
+    $_SESSION['phone']= $phone;
+    $_SESSION['address']= $address;
+    $_SESSION['job']= $job;
+    $$_SESSION['profile']= $profile;
+    $_SESSION['gender']= $gender;
+    $_SESSION['birth']= $DOB;
+    $_SESSION['edu']= $edu;
+    $_SESSION['fax']= $fax;
+    $_SESSION['company']= $company;
+
+
+    echo "<script>alert('Data is updated.')</script>";
+    echo "<script> location.href='User_profile.php'; </script>";
+    
+}else {
+    echo "<script>alert('Data is NOT updated.')</script>";
+    echo "<script> location.href='User_profile.php'; </script>";
+}
+
+
+} 
+
 // $sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile, Gender, Nick, DOB, Edu, Fax, Company FROM user_";
 
 // $results = mysqli_query($conn, $sql);
@@ -213,7 +258,7 @@ include("connection.php");
                       <p class="card-picture"><img src= 'profile/<?= $_SESSION['profile'] ?>'></p>   
                     </div>
                     <div class="card-contact">
-                    <form action="User_profile.php" method="POST">
+                    
 
                         <table>
                         <!-- $_SESSION['ID'] = $id;
@@ -231,7 +276,8 @@ include("connection.php");
             $_SESSION['company'] = $row["company"]; -->
                         <tr>
                             <td colspan=12></td>
-                            <td><a href="User_profileedit.php?edit=<?= $_SESSION['ID'] ?>"><img src="picture/edit.png" name="edit"></a></td>
+                            <td><form action="User_profileedit.php" method="POST"><input type="submit" name="edit" value="edit"></form></td>
+                            <!-- <td><a href="User_profileedit.php?edit=<?= $_SESSION['ID'] ?>"><img src="picture/edit.png" name="edit"></a></td> -->
                         </tr>
 
                         <tr>
@@ -241,7 +287,7 @@ include("connection.php");
 
                         <tr>
                             <td>Name: </td>
-                            <td><?=  $_SESSION['name']; ?></td>
+                            <td><?=  $_SESSION['name'] ?></td>
                         </tr>
 
                         <tr>
@@ -291,7 +337,7 @@ include("connection.php");
 
                         <tr>
                             <td>Company: </td>
-                            <td><?= $_SESSION['company']?></td>
+                            <td><?= $_SESSION['company'] ?></td>
                         </tr>
 
                         </table>

@@ -1,35 +1,36 @@
 <?php
-// session_start();
-
+session_start();
 include('connection.php');
-if (isset($_GET['edit'])) {
-$edit= $_GET['edit'];
-$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile, Gender, Nick, DOB, Edu, Fax, Company FROM user_ WHERE ID = '$edit'";
+if (isset($_POST['edit'])) {
+// $edit= $_GET['edit'];
+$name=$_SESSION['name'];
+$sql = "SELECT ID, Uname, Nick, Email, Tel, Upassword, Address, Job, Profile, Gender, DOB, Edu, Fax, Company FROM user_ WHERE Uname = '$name'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
 
-    while($row = mysqli_fetch_array($result)) {
-    $id= $row["ID"];
-    $name= $row["Uname"];
-    $email= $row["Email"];
-    $phone= $row["Tel"];
-    $address= $row["Address"];
-    $job= $row["Job"];
-    $profile=$row["Profile"];
-    $gender= $row["Gender"];
-    $nick= $row["Nick"];
-    $DOB= $row["DOB"];
-    $edu= $row["Edu"];
-    $fax= $row["Fax"];
-    $company= $row["Company"];
-    }
-    mysqli_close($conn);
-    }
-}
+//     while($row = mysqli_fetch_array($result)) {
+//     $id= $row["ID"];
+//     $name= $row["Uname"];
+//     $nick= $row["Nick"];
+//     $email= $row["Email"];
+//     $phone= $row["Tel"];
+//     $address= $row["Address"];
+//     $job= $row["Job"];
+//     $profile=$row["Profile"];
+//     $gender= $row["Gender"];
+//     $DOB= $row["DOB"];
+//     $edu= $row["Edu"];
+//     $fax= $row["Fax"];
+//     $company= $row["Company"];
+//     }
+//     mysqli_close($conn);
+//     }
+// }
+
 ?>
 
-<?php if(empty($_POST['update'])) { ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -47,7 +48,7 @@ if (mysqli_num_rows($result) > 0) {
 
         .login-box {
             position: absolute;
-            top: 50%;
+            top: 70%;
             left: 50%;
             width: 400px;
             padding: 40px;
@@ -223,10 +224,12 @@ if (mysqli_num_rows($result) > 0) {
 
     <div class="login-box">
     <h2>Update Contact</h2>
-
-        <form action="User_profileedit.php" method="POST" name="updateform" enctype="multipart/form-data">
+    <?php
+    while($row = mysqli_fetch_array($result)) {
+    ?>
+        <form action="User_profile.php" method="POST" name="updateform" enctype="multipart/form-data">
             
-            <input type="hidden" name="ID" value="<?= $id; ?>"></input>
+            <input type="hidden" name="ID" value="<?= $row["ID"]; ?>"></input>
             
             <div class="user-box">
             <input type="file" name="Profile" value="<?= $row['Profile']; ?>">
@@ -234,57 +237,57 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="user-box">
-            <input type="text" name="Uname" value="<?= $name; ?>">
+            <input type="text" name="Uname" value="<?= $row["Uname"] ?>">
             <label>Name</label>
             </div>
 
             <div class="user-box">
-            <input type="text" name="Email" value="<?= $email; ?>">
-            <label>Email</label>
-            </div>
-
-            <div class="user-box">
-            <input type="text" name="Tel" value="<?= $phone; ?>">
-            <label>Phone</label>
-            </div>
-
-            <div class="user-box">
-            <input type="text" name="Address" value="<?= $address; ?>">
-            <label>Address</label>
-            </div>
-
-            <div class="user-box">
-            <input type="text" name="Job" value="<?= $job; ?>">
-            <label>Job</label>
-            </div>
-
-            <div class="user-box">
-            <input type="text" name="Gender" value="<?= $gender; ?>">
-            <label>Gender</label>
-            </div>
-
-            <div class="user-box">
-            <input type="text" name="Nick" value="<?= $nick; ?>">
+            <input type="text" name="Nick" value="<?= $row["Nick"] ?>">
             <label>Nickname</label>
             </div>
 
             <div class="user-box">
-            <input type="text" name="DOB" value="<?= $DOB; ?>">
+            <input type="text" name="Email" value="<?= $row["Email"] ?>">
+            <label>Email</label>
+            </div>
+
+            <div class="user-box">
+            <input type="text" name="Tel" value="<?= $row["Tel"] ?>">
+            <label>Phone</label>
+            </div>
+
+            <div class="user-box">
+            <input type="text" name="Address" value="<?= $row["Address"] ?>">
+            <label>Address</label>
+            </div>
+
+            <div class="user-box">
+            <input type="text" name="Job" value="<?= $row["Job"] ?>">
+            <label>Job</label>
+            </div>
+
+            <div class="user-box">
+            <input type="text" name="Gender" value="<?= $row["Gender"] ?>">
+            <label>Gender</label>
+            </div>
+
+            <div class="user-box">
+            <input type="text" name="DOB" value="<?= $row["DOB"] ?>">
             <label>Date of Birthday</label>
             </div>
 
             <div class="user-box">
-            <input type="text" name="Edu" value="<?= $edu; ?>">
+            <input type="text" name="Edu" value="<?= $row["Edu"] ?>">
             <label>Education</label>
             </div>
 
             <div class="user-box">
-            <input type="text" name="Fax" value="<?= $fax; ?>">
+            <input type="text" name="Fax" value="<?= $row["Fax"] ?>">
             <label>Fax Number</label>
             </div>
 
             <div class="user-box">
-            <input type="text" name="Company" value="<?= $company; ?>">
+            <input type="text" name="Company" value="<?=$row["Company"] ?>">
             <label>Company</label>
             </div>
 
@@ -294,50 +297,58 @@ if (mysqli_num_rows($result) > 0) {
                 <span></span>
                 <span></span>
                 <span></span>
-                <input type="submit" class="btn" name="update">
+                <input type="submit" class="btn" name="update" value="update">
             
             </a>
 
     </form>
     </div>
+<?php
+}
+}
+}
+?>
 
+</body>
+</html>
 
 <?php 
 
-}else{
-
-    include('connection.php');
-
-    $id = $_POST['ID'];
-    $name = $_POST['Uname'];
-    $email = $_POST['Email'];
-    $phone = $_POST['Tel'];
-    $address = $_POST['Address'];
-    $job = $_POST['Job'];
-    $profile = $_FILES['Profile']['name'];
-    $gender= $_POST["Gender"];
-    $nick= $_POST["Nick"];
-    $DOB= $_POST["DOB"];
-    $edu= $_POST["Edu"];
-    $fax= $_POST["Fax"];
-    $company= $_POST["Company"];
-
-    $sql= "UPDATE user_ SET Uname = '$name', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job', Profile = '$profile', Gender = '$gender', Nick = '$nick', DOB = '$DOB', Edu = '$edu', Fax = '$fax', Company = '$company', WHERE ID = '$id' ";
-    $results = mysqli_query($conn, $sql);
-  
-    if($results) {
-
-        echo "<script>alert('Data is updated.')</script>";
-        echo "<script> location.href='User_profile.php'; </script>";
-        
-    }else {
-        echo "<script>alert('Data is NOT updated.')</script>";
-    }
+// }else{
     
-    mysqli_close($conn);
-
-} 
+//     include('connection.php');
+//     if(isset($_POST['update'])){
+//         $id = $_POST['ID'];
+//         $name = $_POST['Uname'];
+//         $nick= $_POST["Nick"];
+//         $email = $_POST['Email'];
+//         $phone = $_POST['Tel'];
+//         $address = $_POST['Address'];
+//         $job = $_POST['Job'];
+//         $profile = $_FILES['Profile']['name'];
+//         $gender= $_POST["Gender"];
+//         $DOB= $_POST["DOB"];
+//         $edu= $_POST["Edu"];
+//         $fax= $_POST["Fax"];
+//         $company= $_POST["Company"];
+    
+//     $sql= "UPDATE user_ SET Uname = '$name', Nick = '$nick', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job', Profile = '$profile', Gender = '$gender', DOB = '$DOB', Edu = '$edu', Fax = '$fax', Company = '$company', WHERE Uname = '$name' ";
+//     $results = mysqli_query($conn, $sql);
+  
+//     if($results) {
+//         $_SESSION['name']= $name;
+//         $_SESSION['nickname']= $nick;
+//         echo "<script>alert('Data is updated.')</script>";
+//         echo "<script> location.href='User_profile.php'; </script>";
+        
+//     }else {
+//         echo "<script>alert('Data is NOT updated.')</script>";
+//         echo "<script> location.href='User_profile.php'; </script>";
+//     }
+    
+//     mysqli_close($conn);
+    
+// } 
 
 ?>
-</body>
-</html>
+
