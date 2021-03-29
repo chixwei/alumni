@@ -75,24 +75,17 @@ if (mysqli_num_rows($result) > 0) {
             outline: none;
             background: transparent;
         }
+        
         .login-box .user-box label {
             position: absolute;
-            top:0;
+            top:-20px;
             left: 0;
             padding: 10px 0;
             font-size: 16px;
-            color: #fff;
+            color: black;
+            font-weight: bold;
             pointer-events: none;
             transition: .5s;
-        }
-
-        .login-box .user-box input:focus ~ label,
-        .login-box .user-box input:valid ~ label {
-            top: -20px;
-            left: 0;
-            color: black;
-            font-weight:bold;
-            font-size: 14px;
         }
 
         .login-box form a {
