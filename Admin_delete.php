@@ -8,10 +8,11 @@ include('connection.php');
 	    
 	    $result=mysqli_query($conn,$SQL);
 	    if($result){
-	    	echo "Success deleted";
+	    	echo "<script>alert('Success Deleted.')</script>";
+        	echo "<script> location.href='Admin_contact.php'; </script>";
 	    }else{
-	    	echo "Failed deleted";	
-
+	    	echo "<script>alert('Fail Deleted.')</script>";
+        	echo "<script> location.href='Admin_contact.php'; </script>";
 	    }
 	    
         mysqli_close($conn);

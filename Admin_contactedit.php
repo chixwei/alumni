@@ -18,9 +18,9 @@ if (mysqli_num_rows($result) > 0) {
     $job= $row["Job"];
     $profile=$row["Profile"];
   
-}
-mysqli_close($conn);
-}
+    }
+        mysqli_close($conn);
+    }
 }
 ?>
 
@@ -262,7 +262,7 @@ mysqli_close($conn);
                 <span></span>
                 <span></span>
                 <span></span>
-                <input type="submit" class="btn" name="update">
+                <input type="submit" class="btn" name="update" value="update">
             
             </a>
 
@@ -295,6 +295,7 @@ mysqli_close($conn);
 
     }else {
         echo "<script>alert('Data is NOT updated.')</script>";
+        echo "<script> location.href='Admin_contact.php'; </script>";
     }
     
     mysqli_close($conn);
