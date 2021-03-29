@@ -209,7 +209,7 @@
 
 				<div>
 					<p class="emoji">&#128233;</i>
-					<p><a href="mailto:kaweieeuniversity@mail.com">kaweieeunivercity@mail.com</a></p>
+					<p><a href="mailto:kaweieeuniversity@mail.com">kaweieeuniversity@mail.com</a></p>
 				</div>
 			</div>
 
