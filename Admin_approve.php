@@ -221,7 +221,7 @@ h3{
 <br><br><br><br>
 <div class="card">
   <div class="container">
-  <img src="picture/approve.png"  width="250px" height="250px">
+  <img src="picture/approve1.png"  width="250px" height="250px">
   <form action="Admin_approve.php" method="POST">
 
   <h3>Name:  <?php echo $row['Uname']?></h3>

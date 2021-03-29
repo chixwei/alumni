@@ -62,49 +62,57 @@ include("connection.php");
         }
         
         .card {
-            background-color: #e7d9bc; /*background*/
-            width: 100%;
-            padding: 0px;
+            background-color: #FEEED5; /*background*/
+            width: 100px;
+            padding: 100px;
             line-height:72vh;
             margin:0px;
-            flex-wrap: nowrap;
+            /* flex-wrap: nowrap;
             flex-direction: row;
-            justify-content: center;
+            justify-content: center; */
         }
 
         .card-cardtion {
             font-family: 'Source Sans Pro', sans-serif;
             font-weight: normal;
             font-size: 1.6rem;
-            line-height: 1.3;
+            line-height: 1.9;
             margin: 100px;
+
         }
 
         .card-container {
             display: center;
             margin: 100px;
-            width: 100%;
+            /* width: 100px; */
         }
 
 
         .card-picture img{
-            height:400px;
-            width:400px;
-            margin-top: -10px;
+            height:350px;
+            width:350px;
+            margin-top: -190px;
             border-radius: 15px;
-            display: center;
+            margin-left:30px;
+            float:left;
+
         }
 
         .card-contact {
-            background: linear-gradient(to right, #fbf6e9, #fdfaf4);
-            height: 650px;
-            width: 750px;
+            background: #FEEED5;
+            height: 250px;
+            width: 1000px;
             border-radius: 10px;
-            text-align: center;
             color: black;
-            padding: 5px;
-            margin-right:auto;
+            padding: 200px 5px;
             display: center;
+            margin-left:50px;  
+        }
+
+        table{
+            float:right;
+            margin-top:-200px;
+            margin-right:50px;
         }
 
         img{
@@ -113,7 +121,7 @@ include("connection.php");
 
         @media screen and (max-width: 1000px) {
             .card-container {
-                display: flex;
+                display: center;
                 flex-direction: column;
             }
 
@@ -124,7 +132,7 @@ include("connection.php");
             }
 
             .card-contact {
-               margin-left:-5%;
+               margin-left:0%;
                height: 400px;
                width: 570px;
             }
@@ -175,21 +183,19 @@ include("connection.php");
     </script>
 
     <body>
-
-    <div class="flex-container">
-            <div class="card">
+<br><br><br><br><br><br>
               <div class="card-cardtion">
                   <div class="card-container">
+                    <div class="card-contact">
                     <div class="card-profile">
                       <p class="card-picture"><img src= 'profile/<?= $_SESSION['profile'] ?>'></p>   
                     </div>
-                    <div class="card-contact">
                     <form action="User_profile.php" method="POST">
 
                         <table>
                        
                         <tr>
-                            <td colspan=12></td>
+                            <td colspan=13></td>
                             <td><a href="User_profileedit.php?edit=<?= $_SESSION['ID'] ?>"><img src="picture/edit.png" name="edit"></a></td>
                         </tr>
 
