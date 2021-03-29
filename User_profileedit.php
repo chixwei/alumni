@@ -1,32 +1,13 @@
 <?php
 session_start();
 include('connection.php');
-if (isset($_POST['edit'])) {
-// $edit= $_GET['edit'];
+if (isset($_SESSION['ID'])) {
+
 $name=$_SESSION['name'];
 $sql = "SELECT ID, Uname, Nick, Email, Tel, Upassword, Address, Job, Profile, Gender, DOB, Edu, Fax, Company FROM user_ WHERE Uname = '$name'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-
-//     while($row = mysqli_fetch_array($result)) {
-//     $id= $row["ID"];
-//     $name= $row["Uname"];
-//     $nick= $row["Nick"];
-//     $email= $row["Email"];
-//     $phone= $row["Tel"];
-//     $address= $row["Address"];
-//     $job= $row["Job"];
-//     $profile=$row["Profile"];
-//     $gender= $row["Gender"];
-//     $DOB= $row["DOB"];
-//     $edu= $row["Edu"];
-//     $fax= $row["Fax"];
-//     $company= $row["Company"];
-//     }
-//     mysqli_close($conn);
-//     }
-// }
 
 ?>
 
@@ -227,7 +208,7 @@ if (mysqli_num_rows($result) > 0) {
     <?php
     while($row = mysqli_fetch_array($result)) {
     ?>
-        <form action="User_profile.php" method="POST" name="updateform" enctype="multipart/form-data">
+        <form action="User_profileedit.php" method="POST" name="updateform" enctype="multipart/form-data">
             
             <input type="hidden" name="ID" value="<?= $row["ID"]; ?>"></input>
             
@@ -304,8 +285,8 @@ if (mysqli_num_rows($result) > 0) {
     </form>
     </div>
 <?php
-}
-}
+        }
+    }
 }
 ?>
 
@@ -313,42 +294,51 @@ if (mysqli_num_rows($result) > 0) {
 </html>
 
 <?php 
-
-// }else{
-    
-//     include('connection.php');
-//     if(isset($_POST['update'])){
-//         $id = $_POST['ID'];
-//         $name = $_POST['Uname'];
-//         $nick= $_POST["Nick"];
-//         $email = $_POST['Email'];
-//         $phone = $_POST['Tel'];
-//         $address = $_POST['Address'];
-//         $job = $_POST['Job'];
-//         $profile = $_FILES['Profile']['name'];
-//         $gender= $_POST["Gender"];
-//         $DOB= $_POST["DOB"];
-//         $edu= $_POST["Edu"];
-//         $fax= $_POST["Fax"];
-//         $company= $_POST["Company"];
-    
-//     $sql= "UPDATE user_ SET Uname = '$name', Nick = '$nick', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job', Profile = '$profile', Gender = '$gender', DOB = '$DOB', Edu = '$edu', Fax = '$fax', Company = '$company', WHERE Uname = '$name' ";
-//     $results = mysqli_query($conn, $sql);
   
-//     if($results) {
-//         $_SESSION['name']= $name;
-//         $_SESSION['nickname']= $nick;
-//         echo "<script>alert('Data is updated.')</script>";
-//         echo "<script> location.href='User_profile.php'; </script>";
+    if(isset($_POST['update'])){
+    $id = $_POST['ID'];
+    $name = $_POST['Uname'];
+    $nick= $_POST["Nick"];
+    $email = $_POST['Email'];
+    $phone = $_POST['Tel'];
+    $address = $_POST['Address'];
+    $job = $_POST['Job'];
+    $profile = $_FILES['Profile']['name'];
+    $gender= $_POST["Gender"];
+    $DOB= $_POST["DOB"];
+    $edu= $_POST["Edu"];
+    $fax= $_POST["Fax"];
+    $company= $_POST["Company"];
+
+$sql= "UPDATE user_ SET Uname = '$name', Nick = '$nick', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job', Profile = '$profile', Gender = '$gender', DOB = '$DOB', Edu = '$edu', Fax = '$fax', Company = '$company' WHERE Uname = '$name' ";
+$results = mysqli_query($conn, $sql);
+
+    if($results) {
+        $_SESSION['ID']= $id;
+        $_SESSION['name']= $name;
+        $_SESSION['nickname']= $nick;
+        $_SESSION['email']= $email;
+        $_SESSION['phone']= $phone;
+        $_SESSION['address']= $address;
+        $_SESSION['job']= $job;
+        $_SESSION['profile']= $profile;
+        $_SESSION['gender']= $gender;
+        $_SESSION['birth']= $DOB;
+        $_SESSION['edu']= $edu;
+        $_SESSION['fax']= $fax;
+        $_SESSION['company']= $company;
+
+
+        echo "<script>alert('Data is updated.')</script>";
+        echo "<script> location.href='User_profile.php'; </script>";
         
-//     }else {
-//         echo "<script>alert('Data is NOT updated.')</script>";
-//         echo "<script> location.href='User_profile.php'; </script>";
-//     }
+    }else {
+        echo "<script>alert('Data is NOT updated.')</script>";
+        echo "<script> location.href='User_profile.php'; </script>";
     
-//     mysqli_close($conn);
+    }
     
-// } 
+} 
 
 ?>
 

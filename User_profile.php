@@ -1,79 +1,8 @@
 <?php
+
 session_start();
 include("connection.php"); 
-
-if(isset($_POST['update'])){
-    $id = $_POST['ID'];
-    $name = $_POST['Uname'];
-    $nick= $_POST["Nick"];
-    $email = $_POST['Email'];
-    $phone = $_POST['Tel'];
-    $address = $_POST['Address'];
-    $job = $_POST['Job'];
-    $profile = $_FILES['Profile']['name'];
-    $gender= $_POST["Gender"];
-    $DOB= $_POST["DOB"];
-    $edu= $_POST["Edu"];
-    $fax= $_POST["Fax"];
-    $company= $_POST["Company"];
-
-$sql= "UPDATE user_ SET Uname = '$name', Nick = '$nick', Email = '$email', Tel = '$phone', Address = '$address', Job = '$job', Profile = '$profile', Gender = '$gender', DOB = '$DOB', Edu = '$edu', Fax = '$fax', Company = '$company', WHERE Uname = '$name' ";
-$results = mysqli_query($conn, $sql);
-
-if($results) {
-    $_SESSION['ID']= $id;
-    $_SESSION['name']= $name;
-    $_SESSION['nickname']= $nick;
-    $_SESSION['email']= $email;
-    $_SESSION['phone']= $phone;
-    $_SESSION['address']= $address;
-    $_SESSION['job']= $job;
-    $$_SESSION['profile']= $profile;
-    $_SESSION['gender']= $gender;
-    $_SESSION['birth']= $DOB;
-    $_SESSION['edu']= $edu;
-    $_SESSION['fax']= $fax;
-    $_SESSION['company']= $company;
-
-
-    echo "<script>alert('Data is updated.')</script>";
-    echo "<script> location.href='User_profile.php'; </script>";
-    
-}else {
-    echo "<script>alert('Data is NOT updated.')</script>";
-    echo "<script> location.href='User_profile.php'; </script>";
-}
-
-
-} 
-
-// $sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile, Gender, Nick, DOB, Edu, Fax, Company FROM user_";
-
-// $results = mysqli_query($conn, $sql);
-
-// if (mysqli_num_rows($results) > 0) {
-    
-//     $row = mysqli_fetch_array($results);
-//         if($SESSION['name']== $row["Uname"]){
-//         $id= $row["ID"];
-//         $name= $row["Uname"];
-//         $email= $row["Email"];
-//         $phone= $row["Tel"];
-//         $address= $row["Address"];
-//         $job= $row["Job"];
-//         $profile= $row["Profile"];
-//         $gender= $row["Gender"];
-//         $nick= $row["Nick"];
-//         $DOB= $row["DOB"];
-//         $edu= $row["Edu"];
-//         $fax= $row["Fax"];
-//         $company= $row["Company"];
-//         }
-    
-// }
-
-    ?>  
-
+?>  
 
 <!DOCTYPE html>
     <html>
@@ -84,7 +13,6 @@ if($results) {
         *{
             padding:0;
             margin:0;
-            
         }
 
         body{
@@ -247,8 +175,6 @@ if($results) {
     </script>
 
     <body>
-    
-    
 
     <div class="flex-container">
             <div class="card">
@@ -258,26 +184,13 @@ if($results) {
                       <p class="card-picture"><img src= 'profile/<?= $_SESSION['profile'] ?>'></p>   
                     </div>
                     <div class="card-contact">
-                    
+                    <form action="User_profile.php" method="POST">
 
                         <table>
-                        <!-- $_SESSION['ID'] = $id;
-            $_SESSION['name'] = $row["Uname"];
-            $_SESSION['email'] = $row["Email"];
-            $_SESSION['phone'] = $row["Tel"];
-            $_SESSION['address'] = $row["Address"];
-            $_SESSION['job'] = $row["Job"];
-            $_SESSION['profile'] = $row["Profile"];
-            $_SESSION['gender'] = $row["Gender"];
-            $_SESSION['nickname'] = $row["Nick"];
-            $_SESSION['birth'] = $row["DOB"];
-            $_SESSION['edu'] = $row["Edu"];
-            $_SESSION['fax'] = $row["Fax"];
-            $_SESSION['company'] = $row["company"]; -->
+                       
                         <tr>
                             <td colspan=12></td>
-                            <td><form action="User_profileedit.php" method="POST"><input type="submit" name="edit" value="edit"></form></td>
-                            <!-- <td><a href="User_profileedit.php?edit=<?= $_SESSION['ID'] ?>"><img src="picture/edit.png" name="edit"></a></td> -->
+                            <td><a href="User_profileedit.php?edit=<?= $_SESSION['ID'] ?>"><img src="picture/edit.png" name="edit"></a></td>
                         </tr>
 
                         <tr>
@@ -346,15 +259,6 @@ if($results) {
                   </div>
               </div>
             </div>
-
-
-<!-- <?php
-//     }
-// }else {
-//     echo "0 results";
-// }
-
-?> -->
 
 </body>
 <html>

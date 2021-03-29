@@ -250,7 +250,7 @@
 
 include("connection.php"); 
 
-$sql = "SELECT ID, Uname, Email, Tel, Upassword, Address, Job, Profile FROM user_";
+$sql = "SELECT ID, Uname, Nick, Email, Tel, Upassword, Address, Job, Profile, Gender, DOB, Edu, Fax, Company FROM user_";
 
 $results = mysqli_query($conn, $sql);
 
