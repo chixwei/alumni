@@ -361,14 +361,14 @@ header{
     line-height: 42px;
     margin: 10px 15px;
     vertical-align: middle;
-    margin-top:40px;
+    margin-top:30px;
   }
   
   .foot .footer-center p{
     display: inline-block;
     color: #ffffff;
     vertical-align: middle;
-    margin-top:40px;
+    margin-top:30px;
   }
   
   .foot .footer-center p span{
@@ -385,7 +385,7 @@ header{
 
   .foot .footer-right{
     width: 30%;
-    margin-top: 40px;
+    margin-top: 30px;
   }
   
   .foot .footer-company-about{
