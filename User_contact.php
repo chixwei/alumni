@@ -203,6 +203,130 @@
                 float: none;
                 }
             }
+
+            .foot {
+                background-color:#2F2F2F;
+                box-sizing: border-box;
+                width: 100%;
+                text-align: left;
+                font: bold 16px sans-serif;
+                padding: 50px 50px 60px 50px;
+            }
+
+            .foot .footer-left,
+            .foot .footer-center,
+            .foot .footer-right {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .foot .footer-left {
+                width: 30%;
+            }
+
+            .foot .footer-left img {
+                width: 50%;
+                margin-left: 10px;
+            }
+
+            .foot .footer-links{
+                color:  #ffffff;
+                margin: 20px 0 12px;
+            }
+            
+            .foot .footer-links a{
+                display:inline-block;
+                line-height: 1.8;
+                text-decoration: none;
+                color:  inherit;
+            }
+
+            .foot .footer-company-name{
+                color:  #8f9296;
+                font-size: 14px;
+                font-weight: normal;
+                margin: 0;
+            }
+
+            .foot .footer-center{
+                width: 35%;
+            }
+            
+            .foot .footer-center .emoji{
+                background-color:  #33383b;
+                color: #ffffff;
+                font-size: 25px;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 42px;
+                margin: 10px 15px;
+                vertical-align: middle;
+                margin-top:30px;
+            }
+            
+            .foot .footer-center p{
+                display: inline-block;
+                color: #ffffff;
+                vertical-align: middle;
+                margin-top:30px;
+            }
+            
+            .foot .footer-center p span{
+                display:block;
+                font-weight: normal;
+                font-size:14px;
+                line-height:2;
+            }
+            
+            .foot .footer-center p a{
+                color:  white;
+                text-decoration: none;;
+            }
+
+            .foot .footer-right{
+                width: 30%;
+                margin-top: 30px;
+            }
+            
+            .foot .footer-company-about{
+                line-height: 20px;
+                color:  #92999f;
+                font-size: 13px;
+                font-weight: normal;
+                margin: 0;
+            }
+            
+            .foot .footer-company-about span{
+                display: block;
+                color:  #ffffff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            
+            .foot .footer-icons{
+                margin-top: 25px;
+            }
+            
+            .foot .footer-icons a img{
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+                background-color:  #33383b;
+                border-radius: 2px;
+            
+                font-size: 20px;
+                color: #ffffff;
+                text-align: center;
+                line-height: 35px;
+            
+                margin-right: 3px;
+                margin-bottom: 5px;
+            }
+        }
         
     </style>
 
@@ -331,6 +455,60 @@ if (mysqli_num_rows($results) > 0) {
 }
 
 ?>
+
+<footer class="foot">
+
+<div class="footer-left">
+  <img src="picture/footerlogo.png">
+  
+  <p class="footer-links">
+    <a href="home.php">Home</a>
+    |
+    <a href="User_about.php">About</a>
+    |
+    <a href="User_event.php">News & Events</a>
+    |
+    <a href="User_contact.php">Contact</a>
+    |
+    <a href="User_profile.php">Profile</a>
+  </p>
+    
+  <p class="footer-company-name"> © 2021 KAWEIEE UNIVERSITY</p>
+</div>
+
+<div class="footer-center">
+  <div>
+      <p class="emoji">&#128205;</p>
+                <p><span> V01-06-01, Lingkaran SV Kaweiee University,<br>
+       55100 Kuala Lumpur</span>
+                  </p>
+          </div>
+
+  <div>
+              <p class="emoji">&#128222;</p>
+              <p><a href="tel:+60123456789">+60 123456789</p>
+          </div>
+
+          <div>
+              <p class="emoji">&#128233;</i>
+              <p><a href="mailto:kaweieeuniversity@mail.com">kaweieeuniversity@mail.com</a></p>
+          </div>
+      </div>
+
+<div class="footer-right">
+          <p class="footer-company-about">
+              <span>About the University</span>
+              This is Kaweiee University's Alumni webpage. We will provide you an amazing experience throughout our webpage. </p>
+          <div class="footer-icons">
+              <a href="https://www.facebook.com/" target="_blank"><img src="picture/facebook.png"></a>
+              <a href="https://twitter.com/" target="_blank"><img src="picture/twitter.png"></a>
+              <a href="https://www.instagram.com/" target="_blank"><img src="picture/instagram.png"></a>
+              <a href="https://www.linkedin.com/" target="_blank"><img src="picture/linkedin.png"></a>
+              <a href="https://www.youtube.com/" target="_blank"><img src="picture/youtube.png"></a>
+          </div>
+      </div>
+
+</footer>
 
 </body>
 <html>
