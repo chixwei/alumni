@@ -19,10 +19,13 @@ if (mysqli_num_rows($result) > 0) {
             height: 1300px;
         }
         body {
-            margin:0;
+            margin-top:600px;
             padding:0;
             font-family: sans-serif;
-            background: RGB(199, 236, 234);
+            background-size: 200% 100% !important;
+            animation: move 10s ease infinite;
+            transform: translate3d(0, 0, 0);
+            background: linear-gradient(45deg, #D7F9FB  40%, #A0D5E8 60%);
         }
 
         .login-box {
@@ -186,7 +189,17 @@ if (mysqli_num_rows($result) > 0) {
             }
         }
 
-        
+        @keyframes move {
+    0% {
+        background-position: 0 0
+    }
+    50% {
+        background-position: 100% 0
+    }
+    100% {
+        background-position: 0 0
+    }
+}
 
     </style>
 </head>
