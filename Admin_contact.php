@@ -334,7 +334,7 @@
         <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
             <div id="navbar-right">
                 <br>
-                <a href="home.php">HOME</a>
+                <a href="Admin_home.php">HOME</a>
                 <a href="Admin_about.php">ABOUT US</a>
                 <a href="Admin_event.php">NEWS & EVENTS</a>
                 <a href="Admin_contact.php">CONTACT</a>
@@ -462,7 +462,7 @@ if (mysqli_num_rows($results) > 0) {
         <img src="picture/footerlogo.png">
         
         <p class="footer-links">
-          <a href="home.php">Home</a>
+          <a href="Admin_home.php">Home</a>
           |
           <a href="Admin_about.php">About</a>
           |

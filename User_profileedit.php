@@ -11,32 +11,26 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <style>
-
-    *{
-        margin:0px;
-        padding:0px;
-    }
-
-        
+         html {
+            height: 1300px;
+        }
         body {
+            margin-top:600px;
+            padding:0;
             font-family: sans-serif;
             background-size: 200% 100% !important;
             animation: move 10s ease infinite;
             transform: translate3d(0, 0, 0);
-            background: linear-gradient(45deg, #A0D5E8  40%, #D7F9FB 60%);
-            height: 100vh;
+            background: linear-gradient(45deg, #D7F9FB  40%, #A0D5E8 60%);
         }
 
         .login-box {
             position: absolute;
-            margin-top:600px;
-            margin-bottom:3000px;
+            top: 90%;
             left: 50%;
             width: 600px;
             padding: 30px;
@@ -206,7 +200,6 @@ if (mysqli_num_rows($result) > 0) {
         background-position: 0 0
     }
 }
-        
 
     </style>
 </head>
@@ -291,7 +284,7 @@ if (mysqli_num_rows($result) > 0) {
             
             </a>
 
-    </form><br><br><br>
+    </form>
     </div>
 <?php
         }

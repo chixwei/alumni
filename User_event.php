@@ -444,7 +444,7 @@ function carousel() {
   <img src="picture/footerlogo.png">
   
   <p class="footer-links">
-    <a href="home.php">Home</a>
+    <a href="User_home.php">Home</a>
     |
     <a href="User_about.php">About</a>
     |
