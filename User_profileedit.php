@@ -17,33 +17,39 @@ if (mysqli_num_rows($result) > 0) {
 <html>
 <head>
     <style>
-        html {
-            height: 100%;
-        }
+
+    *{
+        margin:0px;
+        padding:0px;
+    }
+
+        
         body {
-            margin:0;
-            padding:0;
             font-family: sans-serif;
-            background: linear-gradient(#e6b800, #ffeb99);
+            background-size: 200% 100% !important;
+            animation: move 10s ease infinite;
+            transform: translate3d(0, 0, 0);
+            background: linear-gradient(45deg, #A0D5E8  40%, #D7F9FB 60%);
+            height: 100vh;
         }
 
         .login-box {
             position: absolute;
-            top: 70%;
+            margin-top:600px;
+            margin-bottom:3000px;
             left: 50%;
-            width: 400px;
-            padding: 40px;
+            width: 600px;
+            padding: 30px;
             transform: translate(-50%, -50%);
             background: rgba(0,0,0,.5);
             box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0,0,0,.6);
-            border-radius: 10px;
+            border-radius: 15px;
         }
 
         .login-box h2 {
-            margin: 0 0 30px;
+            margin: 0 0 15px;
             padding: 0;
-            color: #fff;
+            color: black;
             text-align: center;
         }
 
@@ -56,13 +62,12 @@ if (mysqli_num_rows($result) > 0) {
             padding: 10px 0;
             font-size: 16px;
             color: #fff;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             border: none;
             border-bottom: 1px solid #fff;
             outline: none;
             background: transparent;
         }
-        
         .login-box .user-box label {
             position: absolute;
             top:-20px;
@@ -74,7 +79,6 @@ if (mysqli_num_rows($result) > 0) {
             pointer-events: none;
             transition: .5s;
         }
-
 
         .login-box form a {
             position: relative;
@@ -90,25 +94,25 @@ if (mysqli_num_rows($result) > 0) {
         }
 
         .login-box form .btn{
-            background:rgba(245, 208, 89, 0.863);
+            background: RGB(135, 216, 210);
             padding: 10px 20px;
-            color: #fff;
+            color: black;
             font-size: 16px;
             text-decoration: none;
             text-transform: uppercase;
             overflow: hidden;
             transition: .5s;
-            letter-spacing: 4px
+            letter-spacing: 3px
         }
 
         .login-box a .btn:hover {
-            background: rgb(255, 180, 67);;
-            color: #fff;
+            background: RGB(168, 227, 227);;
+            color: black;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgb(251, 255, 9),
-                        0 0 25px rgb(251, 255, 9),
-                        0 0 50px rgb(251, 255, 9),
-                        0 0 100px rgb(251, 255, 9);
+            box-shadow: 0 0 5px RGB(168, 227, 227),
+                        0 0 25px RGB(168, 227, 227),
+                        0 0 50px RGB(168, 227, 227),
+                        0 0 100px RGB(168, 227, 227);
         }
 
         .login-box a span {
@@ -121,7 +125,7 @@ if (mysqli_num_rows($result) > 0) {
             left: -100%;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #fab319);
+            background: linear-gradient(90deg, transparent, #E9FDFF);
             animation: btn-anim1 1s linear infinite;
         }
 
@@ -139,9 +143,9 @@ if (mysqli_num_rows($result) > 0) {
             right: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(180deg, transparent, #fab319);
+            background: linear-gradient(180deg, transparent, #E9FDFF);
             animation: btn-anim2 1s linear infinite;
-            animation-delay: .25s
+            animation-delay: .30s
         }
 
         @keyframes btn-anim2 {
@@ -158,7 +162,7 @@ if (mysqli_num_rows($result) > 0) {
             right: -100%;
             width: 100%;
             height: 2px;
-            background: linear-gradient(270deg, transparent, #fab319);
+            background: linear-gradient(270deg, transparent, #E9FDFF);
             animation: btn-anim3 1s linear infinite;
             animation-delay: .5s
         }
@@ -177,7 +181,7 @@ if (mysqli_num_rows($result) > 0) {
             left: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(360deg, transparent, #fab319);
+            background: linear-gradient(360deg, transparent, #E9FDFF);
             animation: btn-anim4 1s linear infinite;
             animation-delay: .75s
         }
@@ -186,11 +190,22 @@ if (mysqli_num_rows($result) > 0) {
             0% {
                 bottom: -100%;
             }
-            50%,100% {
+            30%,100% {
                 bottom: 100%;
             }
         }
 
+        @keyframes move {
+    0% {
+        background-position: 0 0
+    }
+    50% {
+        background-position: 100% 0
+    }
+    100% {
+        background-position: 0 0
+    }
+}
         
 
     </style>
@@ -247,7 +262,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="user-box">
-            <input type="text" name="DOB" value="<?= $row["DOB"] ?>">
+            <input type="date" name="DOB" value="<?= $row["DOB"] ?>">
             <label>Date of Birthday</label>
             </div>
 
@@ -276,7 +291,7 @@ if (mysqli_num_rows($result) > 0) {
             
             </a>
 
-    </form>
+    </form><br><br><br>
     </div>
 <?php
         }
