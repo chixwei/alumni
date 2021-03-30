@@ -15,9 +15,10 @@ if (mysqli_num_rows($result) > 0) {
 <html>
 <head>
     <style>
-         html {
+        html {
             height: 1300px;
         }
+
         body {
             margin-top:600px;
             padding:0;
@@ -190,15 +191,15 @@ if (mysqli_num_rows($result) > 0) {
         }
 
         @keyframes move {
-    0% {
-        background-position: 0 0
-    }
-    50% {
-        background-position: 100% 0
-    }
-    100% {
-        background-position: 0 0
-    }
+            0% {
+                background-position: 0 0
+            }
+            50% {
+                background-position: 100% 0
+            }
+            100% {
+                background-position: 0 0
+        }
 }
 
     </style>

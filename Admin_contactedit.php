@@ -1,5 +1,4 @@
 <?php
-// session_start();
 
 include('connection.php');
 if (isset($_GET['edit'])) {
@@ -201,9 +200,7 @@ if (mysqli_num_rows($result) > 0) {
             50%,100% {
                 bottom: 100%;
             }
-        }
-
-        
+        }    
 
     </style>
 </head>
@@ -219,9 +216,7 @@ if (mysqli_num_rows($result) > 0) {
             <div class="user-box">
             <input type="file" name="Profile" value="<?= $row['Profile']; ?>">
             <label>Profile picture</label>
-            </div>
-
-            
+            </div>  
 
             <div class="user-box">
             <input type="text" name="Uname" value="<?= $name; ?>">
@@ -247,7 +242,6 @@ if (mysqli_num_rows($result) > 0) {
             <input type="text" name="Job" value="<?= $job; ?>">
             <label>Job</label>
             </div>
-
             
             <a href="#">
             

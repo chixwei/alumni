@@ -14,7 +14,6 @@ if(isset($_POST['submit'])){
         $name = $_POST['name'];
     }
 
-
     if(empty($_POST['email'])){
         $errors['email'] = "Email is required";
     } else {
@@ -40,7 +39,6 @@ if(isset($_POST['submit'])){
         $password= $_POST['password'];
     }
 
-
     if(!array_filter($errors)){
 
         $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -50,13 +48,12 @@ if(isset($_POST['submit'])){
 
         $sql = "INSERT INTO user_(Uname, Email, Tel, Upassword, Status_) VALUES('$name', '$email', '$tel', '$password','')";
 
-        //save to db and check
         if(mysqli_query($conn, $sql)){
-            //success
+
             header("waiting.php");
         } else {
-            //error
-            echo "Query error: " . mysqli_error($conn); //showing the database connection error
+
+            echo "Query error: " . mysqli_error($conn); 
         }
 
         echo "<script> location.href='User_waiting.php'; </script>";
@@ -74,17 +71,16 @@ if(isset($_POST['submit'])){
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
 
-*{
-    padding:0px;
-    margin:0px;
-}
-
-body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #F3FFFA;
+    *{
+        padding:0px;
+        margin:0px;
     }
 
-    
+    body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F3FFFA;
+    }
+
     .right {
         float:right;
         background-color: #F3FFFA;
@@ -98,81 +94,80 @@ body {
         margin-right: auto;
     }
     
-    
     form.form1 {
         padding-top: 40px;
     }
 
     .name{
         width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-left: 46px;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-left: 46px;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .email{
         width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-left: 46px;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-left: 46px;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
     }
     
     .tel{
         width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-left: 46px;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-left: 46px;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .pass{
         width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-left: 46px;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-left: 46px;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
     }
    
     .name:focus, .tel:focus, .email:focus, .pass:focus{
@@ -182,7 +177,7 @@ body {
 
     .enter {
         font-weight:bold;
-      cursor: pointer;
+        cursor: pointer;
         border-radius: 5em;
         color: #FFFFFF;
         background: linear-gradient(to right, #98D1EA, #B9ECDA);
@@ -238,7 +233,6 @@ body {
         color:#996515;
     }
 
-
     </style>
 </head>
 
@@ -246,7 +240,6 @@ body {
 <div style="max-width:1100px">
   <img class="left" src="picture/college.jpg ">
   </div>
-
 
 <div class="right">
 

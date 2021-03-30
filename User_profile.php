@@ -2,6 +2,7 @@
 
 session_start();
 include("connection.php"); 
+
 ?>  
 
 <!DOCTYPE html>
@@ -62,14 +63,11 @@ include("connection.php");
         }
         
         .card {
-            background-color: #FEEED5; /*background*/
+            background-color: #FEEED5;
             width: 100px;
             padding: 100px;
             line-height:72vh;
             margin:0px;
-            /* flex-wrap: nowrap;
-            flex-direction: row;
-            justify-content: center; */
         }
 
         .card-cardtion {
@@ -84,7 +82,6 @@ include("connection.php");
         .card-container {
             display: center;
             margin: 100px;
-            /* width: 100px; */
         }
 
 
@@ -275,7 +272,6 @@ include("connection.php");
                 margin-right: 3px;
                 margin-bottom: 5px;
             }
-        }
         
     </style>
 
@@ -392,57 +388,57 @@ include("connection.php");
 
             <footer class="foot">
 
-<div class="footer-left">
-  <img src="picture/footerlogo.png">
-  
-  <p class="footer-links">
-    <a href="User_home.php">Home</a>
-    |
-    <a href="User_about.php">About</a>
-    |
-    <a href="User_event.php">News & Events</a>
-    |
-    <a href="User_contact.php">Contact</a>
-    |
-    <a href="User_profile.php">Profile</a>
-  </p>
-    
-  <p class="footer-company-name"> © 2021 KAWEIEE UNIVERSITY</p>
-</div>
+            <div class="footer-left">
+            <img src="picture/footerlogo.png">
+            
+            <p class="footer-links">
+                <a href="User_home.php">Home</a>
+                |
+                <a href="User_about.php">About</a>
+                |
+                <a href="User_event.php">News & Events</a>
+                |
+                <a href="User_contact.php">Contact</a>
+                |
+                <a href="User_profile.php">Profile</a>
+            </p>
+                
+            <p class="footer-company-name"> © 2021 KAWEIEE UNIVERSITY</p>
+            </div>
 
-<div class="footer-center">
-  <div>
-      <p class="emoji">&#128205;</p>
-                <p><span> V01-06-01, Lingkaran SV Kaweiee University,<br>
-       55100 Kuala Lumpur</span>
-                  </p>
-          </div>
+            <div class="footer-center">
+            <div>
+                <p class="emoji">&#128205;</p>
+                            <p><span> V01-06-01, Lingkaran SV Kaweiee University,<br>
+                55100 Kuala Lumpur</span>
+                            </p>
+                    </div>
 
-  <div>
-              <p class="emoji">&#128222;</p>
-              <p><a href="tel:+60123456789">+60 123456789</p>
-          </div>
+            <div>
+                        <p class="emoji">&#128222;</p>
+                        <p><a href="tel:+60123456789">+60 123456789</p>
+                    </div>
 
-          <div>
-              <p class="emoji">&#128233;</i>
-              <p><a href="mailto:kaweieeuniversity@mail.com">kaweieeuniversity@mail.com</a></p>
-          </div>
-      </div>
+                    <div>
+                        <p class="emoji">&#128233;</i>
+                        <p><a href="mailto:kaweieeuniversity@mail.com">kaweieeuniversity@mail.com</a></p>
+                    </div>
+                </div>
 
-<div class="footer-right">
-          <p class="footer-company-about">
-              <span>About the University</span>
-              This is Kaweiee University's Alumni webpage. We will provide you an amazing experience throughout our webpage. </p>
-          <div class="footer-icons">
-              <a href="https://www.facebook.com/" target="_blank"><img src="picture/facebook.png"></a>
-              <a href="https://twitter.com/" target="_blank"><img src="picture/twitter.png"></a>
-              <a href="https://www.instagram.com/" target="_blank"><img src="picture/instagram.png"></a>
-              <a href="https://www.linkedin.com/" target="_blank"><img src="picture/linkedin.png"></a>
-              <a href="https://www.youtube.com/" target="_blank"><img src="picture/youtube.png"></a>
-          </div>
-      </div>
+            <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About the University</span>
+                        This is Kaweiee University's Alumni webpage. We will provide you an amazing experience throughout our webpage. </p>
+                    <div class="footer-icons">
+                        <a href="https://www.facebook.com/" target="_blank"><img src="picture/facebook.png"></a>
+                        <a href="https://twitter.com/" target="_blank"><img src="picture/twitter.png"></a>
+                        <a href="https://www.instagram.com/" target="_blank"><img src="picture/instagram.png"></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><img src="picture/linkedin.png"></a>
+                        <a href="https://www.youtube.com/" target="_blank"><img src="picture/youtube.png"></a>
+                    </div>
+                </div>
 
-</footer>
+            </footer>
 
 </body>
 <html>

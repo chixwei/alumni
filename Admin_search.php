@@ -4,10 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
-*{
+        *{
             padding:0;
             margin:0;
-            
         }
 
         body{
@@ -59,11 +58,10 @@
         .flex-container {
             display: flex;
             flex-direction: column;
-            
         }
         
         .card {
-            background-color: #e7d9bc; /*background*/
+            background-color: #e7d9bc; 
             width: 100%;
             padding: 0px;
             line-height:72vh;
@@ -205,128 +203,127 @@
             }
 
             .foot {
-    background-color:#2F2F2F;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    font: bold 16px sans-serif;
-    padding: 50px 50px 60px 50px;
-  }
+                background-color:#2F2F2F;
+                box-sizing: border-box;
+                width: 100%;
+                text-align: left;
+                font: bold 16px sans-serif;
+                padding: 50px 50px 60px 50px;
+            }
 
-  .foot .footer-left,
-  .foot .footer-center,
-  .foot .footer-right {
-    display: inline-block;
-    vertical-align: top;
-  }
+            .foot .footer-left,
+            .foot .footer-center,
+            .foot .footer-right {
+                display: inline-block;
+                vertical-align: top;
+            }
 
-  .foot .footer-left {
-    width: 30%;
-  }
+            .foot .footer-left {
+                width: 30%;
+            }
 
-  .foot .footer-left img {
-    width: 50%;
-    margin-left: 10px;
-  }
+            .foot .footer-left img {
+                width: 50%;
+                margin-left: 10px;
+            }
 
-  .foot .footer-links{
-    color:  #ffffff;
-    margin: 20px 0 12px;
-  }
-  
-  .foot .footer-links a{
-    display:inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color:  inherit;
-  }
+            .foot .footer-links{
+                color:  #ffffff;
+                margin: 20px 0 12px;
+            }
+            
+            .foot .footer-links a{
+                display:inline-block;
+                line-height: 1.8;
+                text-decoration: none;
+                color:  inherit;
+            }
 
-  .foot .footer-company-name{
-    color:  #8f9296;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-  }
+            .foot .footer-company-name{
+                color:  #8f9296;
+                font-size: 14px;
+                font-weight: normal;
+                margin: 0;
+            }
 
-  .foot .footer-center{
-    width: 35%;
-  }
-  
-  .foot .footer-center .emoji{
-    background-color:  #33383b;
-    color: #ffffff;
-    font-size: 25px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
-    margin-top:30px;
-  }
-  
-  .foot .footer-center p{
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin-top:30px;
-  }
-  
-  .foot .footer-center p span{
-    display:block;
-    font-weight: normal;
-    font-size:14px;
-    line-height:2;
-  }
-  
-  .foot .footer-center p a{
-    color:  white;
-    text-decoration: none;;
-  }
+            .foot .footer-center{
+                width: 35%;
+            }
+            
+            .foot .footer-center .emoji{
+                background-color:  #33383b;
+                color: #ffffff;
+                font-size: 25px;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 42px;
+                margin: 10px 15px;
+                vertical-align: middle;
+                margin-top:30px;
+            }
+            
+            .foot .footer-center p{
+                display: inline-block;
+                color: #ffffff;
+                vertical-align: middle;
+                margin-top:30px;
+            }
+            
+            .foot .footer-center p span{
+                display:block;
+                font-weight: normal;
+                font-size:14px;
+                line-height:2;
+            }
+            
+            .foot .footer-center p a{
+                color:  white;
+                text-decoration: none;;
+            }
 
-  .foot .footer-right{
-    width: 30%;
-    margin-top: 30px;
-  }
-  
-  .foot .footer-company-about{
-    line-height: 20px;
-    color:  #92999f;
-    font-size: 13px;
-    font-weight: normal;
-    margin: 0;
-  }
-  
-  .foot .footer-company-about span{
-    display: block;
-    color:  #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .foot .footer-icons{
-    margin-top: 25px;
-  }
-  
-  .foot .footer-icons a img{
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color:  #33383b;
-    border-radius: 2px;
-  
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-  
-    margin-right: 3px;
-    margin-bottom: 5px;
-  }
-}
+            .foot .footer-right{
+                width: 30%;
+                margin-top: 30px;
+            }
+            
+            .foot .footer-company-about{
+                line-height: 20px;
+                color:  #92999f;
+                font-size: 13px;
+                font-weight: normal;
+                margin: 0;
+            }
+            
+            .foot .footer-company-about span{
+                display: block;
+                color:  #ffffff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            
+            .foot .footer-icons{
+                margin-top: 25px;
+            }
+            
+            .foot .footer-icons a img{
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+                background-color:  #33383b;
+                border-radius: 2px;
+            
+                font-size: 20px;
+                color: #ffffff;
+                text-align: center;
+                line-height: 35px;
+            
+                margin-right: 3px;
+                margin-bottom: 5px;
+            }
         
     </style>
 

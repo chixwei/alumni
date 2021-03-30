@@ -326,7 +326,6 @@
                 margin-right: 3px;
                 margin-bottom: 5px;
             }
-        }
         
     </style>
 
@@ -359,7 +358,6 @@
 
     <body>
 
-    
         <form action="User_search.php" method="POST" class="search" >
             <table>
                 <tr>
@@ -368,7 +366,6 @@
                 </tr>
             </table>
         </form>
-    
     
 <?php
 
@@ -388,7 +385,6 @@ if (mysqli_num_rows($results) > 0) {
         $address= $row["Address"];
         $job= $row["Job"];
         $profile= $row["Profile"];
-
     ?>      
 
     <div class="flex-container">
@@ -446,7 +442,6 @@ if (mysqli_num_rows($results) > 0) {
                   </div>
               </div>
             </div>
-
 
 <?php
     }

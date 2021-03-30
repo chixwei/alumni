@@ -57,10 +57,9 @@ if(isset($_POST["submit"])) {
     width: 100%; 
     height: 100%;
     z-index: -2;
-}
+    }
 
-
-body {
+    body {
         font-family: Arial, Helvetica, sans-serif;
     }
     
@@ -86,23 +85,23 @@ body {
     }
     
     .un {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
+        width: 76%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-bottom: 50px;
+        margin-left: 46px;
+        text-align: center;
+        margin-bottom: 27px;
+        font-family: Arial, Helvetica, sans-serif;
     }
     
     form.form1 {
@@ -110,23 +109,23 @@ body {
     }
     
     .pass {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: Arial, Helvetica, sans-serif;
+        width: 76%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-bottom: 50px;
+        margin-left: 46px;
+        text-align: center;
+        margin-bottom: 27px;
+        font-family: Arial, Helvetica, sans-serif;
     }
     
    
@@ -139,7 +138,7 @@ body {
     
     .enter {
         font-weight:bold;
-      cursor: pointer;
+        cursor: pointer;
         border-radius: 5em;
         color: #FFFFFF;
         background: linear-gradient(to right,  #F0D971, #C1933E);
@@ -184,40 +183,38 @@ body {
             
     }
 
-
-
-
     @media (max-width: 700px) {
         .main {
             border-radius: 0px;
         } 
     }
 
-@media (min-aspect-ratio: 16/9) {
+    @media (min-aspect-ratio: 16/9) {
     #bgvideo {
         width: 100%;
         height: auto;
+        }
     }
-}
-@media (max-aspect-ratio: 16/9) {
+
+    @media (max-aspect-ratio: 16/9) {
     #bgvideo {
         width: auto;
         height: 200%;
+        }
     }
-}
 
-
-@keyframes arrive {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 50px, 0);
+    @keyframes arrive {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 50px, 0);
+        }
+        
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
     }
     
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
     </style>
 </head>
 

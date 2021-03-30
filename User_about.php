@@ -5,230 +5,233 @@
 <title>About Us</title>
 <style>
 
-* {box-sizing: border-box;}
-
-body { 
-    margin: 0;
-    padding; 0;
-    background-color:  #B9B49E;
-    font-family: Arial, Helvetica, sans-serif;
+    * {
+        box-sizing: border-box;
     }
 
-#navbar {
-    overflow: hidden;
-    background-color: #C99738;
-    padding: 40px 10px;
-    transition: 0.4s;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 99;
+    body { 
+        margin: 0;
+        padding; 0;
+        background-color:  #B9B49E;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
-#navbar a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-    font-size: 21px; 
-    line-height: 25px;
-    border-radius: 8px;
+    #navbar {
+        overflow: hidden;
+        background-color: #C99738;
+        padding: 40px 10px;
+        transition: 0.4s;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99;
     }
 
-#navbar #logo {
-    font-size: 35px;
-    font-weight: bold;
-    transition: 0.4s;
+    #navbar a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        font-size: 21px; 
+        line-height: 25px;
+        border-radius: 8px;
     }
 
-#navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    #navbar #logo {
+        font-size: 35px;
+        font-weight: bold;
+        transition: 0.4s;
     }
 
-#navbar a.active {
-    background-color: dodgerblue;
-    color: white;
+    #navbar a:hover {
+        background-color: #ddd;
+        color: black;
     }
 
-#navbar-right {
-    float: right;
+    #navbar a.active {
+        background-color: dodgerblue;
+        color: white;
     }
 
-.leftcolumn {   
-    float: left;
-    width: 75%;
+    #navbar-right {
+        float: right;
     }
 
-.rightcolumn {
-    float: left;
-    width: 25%;
-    padding-left: 15px;
+    .leftcolumn {   
+        float: left;
+        width: 75%;
     }
 
-.fakeimg {
-    background-color:#DBAFAD;
-    width: 70%;
-    padding: 5px;
+    .rightcolumn {
+        float: left;
+        width: 25%;
+        padding-left: 15px;
     }
 
-.card {
-    background-color:#F2DCBD;
-    padding: 20px;
-    margin-top: 20px;
+    .fakeimg {
+        background-color:#DBAFAD;
+        width: 70%;
+        padding: 5px;
     }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+    .card {
+        background-color:#F2DCBD;
+        padding: 20px;
+        margin-top: 20px;
     }
 
-.footer {
-    padding: 15px;
-    text-align: center;
-    background: RGB(16, 58, 99);
-    margin-top: 15px;
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 
-@media screen and (max-width: 580px) {
-  #navbar {
-    padding: 20px 10px !important;
+    .footer {
+        padding: 15px;
+        text-align: center;
+        background: RGB(16, 58, 99);
+        margin-top: 15px;
     }
-  #navbar a {
-    float: none;
-    display: block;
-    text-align: left;
+
+    @media screen and (max-width: 580px) {
+    #navbar {
+        padding: 20px 10px !important;
+        }
+
+    #navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+        }
+        
+    #navbar-right {
+        float: none;
+        }
     }
-  #navbar-right {
-    float: none;
+
+    .foot {
+        background-color:#2F2F2F;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
     }
- }
 
- .foot {
-    background-color:#2F2F2F;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    font: bold 16px sans-serif;
-    padding: 50px 50px 60px 50px;
-  }
+    .foot .footer-left,
+    .foot .footer-center,
+    .foot .footer-right {
+        display: inline-block;
+        vertical-align: top;
+    }
 
-  .foot .footer-left,
-  .foot .footer-center,
-  .foot .footer-right {
-    display: inline-block;
-    vertical-align: top;
-  }
+    .foot .footer-left {
+        width: 30%;
+    }
 
-  .foot .footer-left {
-    width: 30%;
-  }
+    .foot .footer-left img {
+        width: 50%;
+        margin-left: 10px;
+    }
 
-  .foot .footer-left img {
-    width: 50%;
-    margin-left: 10px;
-  }
+    .foot .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+    }
+    
+    .foot .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color:  inherit;
+    }
 
-  .foot .footer-links{
-    color:  #ffffff;
-    margin: 20px 0 12px;
-  }
-  
-  .foot .footer-links a{
-    display:inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color:  inherit;
-  }
+    .foot .footer-company-name{
+        color:  #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
 
-  .foot .footer-company-name{
-    color:  #8f9296;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-  }
+    .foot .footer-center{
+        width: 35%;
+    }
+    
+    .foot .footer-center .emoji{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+        margin-top:30px;
+    }
+    
+    .foot .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin-top:30px;
+    }
+    
+    .foot .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .foot .footer-center p a{
+        color:  white;
+        text-decoration: none;;
+    }
 
-  .foot .footer-center{
-    width: 35%;
-  }
-  
-  .foot .footer-center .emoji{
-    background-color:  #33383b;
-    color: #ffffff;
-    font-size: 25px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
-    margin-top:30px;
-  }
-  
-  .foot .footer-center p{
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin-top:30px;
-  }
-  
-  .foot .footer-center p span{
-    display:block;
-    font-weight: normal;
-    font-size:14px;
-    line-height:2;
-  }
-  
-  .foot .footer-center p a{
-    color:  white;
-    text-decoration: none;;
-  }
-
-  .foot .footer-right{
-    width: 30%;
-    margin-top: 30px;
-  }
-  
-  .foot .footer-company-about{
-    line-height: 20px;
-    color:  #92999f;
-    font-size: 13px;
-    font-weight: normal;
-    margin: 0;
-  }
-  
-  .foot .footer-company-about span{
-    display: block;
-    color:  #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .foot .footer-icons{
-    margin-top: 25px;
-  }
-  
-  .foot .footer-icons a img{
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color:  #33383b;
-    border-radius: 2px;
-  
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-  
-    margin-right: 3px;
-    margin-bottom: 5px;
-  }
-}
+    .foot .footer-right{
+        width: 30%;
+        margin-top: 30px;
+    }
+    
+    .foot .footer-company-about{
+        line-height: 20px;
+        color:  #92999f;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .foot .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .foot .footer-icons{
+        margin-top: 25px;
+    }
+    
+    .foot .footer-icons a img{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+    
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+    
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
 
 </style>
 </head>

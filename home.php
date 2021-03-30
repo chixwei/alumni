@@ -174,59 +174,59 @@
               };
         </script>
 
-    <footer class="foot">
+        <footer class="foot">
 
-      <div class="footer-left">
-        <img src="picture/footerlogo.png">
-        
-        <p class="footer-links">
-          <a href="home.php">Home</a>
-          |
-          <a href="login.php">About</a>
-          |
-          <a href="login.php">News & Events</a>
-          |
-          <a href="login.php">Contact</a>
-          |
-          <a href="login.php">Profile</a>
-        </p>
-          
-        <p class="footer-company-name"> © 2021 KAWEIEE UNIVERSITY</p>
-      </div>
+          <div class="footer-left">
+            <img src="picture/footerlogo.png">
+            
+            <p class="footer-links">
+              <a href="home.php">Home</a>
+              |
+              <a href="login.php">About</a>
+              |
+              <a href="login.php">News & Events</a>
+              |
+              <a href="login.php">Contact</a>
+              |
+              <a href="login.php">Profile</a>
+            </p>
+              
+            <p class="footer-company-name"> © 2021 KAWEIEE UNIVERSITY</p>
+          </div>
 
-      <div class="footer-center">
-        <div>
-            <p class="emoji">&#128205;</p>
-					  <p><span> V01-06-01, Lingkaran SV Kaweiee University,<br>
-             55100 Kuala Lumpur</span>
-						</p>
-				</div>
+          <div class="footer-center">
+            <div>
+                <p class="emoji">&#128205;</p>
+                <p><span> V01-06-01, Lingkaran SV Kaweiee University,<br>
+                55100 Kuala Lumpur</span>
+                </p>
+            </div>
 
-        <div>
-					<p class="emoji">&#128222;</p>
-					<p><a href="tel:+60123456789">+60 123456789</p>
-				</div>
+            <div>
+              <p class="emoji">&#128222;</p>
+              <p><a href="tel:+60123456789">+60 123456789</p>
+            </div>
 
-				<div>
-					<p class="emoji">&#128233;</i>
-					<p><a href="mailto:kaweieeuniversity@mail.com">kaweieeuniversity@mail.com</a></p>
-				</div>
-			</div>
+            <div>
+              <p class="emoji">&#128233;</i>
+              <p><a href="mailto:kaweieeuniversity@mail.com">kaweieeuniversity@mail.com</a></p>
+            </div>
+          </div>
 
-      <div class="footer-right">
-				<p class="footer-company-about">
-					<span>About the University</span>
-					This is Kaweiee University's Alumni webpage. We will provide you an amazing experience throughout our webpage. </p>
-				<div class="footer-icons">
-					<a href="https://www.facebook.com/" target="_blank"><img src="picture/facebook.png"></a>
-					<a href="https://twitter.com/" target="_blank"><img src="picture/twitter.png"></a>
-					<a href="https://www.instagram.com/" target="_blank"><img src="picture/instagram.png"></a>
-					<a href="https://www.linkedin.com/" target="_blank"><img src="picture/linkedin.png"></a>
-					<a href="https://www.youtube.com/" target="_blank"><img src="picture/youtube.png"></a>
-				</div>
-			</div>
+          <div class="footer-right">
+            <p class="footer-company-about">
+              <span>About the University</span>
+              This is Kaweiee University's Alumni webpage. We will provide you an amazing experience throughout our webpage. </p>
+            <div class="footer-icons">
+              <a href="https://www.facebook.com/" target="_blank"><img src="picture/facebook.png"></a>
+              <a href="https://twitter.com/" target="_blank"><img src="picture/twitter.png"></a>
+              <a href="https://www.instagram.com/" target="_blank"><img src="picture/instagram.png"></a>
+              <a href="https://www.linkedin.com/" target="_blank"><img src="picture/linkedin.png"></a>
+              <a href="https://www.youtube.com/" target="_blank"><img src="picture/youtube.png"></a>
+            </div>
+          </div>
 
-    </footer>
+        </footer>
         
     </body>
 </html>

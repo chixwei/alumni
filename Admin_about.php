@@ -7,7 +7,6 @@
 
 * {box-sizing: border-box;}
 
-
 body { 
     margin: 0;
     padding; 0;
@@ -229,7 +228,6 @@ body {
     margin-right: 3px;
     margin-bottom: 5px;
   }
-}
 
 </style>
 </head>
@@ -338,17 +336,18 @@ body {
 </div>
 
 <script>
+
 window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("navbar").style.padding = "10px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
-    } else {
-    document.getElementById("navbar").style.padding = "40px 10px";
-    document.getElementById("logo").style.fontSize = "30px";
+    function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("navbar").style.padding = "10px 10px";
+        document.getElementById("logo").style.fontSize = "25px";
+        } else {
+        document.getElementById("navbar").style.padding = "40px 10px";
+        document.getElementById("logo").style.fontSize = "30px";
+        }
     }
-}
 </script>
 
 <footer class="foot">

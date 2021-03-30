@@ -14,7 +14,9 @@ if(isset($_POST["submit"]))
 
         if ($row["Email"]){
 
+            echo "<script>alert('Password had been changed.')</script>";
             echo "<script> location.href='login.php'; </script>";
+            
         }
         else 
         {
@@ -27,9 +29,9 @@ if(isset($_POST["submit"]))
 }
 
     $email ="";
- 
 
 ?>
+
 <?php
 session_start();
 include("connection.php");
@@ -39,10 +41,11 @@ if(isset($_POST["submit"])) {
     $password=$_POST["password"];
     $sql= "UPDATE user_ SET Upassword ='$password' WHERE Email='$email'";
     $results= mysqli_query($conn,$sql);
+    
     if($results) {
 
         echo "<script>alert('Password had been changed.')</script>";
-        // echo "<script> location.href='login.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
         
 
     }else {
@@ -53,10 +56,7 @@ if(isset($_POST["submit"])) {
 
 } 
 
-
     $password ="";
-
-
 
 ?>
 
@@ -91,7 +91,6 @@ body {
         font-weight: bold;
         font-size: 30px;
     }
-    
     
     .Np {
         width: 76%;
@@ -156,17 +155,14 @@ body {
     margin-bottom: 27px;
     font-family: Arial, Helvetica, sans-serif;
     }
-
-
     
     .Np:focus, .Cp:focus, .email:focus{
         border: 2px solid #B7882A !important;
-        
     }
 
     .enter {
         font-weight:bold;
-      cursor: pointer;
+        cursor: pointer;
         border-radius: 5em;
         color: #FFFFFF;
         background: linear-gradient(to right, #98D1EA, #B9ECDA);
@@ -192,7 +188,6 @@ body {
         color: #6CB0F2;
         text-decoration: none;
     }
-
     
     a:hover{
         color: black;
@@ -205,25 +200,20 @@ body {
         } 
     }
 
-
-
     </style>
 </head>
 
 <body>
 
-
 <div class="main">
 <p class="sign">Change Password</p><br><br>
 <form action="forgot.php" method="POST">
 
-  <input class="email" type="text" text-align="center" placeholder="Email" name="email">
-  <!-- <input type="hidden" value="forgotpassword and login"/> -->
+    <input class="email" type="text" text-align="center" placeholder="Email" name="email">
 
-<input class="Np" type="password" text-align="center" placeholder="New Password" name="password">
+    <input class="Np" type="password" text-align="center" placeholder="New Password" name="password">
 
-
-<input type="submit" class="enter" value="Submit" name="submit">
+    <input type="submit" class="enter" value="Submit" name="submit">
 
 </form>
 </div>   

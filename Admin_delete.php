@@ -1,6 +1,5 @@
 <?php
 
-
 include('connection.php');
 	    $delete=$_GET['delete'];
 	       

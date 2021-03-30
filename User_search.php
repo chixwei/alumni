@@ -7,7 +7,6 @@
         *{
             padding:0;
             margin:0;
-            
         }
 
         body{
@@ -59,11 +58,10 @@
         .flex-container {
             display: flex;
             flex-direction: column;
-            
         }
         
         .card {
-            background-color: #e7d9bc; /*background*/
+            background-color: #e7d9bc;
             width: 100%;
             padding: 0px;
             line-height:72vh;
@@ -369,7 +367,6 @@
             </table>
         </form>
     
-    
     <?php
 
         include('connection.php');
@@ -439,7 +436,6 @@
                             <td>Job: </td>
                             <td><?= $job ?></td>
                         </tr>
-
 
                         </table>
                         </form>

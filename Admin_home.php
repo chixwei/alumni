@@ -30,7 +30,7 @@
 
         </header>
 
-<!-- section 1 -->
+
 
         <div class="flex-container">
             <div class="sec">
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-<!-- section 2 -->
+
 
         <div class="flex-container2">
             <div class="sec2">
@@ -107,7 +107,7 @@
             </div>
         </div>
 
-<!-- section 3 -->
+
 
         <div class="flex-container">
                     <div class="sec">

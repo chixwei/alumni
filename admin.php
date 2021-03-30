@@ -38,9 +38,9 @@ if(isset($_POST["submit"]))
     *{
     padding:0px;
     margin:0px;
-}
+    }
 
-body {
+    body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #FBFBEF;
     }
@@ -128,7 +128,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     }
     
-   
     .un:focus, .tel:focus, .pass:focus {
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
         
@@ -188,8 +187,6 @@ body {
         } 
     }
 
-
-
 </style>
 </head>
 <body>
@@ -210,7 +207,6 @@ body {
   <input type="password" class="pass" placeholder="Password" name="password"></input>
 
   <input type="submit" class="submit" value="Login" name="submit"><br></input>
-
 
 <p class="forgot"><b> Back to login </b><a href="login.php">Click here to login </a>.</p>
             
