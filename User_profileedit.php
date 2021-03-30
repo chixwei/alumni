@@ -247,7 +247,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="user-box">
-            <input type="text" name="DOB" value="<?= $row["DOB"] ?>">
+            <input type="date" name="DOB" value="<?= $row["DOB"] ?>">
             <label>Date of Birthday</label>
             </div>
 

@@ -283,7 +283,7 @@ include("connection.php");
         <a href="" id="logo">KAWEIEE <br> UNIVERSITY</a>
             <div id="navbar-right">
                 <br>
-                <a href="home.php">HOME</a>
+                <a href="User_home.php">HOME</a>
                 <a href="User_about.php">ABOUT US</a>
                 <a href="User_event.php">NEWS & EVENTS</a>
                 <a href="User_contact.php">CONTACT</a>
@@ -396,7 +396,7 @@ include("connection.php");
   <img src="picture/footerlogo.png">
   
   <p class="footer-links">
-    <a href="home.php">Home</a>
+    <a href="User_home.php">Home</a>
     |
     <a href="User_about.php">About</a>
     |
